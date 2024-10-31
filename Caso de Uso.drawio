@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.3">
   <diagram name="Página-1" id="-hNQNOBoWdc49GFBCAFE">
-    <mxGraphModel dx="1600" dy="5532" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+    <mxGraphModel dx="1600" dy="851" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -142,11 +142,53 @@
         <mxCell id="nr1bMBN_gZwiYWZxmawI-36" value="Visualiza&lt;span style=&quot;background-color: initial;&quot;&gt;r Estatísticas&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-37">
           <mxGeometry x="40" y="40" width="120" height="80" as="geometry" />
         </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="nr1bMBN_gZwiYWZxmawI-38" target="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="nr1bMBN_gZwiYWZxmawI-38" value="Operador&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="890" y="-20" width="30" height="60" as="geometry" />
+          <mxGeometry x="190" y="1730" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nr1bMBN_gZwiYWZxmawI-39" value="Supervisor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
           <mxGeometry x="1100" y="180" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.003;entryY=0.422;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="eNu-A9OQDc99dVDA0O8h-3" target="nr1bMBN_gZwiYWZxmawI-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-51" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1390" width="460" height="710" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-53" value="Inserir Feedback" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry x="61.25" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-54" value="Visualizar rotas de coleta" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry x="60" y="500" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-55" value="Excluir Feedback" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry x="60" y="390" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-56" value="Editar feedback" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry x="60" y="270" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-57" value="Editar informações do perfil" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry x="41.25" y="50" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-59" value="Visualizar histórico de coletas" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry x="300" y="485" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-60" value="Visualiza&lt;span style=&quot;background-color: initial;&quot;&gt;r Estatísticas&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry x="288.75" y="385" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-61" value="Atualizar status de coleta" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry x="288.75" y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-62" value="Visualizar materiais" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry x="288.75" y="145" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-63" value="visualizar pontos de coleta" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry x="288.75" y="265" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1bMBN_gZwiYWZxmawI-65" value="Visualizar coleta" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="nr1bMBN_gZwiYWZxmawI-51">
+          <mxGeometry x="60" y="610" width="120" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
