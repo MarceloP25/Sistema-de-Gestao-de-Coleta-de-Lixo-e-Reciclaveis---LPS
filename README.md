@@ -1,4 +1,4 @@
-# Sistema de Gestão de Coleta de Recicláveis
+# Sistema de Gestão de Coleta de Lixo e Recicláveis
 
 ## 1. Visão Geral do Projeto
 
@@ -49,10 +49,6 @@
 - **RF-22**: O sistema deve enviar notificações automáticas sobre coletas programadas, rota atualizada, e alertas de ponto de coleta cheio.
 - **RF-23**: O sistema deve permitir que o usuário configure preferências de notificação (e-mail, SMS, push).
 
-### 2.9 Gamificação e Incentivos
-- **RF-24**: O sistema deve incluir uma funcionalidade de gamificação, com pontos atribuídos aos cidadãos por ações como envio de feedback ou frequência de uso dos pontos de coleta.
-- **RF-25**: O sistema deve permitir a visualização dos pontos acumulados e definir metas para recompensas futuras.
-
 ---
 
 ## 3. Requisitos Não Funcionais
@@ -93,34 +89,10 @@
 
 ---
 
-## 5. Casos de Uso
-
-### Casos de Uso Derivados da Descrição Inicial do Sistema
-
-1. **Cadastro de Materiais Recicláveis**  
-2. **Cadastro de Pontos de Coleta**  
-3. **Criação de Rotas de Coleta**  
-4. **Relatórios de Coletas**  
-5. **Sistema de Login e Permissões**  
-6. **Feedback dos Usuários**  
-7. **Consulta ao Histórico de Coletas por Região**  
-8. **Estatísticas de Reciclagem**
-
-### Casos de Uso Criados para Expansão de Funcionalidades
-
-9. **Sistema de Notificações e Alertas**  
-10. **Ganhar Pontos por Engajamento (Gamificação)**  
-11. **Cadastrar Usuário (CRUD)**  
-12. **Consultar Usuário (CRUD)**  
-13. **Atualizar Usuário (CRUD)**  
-14. **Deletar Usuário (CRUD)**
-
----
-
-## 6. Priorização dos Requisitos
+## 5. Priorização dos Requisitos
 
 1. **Alta Prioridade**: Cadastro de Materiais e Pontos de Coleta, Sistema de Login e Permissões, Criação de Rotas de Coleta, Histórico de Coletas por Região.
 2. **Média Prioridade**: Relatórios de Coletas, Feedback dos Usuários, Sistema de Notificações e Alertas.
-3. **Baixa Prioridade**: Estatísticas de Reciclagem, Gamificação e Incentivos.
+3. **Baixa Prioridade**: Estatísticas de Reciclagem.
 
 ---
