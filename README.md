@@ -10,44 +10,122 @@
 
 ## 2. Requisitos Funcionais
 
-### 2.1 Cadastro e Gerenciamento de Materiais Recicláveis
-- **RF-01**: O sistema deve permitir o cadastro de diferentes tipos de materiais recicláveis (ex.: papel, plástico, vidro, metal).
-- **RF-02**: O administrador deve poder atualizar informações dos materiais cadastrados, incluindo características e métodos de coleta.
-- **RF-03**: O sistema deve permitir a remoção de materiais, contanto que não estejam atrelados a registros históricos.
+### 2.1 Cadastro e Gerenciamento de Materiais
+
+#### 2.1.1 Cadastrar Dados de Materiais
+- **RF-01**: O sistema deve permitir o cadastro de materiais.
+
+#### 2.1.2 Editar Dados de Materiais
+- **RF-02**: O sistema deve permitir a edição dos dados de materiais.
+
+#### 2.1.3 Excluir Dados de Materiais
+- **RF-03**: O sistema deve permitir a exclusão de materiais.
+
 
 ### 2.2 Cadastro e Gerenciamento de Pontos de Coleta
-- **RF-04**: O sistema deve permitir o cadastro de pontos de coleta com informações de endereço, tipo de material aceito e horário de funcionamento.
-- **RF-05**: O administrador deve poder visualizar todos os pontos de coleta em um mapa interativo.
-- **RF-06**: O sistema deve permitir a atualização dos dados dos pontos de coleta.
-- **RF-07**: O administrador deve poder desativar pontos de coleta temporariamente ou removê-los permanentemente.
+
+#### 2.2.1 Cadastrar de Pontos de Coleta
+- **RF-04**: O sistema deve permitir o cadastro de pontos de coleta dentro de rotas.
+
+#### 2.2.2 Editar Pontos de Coleta
+- **RF-05**: O sistema deve permitir a edição dos pontos de coleta.
+
+#### 2.2.3 Excluir Pontos de coleta
+- **RF-06**: O sistema deve permitir a exclusão de pontos de coleta.
+
+#### 2.2.4 Vizualizar Pontos de coleta
+- **RF-07**: O sistema deve permitir a vizualização dos pontos de coleta.
+
 
 ### 2.3 Sistema de Login e Gerenciamento de Usuários
-- **RF-08**: O sistema deve incluir um mecanismo de autenticação por login e senha.
-- **RF-09**: Deve haver diferentes níveis de permissão: administrador, operador de coleta e cidadão.
-- **RF-10**: Administradores devem poder cadastrar, atualizar e excluir usuários, definindo o perfil de cada um.
-- **RF-11**: O sistema deve permitir a recuperação de senha por e-mail para todos os tipos de usuários.
+
+#### 2.3.1 Cadastrar Dados de Administrador
+- **RF-08**: O sistema deve permitir o cadastro de um administrador para o controle de suas funcionalidades.
+
+#### 2.3.2 Editar Dados de Administrador
+- **RF-09**: O sistema deve permitir a edição dos dados do administrador do sistema para o controle de acesso em situações de sua alteração.
+
+#### 2.3.3 Cadastrar Dados de Supervisor
+- **RF-10**: O sistema deve permitir o cadastro de usuários do tipo supervisor pelo administrador do sistema para o controle de seu acesso.
+
+#### 2.3.4 Editar Dados de Supervisor
+- **RF-11**: O sistema deve permitir a edição dos dados do usuário supervisor.
+
+#### 2.3.5 Desativar Supervisor
+- **RF-12**: O sistema deve permitir a desativação de usuários do tipo supervisor pelo administrador do sistema para o controle de seu acesso.
+
+#### 2.3.6 Cadastrar Dados de Operador
+- **RF-13**: O sistema deve permitir o cadastro de usuários do tipo operador pelo supervisor e administrador do sistema para o controle de seu acesso.
+
+#### 2.3.7 Editar Dados de Operador
+- **RF-14**: O sistema deve permitir a edição dos dados do usuário operador.
+
+#### 2.3.8 Desativar Operador
+- **RF-15**: O sistema deve permitir a desativação de usuários do tipo operador pelo supervisor e administrador do sistema para o controle de seu acesso.
+
+#### 2.3.9 Cadastrar Dados de Cidadão
+- **RF-16**: O sistema deve permitir o cadastro de usuários do tipo cidadão para o controle de suas funcionalidades.
+
+#### 2.3.10 Editar Dados de Cidadão
+- **RF-17**: O sistema deve permitir a edição dos dados do usuário cidadão.
+
+#### 2.3.11 Desativar Cidadão
+- **RF-18**: O sistema deve permitir a desativação do usuário cidadão.
+
+#### 2.3.12 Recuperar Acesso
+- **RF-19**: O sistema deve permitir a recuperação de senha via email.
+
 
 ### 2.4 Criação e Otimização de Rotas de Coleta
-- **RF-12**: O sistema deve permitir a criação de rotas de coleta com base na localização dos pontos e no volume de material.
-- **RF-13**: O administrador deve poder otimizar as rotas usando algoritmos de geolocalização e distância mínima.
-- **RF-14**: O sistema deve permitir o redirecionamento de rotas em tempo real, notificando os operadores de coleta sobre mudanças.
+
+#### 2.4.1 Cadastrar de Rotas de Coleta
+- **RF-20**: O sistema deve permitir o cadastro de rotas de coleta dentro de rotas.
+
+#### 2.4.2 Editar Rotas de Coleta
+- **RF-21**: O sistema deve permitir a edição dos rotas de coleta.
+
+#### 2.4.3 Excluir Rotas de coleta
+- **RF-22**: O sistema deve permitir a exclusão de rotas de coleta.
+
+#### 2.4.4 Vizualizar Rotas de coleta
+- **RF-23**: O sistema deve permitir a vizualização dos rotas de coleta.
+
 
 ### 2.5 Geração de Relatórios e Estatísticas
-- **RF-15**: O sistema deve permitir a geração de relatórios de coleta com dados como volume coletado, tipo de material, região e frequência.
-- **RF-16**: O sistema deve fornecer estatísticas visuais (gráficos e tabelas) sobre os tipos de materiais reciclados e volume mensal.
-- **RF-17**: Os relatórios devem ser exportáveis em formatos como PDF e Excel.
+
+#### 2.5.1 Gerar Relatórios e Estatísticas
+- **RF-24**: O sistema deve permitir a geração de relatórios e estatísticas de coletas.
+
+#### 2.5.2 Vizualizar Relatórios e Estatísticas
+- **RF-25**: O sistema deve permitir a vizualização dos relatórios e estatísticas de coletas.
+
 
 ### 2.6 Sistema de Feedback dos Usuários
-- **RF-18**: Cidadãos devem poder enviar feedback sobre os pontos de coleta e o serviço de coleta em geral.
-- **RF-19**: Administradores devem poder visualizar e responder ao feedback dos usuários.
+
+#### 2.6.1 Criar feedbacks
+- **RF-26**: O sistema deve permitir a criação de feedbacks nas coletas.
+
+#### 2.6.2 Editar feedbacks
+- **RF-27**: O sistema deve permitir a edição dos feedbacks.
+
+#### 2.6.3 Excluir feedbacks
+- **RF-28**: O sistema deve permitir a exclusão de feedbacks.
+
+#### 2.6.4 Vizualizar feedbacks
+- **RF-29**: O sistema deve permitir a vizualização dos feedbacks nas coletas.
+
 
 ### 2.7 Histórico de Coletas por Região
-- **RF-20**: O sistema deve armazenar um histórico detalhado das coletas por região, com data, tipo de material e volume coletado.
-- **RF-21**: O operador de coleta e o administrador devem poder consultar o histórico de coletas em uma região específica.
+
+#### 2.5.1 Gerar Histórico
+- **RF-30**: O sistema deve gerar o histórico das coletas automaticamente.
+
+#### 2.5.2 Vizualizar Histórico
+- **RF-31**: O sistema deve permitir a vizualização do histórico das coletas.
 
 ### 2.8 Notificações e Alertas
-- **RF-22**: O sistema deve enviar notificações automáticas sobre coletas programadas, rota atualizada, e alertas de ponto de coleta cheio.
-- **RF-23**: O sistema deve permitir que o usuário configure preferências de notificação (e-mail, SMS, push).
+- **RF-32**: O sistema deve enviar notificações automáticas sobre coletas programadas, rota atualizada, e alertas de ponto de coleta cheio.
+- **RF-33**: O sistema deve permitir que o usuário configure preferências de notificação (e-mail, SMS).
 
 ---
 
