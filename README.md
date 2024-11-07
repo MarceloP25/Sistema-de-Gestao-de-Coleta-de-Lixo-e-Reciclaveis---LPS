@@ -117,10 +117,10 @@
 
 ### 2.7 Histórico de Coletas por Região
 
-#### 2.5.1 Gerar Histórico
+#### 2.7.1 Gerar Histórico
 - **RF-30**: O sistema deve gerar o histórico das coletas automaticamente.
 
-#### 2.5.2 Vizualizar Histórico
+#### 2.7.2 Vizualizar Histórico
 - **RF-31**: O sistema deve permitir a vizualização do histórico das coletas.
 
 ### 2.8 Notificações e Alertas
@@ -155,15 +155,54 @@
 
 ---
 
-## 4. Suposições e Restrições
+## 4. Usuários do Sistema
 
-### Suposições
-- O sistema será acessado principalmente por usuários com dispositivos móveis e internet de média velocidade.
-- A integração de APIs de geolocalização e notificações (ex.: Google Maps, Twilio) será viável e econômica.
+### Administrador
+O administrador do sistema é o usuário que apresenta a função de controlar o sistema como um todo, com permissão para acessar todas as funcionalidades.
 
-### Restrições
-- O sistema deve operar em conformidade com a Lei Geral de Proteção de Dados (LGPD), armazenando dados pessoais com consentimento e em locais seguros.
-- Operações em tempo real devem ser limitadas aos recursos disponíveis e aos serviços de rede na região de atuação.
+#### Dados Requeridos pelo Sistema
+- Nome
+- CPF/CNPJ
+- Email
+- Endereço (rua, bairro, cidade, estado)
+- CEP
+- Telefone
+
+### Supervisor
+O supervisor é o usuário responsável pelas rotas, pontos de coletas, materiais e as coletas, sendo o responsável por cadastrar e administrar essas funcionalidades.
+
+#### Dados Requeridos pelo Sistema
+- Nome
+- CPF
+- Email
+- Endereço (rua, bairro, cidade, estado)
+- CEP
+- Telefone
+- Departamento de supervisão
+
+### Operador
+O operador é o usuário que acessa as informações de rotas, pontos de coletas e materiais para percorrer as rotas e coletar os materiais nos pontos cadastrados, entregabndo-os ao supervisor poara contabilizá-los.
+
+#### Dados Requeridos pelo Sistema
+- Nome
+- CPF
+- Email
+- Endereço (rua, bairro, cidade, estado)
+- CEP
+- Telefone
+- Departamento 
+
+### Cidadão
+O cidadão é o usuário que acessa as informações presentes no sistema, como as rotas, pontos de coleta e materiais, para depositar o seu lixo nos pontos de coleta antes do operador realizar a coleta.
+
+#### Dados Requeridos pelo Sistema
+- Nome
+- CPF
+- Email
+- Endereço (rua, bairro, cidade, estado)
+- CEP
+- Telefone
+ 
 
 ---
 
