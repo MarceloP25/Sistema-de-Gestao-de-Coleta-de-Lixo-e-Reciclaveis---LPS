@@ -27,44 +27,254 @@ public class FRCadAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         lblTittle = new javax.swing.JLabel();
-        btnCad = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
+        panCad = new javax.swing.JPanel();
+        lblNome = new javax.swing.JLabel();
+        edtNome = new javax.swing.JTextField();
+        lblCpfCnpj = new javax.swing.JLabel();
+        edtCPFCNPJ = new javax.swing.JTextField();
+        lblDataNasc = new javax.swing.JLabel();
+        edtDataNasc = new javax.swing.JTextField();
+        lblEmail = new javax.swing.JLabel();
+        edtEmail = new javax.swing.JTextField();
+        lblEndereco = new javax.swing.JLabel();
+        edtEnderecoRua = new javax.swing.JTextField();
+        edtEnderecoBairro = new javax.swing.JTextField();
+        edtEnderecoCidade = new javax.swing.JTextField();
+        edtEnderecoNumero = new javax.swing.JTextField();
+        lblCep = new javax.swing.JLabel();
+        edtCep = new javax.swing.JTextField();
+        lblSenha = new javax.swing.JLabel();
+        edtSenha = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        bntVoltar = new javax.swing.JButton();
+        bntCad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1280, 720));
 
-        lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Admin");
 
-        btnCad.setText("Cadastrar");
+        lblNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblNome.setText("Nome:");
 
-        btnBack.setText("Voltar");
+        edtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edtNomeActionPerformed(evt);
+            }
+        });
+
+        lblCpfCnpj.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblCpfCnpj.setText("CPF/CNPJ:");
+
+        edtCPFCNPJ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edtCPFCNPJActionPerformed(evt);
+            }
+        });
+
+        lblDataNasc.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDataNasc.setText("Data de nascimento:");
+
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblEmail.setText("Email:");
+
+        lblEndereco.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblEndereco.setText("Endereço:");
+
+        edtEnderecoRua.setText("Rua");
+
+        edtEnderecoBairro.setText("Bairro");
+        edtEnderecoBairro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edtEnderecoBairroActionPerformed(evt);
+            }
+        });
+
+        edtEnderecoCidade.setText("Cidade");
+        edtEnderecoCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edtEnderecoCidadeActionPerformed(evt);
+            }
+        });
+
+        edtEnderecoNumero.setText("Número");
+        edtEnderecoNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edtEnderecoNumeroActionPerformed(evt);
+            }
+        });
+
+        lblCep.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblCep.setText("CEP:");
+
+        lblSenha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblSenha.setText("Senha:");
+
+        javax.swing.GroupLayout panCadLayout = new javax.swing.GroupLayout(panCad);
+        panCad.setLayout(panCadLayout);
+        panCadLayout.setHorizontalGroup(
+            panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panCadLayout.createSequentialGroup()
+                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(lblNome))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(lblCpfCnpj))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(edtCPFCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(lblDataNasc))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(edtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(149, 149, 149)
+                        .addComponent(lblCep))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(lblEndereco))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(edtEnderecoRua, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(edtEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(edtEnderecoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(edtEnderecoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(lblEmail))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(lblSenha))
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+        panCadLayout.setVerticalGroup(
+            panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panCadLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(lblNome)
+                .addGap(6, 6, 6)
+                .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(lblCpfCnpj)
+                .addGap(6, 6, 6)
+                .addComponent(edtCPFCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(lblDataNasc)
+                .addGap(12, 12, 12)
+                .addComponent(edtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(lblCep)
+                .addGap(6, 6, 6)
+                .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(lblEndereco)
+                .addGap(6, 6, 6)
+                .addComponent(edtEnderecoRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(edtEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(edtEnderecoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(edtEnderecoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(lblEmail)
+                .addGap(12, 12, 12)
+                .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(lblSenha)
+                .addGap(6, 6, 6)
+                .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bntVoltar.setText("VOLTAR");
+        jPanel1.add(bntVoltar);
+
+        bntCad.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bntCad.setText("CADASTRAR");
+        bntCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntCadActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bntCad);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTittle, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
+            .addComponent(lblTittle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(216, 216, 216)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(472, 472, 472)
+                .addComponent(panCad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(209, 209, 209))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(lblTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
-                .addComponent(btnCad)
-                .addGap(18, 18, 18)
-                .addComponent(btnBack)
-                .addGap(20, 20, 20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panCad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void edtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtNomeActionPerformed
+
+    private void edtCPFCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCPFCNPJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtCPFCNPJActionPerformed
+
+    private void edtEnderecoBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoBairroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtEnderecoBairroActionPerformed
+
+    private void edtEnderecoCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoCidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtEnderecoCidadeActionPerformed
+
+    private void edtEnderecoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtEnderecoNumeroActionPerformed
+
+    private void bntCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntCadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,8 +312,27 @@ public class FRCadAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnCad;
+    private javax.swing.JButton bntCad;
+    private javax.swing.JButton bntVoltar;
+    private javax.swing.JTextField edtCPFCNPJ;
+    private javax.swing.JTextField edtCep;
+    private javax.swing.JTextField edtDataNasc;
+    private javax.swing.JTextField edtEmail;
+    private javax.swing.JTextField edtEnderecoBairro;
+    private javax.swing.JTextField edtEnderecoCidade;
+    private javax.swing.JTextField edtEnderecoNumero;
+    private javax.swing.JTextField edtEnderecoRua;
+    private javax.swing.JTextField edtNome;
+    private javax.swing.JTextField edtSenha;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblCep;
+    private javax.swing.JLabel lblCpfCnpj;
+    private javax.swing.JLabel lblDataNasc;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblEndereco;
+    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblSenha;
     private javax.swing.JLabel lblTittle;
+    private javax.swing.JPanel panCad;
     // End of variables declaration//GEN-END:variables
 }
