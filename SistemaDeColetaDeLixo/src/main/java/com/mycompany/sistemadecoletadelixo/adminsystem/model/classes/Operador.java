@@ -8,6 +8,32 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.classes;
  *
  * @author marce
  */
-public class Operador {
-    
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "operador")
+public class Operador extends Pessoa {
+    @Column(name = "turno_trabalho", nullable = false)
+    private String turnoTrabalho;
+
+    @Column(name = "veiculo_alocado")
+    private String veiculoAlocado;
+
+    // Getters e Setters
+    public String getTurnoTrabalho() {
+        return turnoTrabalho;
+    }
+
+    public void setTurnoTrabalho(String turnoTrabalho) {
+        this.turnoTrabalho = turnoTrabalho;
+    }
+
+    public String getVeiculoAlocado() {
+        return veiculoAlocado;
+    }
+
+    public void setVeiculoAlocado(String veiculoAlocado) {
+        this.veiculoAlocado = veiculoAlocado;
+    }
 }
+

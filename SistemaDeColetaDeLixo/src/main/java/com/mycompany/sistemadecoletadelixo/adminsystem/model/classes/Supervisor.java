@@ -8,6 +8,20 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.classes;
  *
  * @author marce
  */
-public class Supervisor {
-    
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "supervisor")
+public class Supervisor extends Pessoa {
+    @Column(name = "setor_responsavel", nullable = false)
+    private String setorResponsavel;
+
+    // Getters e Setters
+    public String getSetorResponsavel() {
+        return setorResponsavel;
+    }
+
+    public void setSetorResponsavel(String setorResponsavel) {
+        this.setorResponsavel = setorResponsavel;
+    }
 }
