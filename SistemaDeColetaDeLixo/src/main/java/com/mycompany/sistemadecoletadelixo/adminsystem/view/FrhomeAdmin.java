@@ -43,6 +43,7 @@ public class FrhomeAdmin extends javax.swing.JFrame {
         lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Admin");
+        lblTittle.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         bntMaterial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntMaterial.setText("Materiais");
@@ -51,7 +52,7 @@ public class FrhomeAdmin extends javax.swing.JFrame {
         bntRota.setText("Rotas");
 
         bntSupervisores.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bntSupervisores.setText("Superviores");
+        bntSupervisores.setText("Supervisores");
 
         bntOperador.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntOperador.setText("Operadores");
@@ -72,15 +73,16 @@ public class FrhomeAdmin extends javax.swing.JFrame {
 
         bntSair.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         bntSair.setText("Sair");
+        bntSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTittle, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(162, 162, 162)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -98,7 +100,8 @@ public class FrhomeAdmin extends javax.swing.JFrame {
                 .addComponent(bntSair, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(bntPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(354, Short.MAX_VALUE))
+            .addComponent(lblTittle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,6 +132,10 @@ public class FrhomeAdmin extends javax.swing.JFrame {
     private void bntCidadaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCidadaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bntCidadaoActionPerformed
+
+    private void bntSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntSairActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntSairActionPerformed
 
     /**
      * @param args the command line arguments

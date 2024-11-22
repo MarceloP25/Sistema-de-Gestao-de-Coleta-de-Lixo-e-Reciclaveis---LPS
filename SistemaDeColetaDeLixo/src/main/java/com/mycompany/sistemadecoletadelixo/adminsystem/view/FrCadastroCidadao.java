@@ -6,14 +6,14 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
 
 /**
  *
- * @author marce
+ * @author Edu
  */
-public class FRCadAdmin extends javax.swing.JFrame {
+public class FrCadastroCidadao extends javax.swing.JFrame {
 
     /**
-     * Creates new form FRCadAdmin
+     * Creates new form FrCadastroCidadao
      */
-    public FRCadAdmin() {
+    public FrCadastroCidadao() {
         initComponents();
     }
 
@@ -26,7 +26,7 @@ public class FRCadAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTittle = new javax.swing.JLabel();
+        panInit = new javax.swing.JPanel();
         panCad = new javax.swing.JPanel();
         lblNome = new javax.swing.JLabel();
         edtNome = new javax.swing.JTextField();
@@ -46,22 +46,16 @@ public class FRCadAdmin extends javax.swing.JFrame {
         lblSenha = new javax.swing.JLabel();
         edtSenha = new javax.swing.JTextField();
         edtEnderecoComplemento = new javax.swing.JTextField();
-        lblDeptoID = new javax.swing.JLabel();
-        edtDeptoID = new javax.swing.JTextField();
         lblTelefone = new javax.swing.JLabel();
         edtTelefone = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        bntVoltar = new javax.swing.JButton();
-        bntCad = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
+        btnCadastrar = new javax.swing.JButton();
+        lblTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 600));
-        setMinimumSize(new java.awt.Dimension(1000, 600));
 
-        lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lblTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Admin");
-        lblTittle.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        panInit.setMaximumSize(new java.awt.Dimension(1000, 600));
+        panInit.setMinimumSize(new java.awt.Dimension(1000, 600));
 
         lblNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblNome.setText("Nome:");
@@ -126,15 +120,28 @@ public class FRCadAdmin extends javax.swing.JFrame {
             }
         });
 
-        lblDeptoID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblDeptoID.setText("ID do Departamento");
-
         lblTelefone.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTelefone.setText("Telefone:");
 
         edtTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edtTelefoneActionPerformed(evt);
+            }
+        });
+
+        btnVoltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnVoltar.setText("VOLTAR");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
+
+        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCadastrar.setText("CADASTRAR");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
             }
         });
 
@@ -181,37 +188,33 @@ public class FRCadAdmin extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panCadLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(edtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
+                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
+                        .addComponent(lblEndereco)
+                        .addGap(158, 158, 158))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
+                        .addComponent(lblCep)
+                        .addGap(170, 170, 170))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
+                        .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(panCadLayout.createSequentialGroup()
+                                .addComponent(btnCadastrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnVoltar))
                             .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(edtEnderecoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(edtEnderecoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(edtEnderecoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(edtEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(edtEnderecoRua, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(45, 45, 45))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
-                            .addComponent(lblEndereco)
-                            .addGap(158, 158, 158))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
-                            .addComponent(lblCep)
-                            .addGap(170, 170, 170))
-                        .addGroup(panCadLayout.createSequentialGroup()
-                            .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap()))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
-                        .addComponent(lblDeptoID)
-                        .addGap(123, 123, 123))
-                    .addGroup(panCadLayout.createSequentialGroup()
-                        .addComponent(edtDeptoID, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                                .addComponent(edtEnderecoRua, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(45, 45, 45))))
         );
         panCadLayout.setVerticalGroup(
             panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panCadLayout.createSequentialGroup()
-                .addContainerGap(72, Short.MAX_VALUE)
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome)
                     .addComponent(lblEndereco))
@@ -244,105 +247,144 @@ public class FRCadAdmin extends javax.swing.JFrame {
                     .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSenha)
-                    .addComponent(lblDeptoID))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtDeptoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(lblTelefone)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(edtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panCadLayout.createSequentialGroup()
+                        .addComponent(lblSenha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(lblTelefone)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(edtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
+                        .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCadastrar)
+                            .addComponent(btnVoltar))
+                        .addGap(76, 76, 76))))
         );
 
-        bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bntVoltar.setText("VOLTAR");
-        jPanel1.add(bntVoltar);
+        javax.swing.GroupLayout panInitLayout = new javax.swing.GroupLayout(panInit);
+        panInit.setLayout(panInitLayout);
+        panInitLayout.setHorizontalGroup(
+            panInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panInitLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(panCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        panInitLayout.setVerticalGroup(
+            panInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panInitLayout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(panCad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(7, 7, 7))
+        );
 
-        bntCad.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bntCad.setText("CADASTRAR");
-        bntCad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntCadActionPerformed(evt);
-            }
-        });
-        jPanel1.add(bntCad);
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("Sistema de Coleta de Lixo e Recicláveis - Cadastro de Cidadão");
+        lblTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTittle, javax.swing.GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addContainerGap(302, Short.MAX_VALUE)
+                .addComponent(panInit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98))
+            .addComponent(lblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(lblTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panCad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(panInit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bntCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadActionPerformed
+    private void edtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bntCadActionPerformed
-
-    private void edtEnderecoComplementoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoComplementoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edtEnderecoComplementoActionPerformed
-
-    private void edtEnderecoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoNumeroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edtEnderecoNumeroActionPerformed
-
-    private void edtEnderecoCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoCidadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edtEnderecoCidadeActionPerformed
-
-    private void edtEnderecoBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoBairroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edtEnderecoBairroActionPerformed
+    }//GEN-LAST:event_edtNomeActionPerformed
 
     private void edtCPFCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCPFCNPJActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtCPFCNPJActionPerformed
 
-    private void edtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeActionPerformed
+    private void edtEnderecoBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoBairroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtNomeActionPerformed
+    }//GEN-LAST:event_edtEnderecoBairroActionPerformed
+
+    private void edtEnderecoCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoCidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtEnderecoCidadeActionPerformed
+
+    private void edtEnderecoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtEnderecoNumeroActionPerformed
+
+    private void edtEnderecoComplementoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoComplementoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtEnderecoComplementoActionPerformed
 
     private void edtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtTelefoneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtTelefoneActionPerformed
 
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadastrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FrCadastroCidadao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FrCadastroCidadao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FrCadastroCidadao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FrCadastroCidadao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrCadastroCidadao().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bntCad;
-    private javax.swing.JButton bntVoltar;
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JTextField edtCPFCNPJ;
     private javax.swing.JTextField edtCep;
     private javax.swing.JTextField edtDataNasc;
-    private javax.swing.JTextField edtDeptoID;
     private javax.swing.JTextField edtEmail;
     private javax.swing.JTextField edtEnderecoBairro;
     private javax.swing.JTextField edtEnderecoCidade;
@@ -352,17 +394,16 @@ public class FRCadAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField edtNome;
     private javax.swing.JTextField edtSenha;
     private javax.swing.JTextField edtTelefone;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCep;
     private javax.swing.JLabel lblCpfCnpj;
     private javax.swing.JLabel lblDataNasc;
-    private javax.swing.JLabel lblDeptoID;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEndereco;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JLabel lblTelefone;
-    private javax.swing.JLabel lblTittle;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panCad;
+    private javax.swing.JPanel panInit;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="160" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="111" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[1000, 600]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[1000, 600]"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="lblTitle" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblPlaca" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblChassi" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblPeso" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNumEixos" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAltura" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblTipoCNH" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblCargaMaximaSuportada" min="-2" max="-2" attributes="0"/>
+                              <Component id="edtCargaMaxSuportada" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                              <Component id="edtTipoCNH" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                              <Component id="edtNumEixos" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                              <Component id="edtPeso" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                              <Component id="edtChassi" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                              <Component id="edtPlaca" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                              <Component id="edtLargura" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                              <Component id="edtAltura" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                              <Component id="lblLargura" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="edtConsumo" pref="260" max="32767" attributes="0"/>
+                                  <Component id="edtQuilometragem" pref="260" max="32767" attributes="0"/>
+                                  <Component id="edtCombustivel" pref="260" max="32767" attributes="0"/>
+                                  <Component id="edtComprimento" pref="260" max="32767" attributes="0"/>
+                                  <Component id="edtEmissaoPoluentes" pref="260" max="32767" attributes="0"/>
+                                  <Component id="lblConsumo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCombustivel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblQuilometragem" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblComprimento" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblManutencao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDataManutencao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEmissaoPoluentes" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="edtDataManutencao" min="-2" pref="260" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="437" max="-2" attributes="0"/>
+                          <Component id="btnCadastrar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnVoltar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="37" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="lblTitle" min="-2" pref="81" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblConsumo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="edtPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="edtConsumo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblChassi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblQuilometragem" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="edtChassi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="edtQuilometragem" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCombustivel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="edtPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="edtCombustivel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblNumEixos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblComprimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="edtNumEixos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="edtComprimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblAltura" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblManutencao" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="edtAltura" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lblLargura" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="edtLargura" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jScrollPane1" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblDataManutencao" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblTipoCNH" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="edtDataManutencao" min="-2" max="-2" attributes="0"/>
+                      <Component id="edtTipoCNH" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblCargaMaximaSuportada" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblEmissaoPoluentes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="edtCargaMaxSuportada" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="edtEmissaoPoluentes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblTitle">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="24" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Sistema de Coleta de Lixo e Recicl&#xe1;veis - Cadastro de Ve&#xed;culos"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPlaca">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Placa:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblChassi">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Chassi:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblQuilometragem">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Quilometragem:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPeso">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Peso:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblNumEixos">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="N&#xfa;mero de Eixos:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblComprimento">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Comprimento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAltura">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Altura:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblLargura">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Largura:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblEmissaoPoluentes">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Emiss&#xe3;o de Poluentes:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblTipoCNH">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Tipo de Carteira de Habilita&#xe7;&#xe3;o Exigido:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblConsumo">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Consumo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCombustivel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Combust&#xed;vel:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCargaMaximaSuportada">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Carga M&#xe1;xima Suportada:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblDataManutencao">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Data de Manuten&#xe7;&#xe3;o:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblManutencao">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Tipo de Manuten&#xe7;&#xe3;o Necess&#xe1;ria:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtPlaca">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtChassi">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtPeso">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtPesoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtNumEixos">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtAltura">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtLargura">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtTipoCNH">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtCargaMaxSuportada">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtEmissaoPoluentes">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtComprimento">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtDataManutencao">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtCombustivel">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtQuilometragem">
+        </Component>
+        <Component class="javax.swing.JTextField" name="edtConsumo">
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="edtTipoManutencao">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="btnCadastrar">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CADASTRAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnVoltar">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="VOLTAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
