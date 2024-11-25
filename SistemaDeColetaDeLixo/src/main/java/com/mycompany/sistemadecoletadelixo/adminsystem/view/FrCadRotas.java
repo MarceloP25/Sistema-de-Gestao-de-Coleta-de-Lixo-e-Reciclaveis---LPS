@@ -128,7 +128,7 @@ public class FrCadRotas extends javax.swing.JFrame {
                                     .addComponent(lblPontosColeta)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panCadLayout.createSequentialGroup()
-                                .addGap(0, 242, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(btnCadastrar)
                                 .addGap(57, 57, 57)
                                 .addComponent(btnVoltar)
@@ -181,7 +181,7 @@ public class FrCadRotas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(240, 240, 240)
                 .addComponent(panCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(427, Short.MAX_VALUE))
+                .addContainerGap(669, Short.MAX_VALUE))
             .addComponent(lblTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(

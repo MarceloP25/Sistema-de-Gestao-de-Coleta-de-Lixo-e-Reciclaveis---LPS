@@ -35,15 +35,14 @@ public class FrhomeAdmin extends javax.swing.JFrame {
         bntColetas = new javax.swing.JButton();
         bntPerfil = new javax.swing.JButton();
         bntSair = new javax.swing.JButton();
+        bntDepartamento = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
         lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Admin");
-        lblTittle.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         bntMaterial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntMaterial.setText("Materiais");
@@ -79,6 +78,9 @@ public class FrhomeAdmin extends javax.swing.JFrame {
             }
         });
 
+        bntDepartamento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntDepartamento.setText("Derpartamentos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -89,7 +91,9 @@ public class FrhomeAdmin extends javax.swing.JFrame {
                     .addComponent(bntMaterial, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
                     .addComponent(bntRota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(bntColetas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(61, 61, 61)
+                .addComponent(bntDepartamento, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(bntCidadao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(bntSupervisores, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
@@ -110,7 +114,8 @@ public class FrhomeAdmin extends javax.swing.JFrame {
                 .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bntSupervisores, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bntMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bntMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bntDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(bntRota, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
@@ -144,6 +149,7 @@ public class FrhomeAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntCidadao;
     private javax.swing.JButton bntColetas;
+    private javax.swing.JButton bntDepartamento;
     private javax.swing.JButton bntMaterial;
     private javax.swing.JButton bntOperador;
     private javax.swing.JButton bntPerfil;
