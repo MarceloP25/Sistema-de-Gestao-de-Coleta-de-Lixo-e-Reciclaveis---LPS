@@ -1,6 +1,6 @@
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.classes.Cidadao;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.Cidadao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
