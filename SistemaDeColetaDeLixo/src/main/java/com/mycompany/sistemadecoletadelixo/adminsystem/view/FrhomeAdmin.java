@@ -8,12 +8,12 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
  *
  * @author marce
  */
-public class FrhomeAdmin extends javax.swing.JFrame {
+public class FrHomeAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form FrhomeAdmin
      */
-    public FrhomeAdmin() {
+    public FrHomeAdmin() {
         initComponents();
     }
 
