@@ -127,10 +127,10 @@ public class FrCadDepartamento extends javax.swing.JFrame {
         lblDescricao.setText("Preencha com os dados do departamento.");
 
         lblNumOp.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblNumOp.setText("Número de Veículos:");
+        lblNumOp.setText("Número de Supervisores:");
 
         lblNumSup.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblNumSup.setText("Número de Estações de Descarga:");
+        lblNumSup.setText("Número de Operadores:");
 
         edtNumOp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
