@@ -46,8 +46,6 @@ public class FRCadAdmin extends javax.swing.JFrame {
         lblSenha = new javax.swing.JLabel();
         edtSenha = new javax.swing.JTextField();
         edtEnderecoComplemento = new javax.swing.JTextField();
-        lblDeptoID = new javax.swing.JLabel();
-        edtDeptoID = new javax.swing.JTextField();
         lblTelefone = new javax.swing.JLabel();
         edtTelefone = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
@@ -55,7 +53,6 @@ public class FRCadAdmin extends javax.swing.JFrame {
         bntCad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
         lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -126,9 +123,6 @@ public class FRCadAdmin extends javax.swing.JFrame {
             }
         });
 
-        lblDeptoID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblDeptoID.setText("ID do Departamento");
-
         lblTelefone.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTelefone.setText("Telefone:");
 
@@ -182,30 +176,23 @@ public class FRCadAdmin extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(edtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
-                            .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(edtEnderecoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(edtEnderecoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(edtEnderecoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(edtEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(edtEnderecoRua, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(45, 45, 45))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
-                            .addComponent(lblEndereco)
-                            .addGap(158, 158, 158))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
-                            .addComponent(lblCep)
-                            .addGap(170, 170, 170))
-                        .addGroup(panCadLayout.createSequentialGroup()
-                            .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap()))
+                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
-                        .addComponent(lblDeptoID)
-                        .addGap(123, 123, 123))
+                        .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(edtEnderecoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edtEnderecoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edtEnderecoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edtEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edtEnderecoRua, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
+                        .addComponent(lblEndereco)
+                        .addGap(158, 158, 158))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
+                        .addComponent(lblCep)
+                        .addGap(170, 170, 170))
                     .addGroup(panCadLayout.createSequentialGroup()
-                        .addComponent(edtDeptoID, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         panCadLayout.setVerticalGroup(
@@ -244,13 +231,9 @@ public class FRCadAdmin extends javax.swing.JFrame {
                     .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSenha)
-                    .addComponent(lblDeptoID))
+                .addComponent(lblSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtDeptoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblTelefone)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -342,7 +325,6 @@ public class FRCadAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField edtCPFCNPJ;
     private javax.swing.JTextField edtCep;
     private javax.swing.JTextField edtDataNasc;
-    private javax.swing.JTextField edtDeptoID;
     private javax.swing.JTextField edtEmail;
     private javax.swing.JTextField edtEnderecoBairro;
     private javax.swing.JTextField edtEnderecoCidade;
@@ -356,7 +338,6 @@ public class FRCadAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lblCep;
     private javax.swing.JLabel lblCpfCnpj;
     private javax.swing.JLabel lblDataNasc;
-    private javax.swing.JLabel lblDeptoID;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEndereco;
     private javax.swing.JLabel lblNome;

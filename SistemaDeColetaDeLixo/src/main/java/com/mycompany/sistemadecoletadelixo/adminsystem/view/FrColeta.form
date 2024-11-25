@@ -62,8 +62,8 @@
                       <Component id="lblSupervisor" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="lblMateriaisColetados" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="lblRota" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="234" max="32767" attributes="0"/>
-                      <Component id="jScrollPane4" pref="234" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" max="32767" attributes="0"/>
+                      <Component id="jScrollPane4" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="227" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -71,7 +71,7 @@
                       <Component id="jScrollPane1" max="32767" attributes="0"/>
                       <Component id="lblOperador" min="-2" max="-2" attributes="0"/>
                       <Component id="lblVeiculo" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="234" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" max="32767" attributes="0"/>
                       <Component id="edtPeso" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="100" max="32767" attributes="0"/>

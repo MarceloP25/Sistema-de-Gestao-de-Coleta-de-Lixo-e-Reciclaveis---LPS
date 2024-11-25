@@ -26,221 +26,279 @@ public class FrCadMaterias extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panCad = new javax.swing.JPanel();
-        lblNome = new javax.swing.JLabel();
-        lblTipo = new javax.swing.JLabel();
-        lblLixeira = new javax.swing.JLabel();
-        lblInstrucoes = new javax.swing.JLabel();
-        edtNome = new javax.swing.JTextField();
-        edtTipo = new javax.swing.JTextField();
-        edtLixeira = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        edtInstrucoes = new javax.swing.JTextArea();
-        btnCadastrar = new javax.swing.JButton();
-        btnVoltar = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
+        lblDescricao = new javax.swing.JLabel();
+        lblNome = new javax.swing.JLabel();
+        edtNome = new javax.swing.JTextField();
+        lblTipo = new javax.swing.JLabel();
+        rbtOrganico = new javax.swing.JRadioButton();
+        rbtReciclavel = new javax.swing.JRadioButton();
+        lblLixeira = new javax.swing.JLabel();
+        rbtAzul = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        rbtPerigoso = new javax.swing.JRadioButton();
+        rbtNaoReciclavel = new javax.swing.JRadioButton();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        lblDescarte = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        edtDescricaoDescarte = new javax.swing.JTextArea();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        bntCadastrar1 = new javax.swing.JButton();
+        bntVoltar = new javax.swing.JButton();
+        rbtRadioativo = new javax.swing.JRadioButton();
+        rbtHospitalar = new javax.swing.JRadioButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton9 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        panCad.setMaximumSize(new java.awt.Dimension(1000, 600));
-        panCad.setMinimumSize(new java.awt.Dimension(1000, 600));
-
-        lblNome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblNome.setText("Nome:");
-
-        lblTipo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTipo.setText("Tipo:");
-
-        lblLixeira.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLixeira.setText("Lixeira de Descarte:");
-
-        lblInstrucoes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblInstrucoes.setText("Instruções de Descarte:");
-
-        edtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtNomeActionPerformed(evt);
-            }
-        });
-
-        edtTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtTipoActionPerformed(evt);
-            }
-        });
-
-        edtLixeira.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtLixeiraActionPerformed(evt);
-            }
-        });
-
-        edtInstrucoes.setColumns(20);
-        edtInstrucoes.setRows(5);
-        jScrollPane1.setViewportView(edtInstrucoes);
-
-        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCadastrar.setText("CADASTRAR");
-        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarActionPerformed(evt);
-            }
-        });
-
-        btnVoltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnVoltar.setText("VOLTAR");
-        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panCadLayout = new javax.swing.GroupLayout(panCad);
-        panCad.setLayout(panCadLayout);
-        panCadLayout.setHorizontalGroup(
-            panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadLayout.createSequentialGroup()
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panCadLayout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNome)
-                            .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edtLixeira, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblLixeira)))
-                    .addGroup(panCadLayout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(btnCadastrar)))
-                .addGap(174, 174, 174)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVoltar)
-                    .addComponent(lblInstrucoes)
-                    .addComponent(edtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTipo))
-                .addContainerGap(124, Short.MAX_VALUE))
-        );
-        panCadLayout.setVerticalGroup(
-            panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panCadLayout.createSequentialGroup()
-                .addGap(177, 177, 177)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTipo)
-                    .addComponent(lblNome))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblLixeira)
-                    .addComponent(lblInstrucoes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(edtLixeira, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(94, 94, 94)
-                .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVoltar)
-                    .addComponent(btnCadastrar))
-                .addGap(0, 117, Short.MAX_VALUE))
-        );
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Sistema de Coleta de Lixo e Recicláveis - Cadastro de Materiais");
-        lblTitle.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        lblDescricao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblDescricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDescricao.setText("Preencha com os dados do material que pode ser coletado.");
+
+        lblNome.setText("Nome do Material");
+
+        edtNome.setText("Nome");
+
+        lblTipo.setText("Tipo");
+
+        rbtOrganico.setText("Orgânico");
+        rbtOrganico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtOrganicoActionPerformed(evt);
+            }
+        });
+
+        rbtReciclavel.setText("Reciclável");
+        rbtReciclavel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtReciclavelActionPerformed(evt);
+            }
+        });
+
+        lblLixeira.setText("Lixeira para Descarte Correto");
+
+        rbtAzul.setText("Azul");
+
+        jRadioButton2.setText("Verde");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton3.setText("Vermelho");
+
+        jRadioButton4.setText("Amarelo");
+
+        rbtPerigoso.setText("Perigoso");
+
+        rbtNaoReciclavel.setText("Não Reciclável");
+
+        jRadioButton7.setText("Marrom");
+
+        lblDescarte.setText("Descrição para Descarte");
+
+        edtDescricaoDescarte.setColumns(20);
+        edtDescricaoDescarte.setRows(5);
+        jScrollPane1.setViewportView(edtDescricaoDescarte);
+
+        jRadioButton8.setText("Laranja");
+
+        bntCadastrar1.setText("CADASTRAR");
+
+        bntVoltar.setText("VOLTAR");
+
+        rbtRadioativo.setText("Radioativo");
+
+        rbtHospitalar.setText("Hospitalar");
+
+        jRadioButton1.setText("Cinza");
+
+        jRadioButton5.setText("Branco");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton6.setText("Preto");
+
+        jRadioButton9.setText("Violeta");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
+            .addComponent(lblDescricao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(168, 168, 168)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lblNome)
+                                .addComponent(lblTipo)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(rbtOrganico)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(rbtRadioativo))
+                                .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rbtReciclavel)
+                                .addGap(62, 62, 62)
+                                .addComponent(rbtHospitalar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rbtPerigoso)
+                                .addGap(69, 69, 69)
+                                .addComponent(rbtNaoReciclavel)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblLixeira)
+                            .addComponent(jRadioButton7)
+                            .addComponent(jRadioButton8)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rbtAzul)
+                                    .addComponent(jRadioButton2)
+                                    .addComponent(jRadioButton3)
+                                    .addComponent(jRadioButton4))
+                                .addGap(34, 34, 34)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButton9)
+                                    .addComponent(jRadioButton6)
+                                    .addComponent(jRadioButton5)
+                                    .addComponent(jRadioButton1)))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblDescarte)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(128, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(266, Short.MAX_VALUE)
-                .addComponent(panCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(134, 134, 134))
-            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(106, 106, 106)
+                .addComponent(bntCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(288, 288, 288))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(panCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDescricao)
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblNome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblTipo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbtOrganico)
+                            .addComponent(rbtRadioativo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbtReciclavel)
+                            .addComponent(rbtHospitalar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbtPerigoso)
+                            .addComponent(rbtNaoReciclavel)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblLixeira)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbtAzul)
+                            .addComponent(jRadioButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton2)
+                            .addComponent(jRadioButton5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton3)
+                            .addComponent(jRadioButton6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton4)
+                            .addComponent(jRadioButton9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton8)))
+                .addGap(18, 18, 18)
+                .addComponent(lblDescarte)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void edtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeActionPerformed
+    private void rbtOrganicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtOrganicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtNomeActionPerformed
+    }//GEN-LAST:event_rbtOrganicoActionPerformed
 
-    private void edtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtTipoActionPerformed
+    private void rbtReciclavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtReciclavelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtTipoActionPerformed
+    }//GEN-LAST:event_rbtReciclavelActionPerformed
 
-    private void edtLixeiraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtLixeiraActionPerformed
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtLixeiraActionPerformed
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCadastrarActionPerformed
-
-    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVoltarActionPerformed
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrCadMaterias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrCadMaterias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrCadMaterias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrCadMaterias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrCadMaterias().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCadastrar;
-    private javax.swing.JButton btnVoltar;
-    private javax.swing.JTextArea edtInstrucoes;
-    private javax.swing.JTextField edtLixeira;
+    private javax.swing.JButton bntCadastrar1;
+    private javax.swing.JButton bntVoltar;
+    private javax.swing.JTextArea edtDescricaoDescarte;
     private javax.swing.JTextField edtNome;
-    private javax.swing.JTextField edtTipo;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblInstrucoes;
+    private javax.swing.JLabel lblDescarte;
+    private javax.swing.JLabel lblDescricao;
     private javax.swing.JLabel lblLixeira;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblTipo;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JPanel panCad;
+    private javax.swing.JRadioButton rbtAzul;
+    private javax.swing.JRadioButton rbtHospitalar;
+    private javax.swing.JRadioButton rbtNaoReciclavel;
+    private javax.swing.JRadioButton rbtOrganico;
+    private javax.swing.JRadioButton rbtPerigoso;
+    private javax.swing.JRadioButton rbtRadioativo;
+    private javax.swing.JRadioButton rbtReciclavel;
     // End of variables declaration//GEN-END:variables
 }
