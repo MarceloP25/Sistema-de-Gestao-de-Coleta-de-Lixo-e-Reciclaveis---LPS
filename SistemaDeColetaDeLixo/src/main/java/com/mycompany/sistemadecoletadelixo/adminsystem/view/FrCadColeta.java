@@ -8,12 +8,12 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
  *
  * @author Edu
  */
-public class FrColeta extends javax.swing.JFrame {
+public class FrCadColeta extends javax.swing.JFrame {
 
     /**
      * Creates new form FrColeta
      */
-    public FrColeta() {
+    public FrCadColeta() {
         initComponents();
     }
 
@@ -119,15 +119,15 @@ public class FrColeta extends javax.swing.JFrame {
                     .addComponent(lblSupervisor)
                     .addComponent(lblMateriaisColetados)
                     .addComponent(lblRota)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane4))
                 .addGap(227, 227, 227)
                 .addGroup(panCadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblPeso)
                     .addComponent(jScrollPane1)
                     .addComponent(lblOperador)
                     .addComponent(lblVeiculo)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3)
                     .addComponent(edtPeso))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                 .addComponent(btnVoltar)

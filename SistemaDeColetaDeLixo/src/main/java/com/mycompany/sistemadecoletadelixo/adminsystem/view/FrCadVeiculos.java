@@ -26,278 +26,230 @@ public class FrCadVeiculos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        lblDescricao = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         lblPlaca = new javax.swing.JLabel();
         lblChassi = new javax.swing.JLabel();
+        lblPesoVeiculo = new javax.swing.JLabel();
         lblQuilometragem = new javax.swing.JLabel();
-        lblPeso = new javax.swing.JLabel();
-        lblNumEixos = new javax.swing.JLabel();
+        lblEixos = new javax.swing.JLabel();
         lblComprimento = new javax.swing.JLabel();
+        bntPlaca = new javax.swing.JTextField();
+        edtChassi = new javax.swing.JTextField();
+        edtPesoVeiculo = new javax.swing.JTextField();
+        edtEixos = new javax.swing.JTextField();
+        edtQuilometragem = new javax.swing.JTextField();
+        edtComprimento = new javax.swing.JTextField();
         lblAltura = new javax.swing.JLabel();
         lblLargura = new javax.swing.JLabel();
-        lblEmissaoPoluentes = new javax.swing.JLabel();
-        lblTipoCNH = new javax.swing.JLabel();
-        lblConsumo = new javax.swing.JLabel();
-        lblCombustivel = new javax.swing.JLabel();
-        lblCargaMaximaSuportada = new javax.swing.JLabel();
-        lblDataManutencao = new javax.swing.JLabel();
-        lblManutencao = new javax.swing.JLabel();
-        edtPlaca = new javax.swing.JTextField();
-        edtChassi = new javax.swing.JTextField();
-        edtPeso = new javax.swing.JTextField();
-        edtNumEixos = new javax.swing.JTextField();
         edtAltura = new javax.swing.JTextField();
         edtLargura = new javax.swing.JTextField();
-        edtTipoCNH = new javax.swing.JTextField();
-        edtCargaMaxSuportada = new javax.swing.JTextField();
-        edtEmissaoPoluentes = new javax.swing.JTextField();
-        edtComprimento = new javax.swing.JTextField();
-        edtDataManutencao = new javax.swing.JTextField();
+        lblCarteira = new javax.swing.JLabel();
+        lblCarga = new javax.swing.JLabel();
+        lblConsumo = new javax.swing.JLabel();
+        lblCombustivel = new javax.swing.JLabel();
+        lblPoluentes = new javax.swing.JLabel();
+        edtCarteira = new javax.swing.JTextField();
+        edtCarga = new javax.swing.JTextField();
         edtCombustivel = new javax.swing.JTextField();
-        edtQuilometragem = new javax.swing.JTextField();
-        edtConsumo = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        edtTipoManutencao = new javax.swing.JTextArea();
-        btnCadastrar = new javax.swing.JButton();
-        btnVoltar = new javax.swing.JButton();
+        cbConsumo = new javax.swing.JComboBox<>();
+        cbEmissao = new javax.swing.JComboBox<>();
+        bntCad = new javax.swing.JButton();
+        bntVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(1000, 600));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1000, 600));
+        lblDescricao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblDescricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDescricao.setText("Preencha com os dados da estação de descarga.");
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Sistema de Coleta de Lixo e Recicláveis - Cadastro de Veículos");
-        lblTitle.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        lblPlaca.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblPlaca.setText("Placa:");
+        lblPlaca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPlaca.setText("Placa");
 
-        lblChassi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblChassi.setText("Chassi:");
+        lblChassi.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblChassi.setText("Chassi");
 
-        lblQuilometragem.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblQuilometragem.setText("Quilometragem:");
+        lblPesoVeiculo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPesoVeiculo.setText("Peso do Veículo");
 
-        lblPeso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblPeso.setText("Peso:");
+        lblQuilometragem.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblQuilometragem.setText("Quilometragem");
 
-        lblNumEixos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblNumEixos.setText("Número de Eixos:");
+        lblEixos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblEixos.setText("Eixos");
 
-        lblComprimento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblComprimento.setText("Comprimento:");
+        lblComprimento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblComprimento.setText("Comprimento");
 
-        lblAltura.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblAltura.setText("Altura:");
+        lblAltura.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblAltura.setText("Altura");
 
-        lblLargura.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblLargura.setText("Largura:");
+        lblLargura.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblLargura.setText("Largura");
 
-        lblEmissaoPoluentes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblEmissaoPoluentes.setText("Emissão de Poluentes:");
+        lblCarteira.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCarteira.setText("Carteira");
 
-        lblTipoCNH.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblTipoCNH.setText("Tipo de Carteira de Habilitação Exigido:");
+        lblCarga.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCarga.setText("Carga Máxima");
 
-        lblConsumo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblConsumo.setText("Consumo:");
+        lblConsumo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblConsumo.setText("Consumo");
 
-        lblCombustivel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblCombustivel.setText("Combustível:");
+        lblCombustivel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCombustivel.setText("Combustível");
 
-        lblCargaMaximaSuportada.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblCargaMaximaSuportada.setText("Carga Máxima Suportada:");
+        lblPoluentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPoluentes.setText("Emissão de Poluentes");
 
-        lblDataManutencao.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblDataManutencao.setText("Data de Manutenção:");
+        cbConsumo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        lblManutencao.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblManutencao.setText("Tipo de Manutenção Necessária:");
+        cbEmissao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        edtPeso.addActionListener(new java.awt.event.ActionListener() {
+        bntCad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntCad.setText("CADASTRAR");
+        bntCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtPesoActionPerformed(evt);
+                bntCadActionPerformed(evt);
             }
         });
 
-        edtTipoManutencao.setColumns(20);
-        edtTipoManutencao.setRows(5);
-        jScrollPane1.setViewportView(edtTipoManutencao);
-
-        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnCadastrar.setText("CADASTRAR");
-        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarActionPerformed(evt);
-            }
-        });
-
-        btnVoltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnVoltar.setText("VOLTAR");
-        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPlaca)
-                            .addComponent(lblChassi)
-                            .addComponent(lblPeso)
-                            .addComponent(lblNumEixos)
-                            .addComponent(lblAltura)
-                            .addComponent(lblTipoCNH)
-                            .addComponent(lblCargaMaximaSuportada)
-                            .addComponent(edtCargaMaxSuportada, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edtTipoCNH, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edtNumEixos, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edtChassi, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edtLargura, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblLargura))
-                        .addGap(232, 232, 232)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(edtConsumo, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                                .addComponent(edtQuilometragem, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                                .addComponent(edtCombustivel, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                                .addComponent(edtComprimento, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                                .addComponent(edtEmissaoPoluentes, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                                .addComponent(lblConsumo)
-                                .addComponent(lblCombustivel)
-                                .addComponent(lblQuilometragem)
-                                .addComponent(lblComprimento)
-                                .addComponent(lblManutencao)
-                                .addComponent(lblDataManutencao)
-                                .addComponent(lblEmissaoPoluentes)
-                                .addComponent(jScrollPane1))
-                            .addComponent(edtDataManutencao, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(437, 437, 437)
-                        .addComponent(btnCadastrar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnVoltar)))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPlaca)
-                    .addComponent(lblConsumo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblChassi)
-                    .addComponent(lblQuilometragem))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtChassi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtQuilometragem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPeso)
-                    .addComponent(lblCombustivel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNumEixos)
-                    .addComponent(lblComprimento))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtNumEixos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtComprimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAltura)
-                    .addComponent(lblManutencao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(edtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblLargura)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(edtLargura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDataManutencao)
-                    .addComponent(lblTipoCNH))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(edtDataManutencao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtTipoCNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCargaMaximaSuportada)
-                    .addComponent(lblEmissaoPoluentes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtCargaMaxSuportada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtEmissaoPoluentes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastrar)
-                    .addComponent(btnVoltar))
-                .addGap(0, 8, Short.MAX_VALUE))
-        );
+        bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntVoltar.setText("VOLTAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(267, 267, 267)
+                        .addComponent(lblDescricao))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblPlaca)
+                                    .addComponent(bntPlaca)
+                                    .addComponent(lblQuilometragem)
+                                    .addComponent(edtQuilometragem)
+                                    .addComponent(lblCarteira)
+                                    .addComponent(edtCarteira, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
+                                .addGap(34, 34, 34)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(edtComprimento)
+                                    .addComponent(lblChassi)
+                                    .addComponent(edtChassi)
+                                    .addComponent(lblComprimento)
+                                    .addComponent(lblCarga)
+                                    .addComponent(edtCarga, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCombustivel)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(lblPesoVeiculo)
+                                                .addComponent(edtPesoVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(32, 32, 32)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(lblEixos)
+                                                .addComponent(edtEixos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(lblAltura)
+                                            .addGap(122, 122, 122)
+                                            .addComponent(lblLargura))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(edtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(edtLargura)))
+                                    .addComponent(edtCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblConsumo)
+                                    .addComponent(cbConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(145, 145, 145)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblPoluentes)
+                                    .addComponent(cbEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(108, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(160, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(140, 140, 140))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(bntCad, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(342, 342, 342))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDescricao)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPlaca)
+                    .addComponent(lblChassi)
+                    .addComponent(lblPesoVeiculo)
+                    .addComponent(lblEixos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtChassi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtPesoVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtEixos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblQuilometragem)
+                    .addComponent(lblComprimento)
+                    .addComponent(lblAltura)
+                    .addComponent(lblLargura))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(edtQuilometragem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtComprimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtLargura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCarteira)
+                    .addComponent(lblCarga)
+                    .addComponent(lblCombustivel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(edtCarteira, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtCarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPoluentes)
+                    .addComponent(lblConsumo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntCad)
+                    .addComponent(bntVoltar))
+                .addGap(58, 58, 58))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void edtPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtPesoActionPerformed
+    private void bntCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtPesoActionPerformed
-
-    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCadastrarActionPerformed
-
-    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVoltarActionPerformed
+    }//GEN-LAST:event_bntCadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,40 +257,35 @@ public class FrCadVeiculos extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCadastrar;
-    private javax.swing.JButton btnVoltar;
+    private javax.swing.JButton bntCad;
+    private javax.swing.JTextField bntPlaca;
+    private javax.swing.JButton bntVoltar;
+    private javax.swing.JComboBox<String> cbConsumo;
+    private javax.swing.JComboBox<String> cbEmissao;
     private javax.swing.JTextField edtAltura;
-    private javax.swing.JTextField edtCargaMaxSuportada;
+    private javax.swing.JTextField edtCarga;
+    private javax.swing.JTextField edtCarteira;
     private javax.swing.JTextField edtChassi;
     private javax.swing.JTextField edtCombustivel;
     private javax.swing.JTextField edtComprimento;
-    private javax.swing.JTextField edtConsumo;
-    private javax.swing.JTextField edtDataManutencao;
-    private javax.swing.JTextField edtEmissaoPoluentes;
+    private javax.swing.JTextField edtEixos;
     private javax.swing.JTextField edtLargura;
-    private javax.swing.JTextField edtNumEixos;
-    private javax.swing.JTextField edtPeso;
-    private javax.swing.JTextField edtPlaca;
+    private javax.swing.JTextField edtPesoVeiculo;
     private javax.swing.JTextField edtQuilometragem;
-    private javax.swing.JTextField edtTipoCNH;
-    private javax.swing.JTextArea edtTipoManutencao;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAltura;
-    private javax.swing.JLabel lblCargaMaximaSuportada;
+    private javax.swing.JLabel lblCarga;
+    private javax.swing.JLabel lblCarteira;
     private javax.swing.JLabel lblChassi;
     private javax.swing.JLabel lblCombustivel;
     private javax.swing.JLabel lblComprimento;
     private javax.swing.JLabel lblConsumo;
-    private javax.swing.JLabel lblDataManutencao;
-    private javax.swing.JLabel lblEmissaoPoluentes;
+    private javax.swing.JLabel lblDescricao;
+    private javax.swing.JLabel lblEixos;
     private javax.swing.JLabel lblLargura;
-    private javax.swing.JLabel lblManutencao;
-    private javax.swing.JLabel lblNumEixos;
-    private javax.swing.JLabel lblPeso;
+    private javax.swing.JLabel lblPesoVeiculo;
     private javax.swing.JLabel lblPlaca;
+    private javax.swing.JLabel lblPoluentes;
     private javax.swing.JLabel lblQuilometragem;
-    private javax.swing.JLabel lblTipoCNH;
     private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 }
