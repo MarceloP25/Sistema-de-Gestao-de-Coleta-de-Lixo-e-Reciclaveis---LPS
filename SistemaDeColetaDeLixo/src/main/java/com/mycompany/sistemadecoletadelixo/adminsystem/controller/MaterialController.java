@@ -1,42 +1,42 @@
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.classes.Supervisor;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.classes.Material;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-public class FrCadSupervisorController {
+public class MaterialController {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("adminPU");
 
-    public void salvarSupervisor(Supervisor supervisor) {
+    public void salvarMaterial(Material material) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.persist(supervisor);
+        em.persist(material);
         em.getTransaction().commit();
         em.close();
     }
 
-    public Supervisor buscarSupervisor(Long id) {
+    public Material buscarMaterial(Long id) {
         EntityManager em = emf.createEntityManager();
-        Supervisor supervisor = em.find(Supervisor.class, id);
+        Material material = em.find(Material.class, id);
         em.close();
-        return supervisor;
+        return material;
     }
 
-    public void atualizarSupervisor(Supervisor supervisor) {
+    public void atualizarMaterial(Material material) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.merge(supervisor);
+        em.merge(material);
         em.getTransaction().commit();
         em.close();
     }
 
-    public void deletarSupervisor(Long id) {
+    public void deletarMaterial(Long id) {
         EntityManager em = emf.createEntityManager();
-        Supervisor supervisor = em.find(Supervisor.class, id);
-        if (supervisor != null) {
+        Material material = em.find(Material.class, id);
+        if (material != null) {
             em.getTransaction().begin();
-            em.remove(supervisor);
+            em.remove(material);
             em.getTransaction().commit();
         }
         em.close();

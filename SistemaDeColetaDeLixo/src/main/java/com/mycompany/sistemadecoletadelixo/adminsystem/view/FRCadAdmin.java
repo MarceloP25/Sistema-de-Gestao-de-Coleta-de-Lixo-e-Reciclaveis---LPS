@@ -8,12 +8,12 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
  *
  * @author marce
  */
-public class FRCadAdmin extends javax.swing.JFrame {
+public class FrCadAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form FRCadAdmin
      */
-    public FRCadAdmin() {
+    public FrCadAdmin() {
         initComponents();
     }
 

@@ -1,13 +1,44 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-/**
- *
- * @author marce
- */
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.classes.Operador;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
 public class OperadorController {
-    
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("adminPU");
+
+    public void salvarOperador(Operador operador) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.persist(operador);
+        em.getTransaction().commit();
+        em.close();
+    }
+
+    public Operador buscarOperador(Long id) {
+        EntityManager em = emf.createEntityManager();
+        Operador operador = em.find(Operador.class, id);
+        em.close();
+        return operador;
+    }
+
+    public void atualizarOperador(Operador operador) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.merge(operador);
+        em.getTransaction().commit();
+        em.close();
+    }
+
+    public void deletarOperador(Long id) {
+        EntityManager em = emf.createEntityManager();
+        Operador operador = em.find(Operador.class, id);
+        if (operador != null) {
+            em.getTransaction().begin();
+            em.remove(operador);
+            em.getTransaction().commit();
+        }
+        em.close();
+    }
 }

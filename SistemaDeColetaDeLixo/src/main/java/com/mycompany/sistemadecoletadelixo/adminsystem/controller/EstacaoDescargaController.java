@@ -1,42 +1,42 @@
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.classes.PontoDeColeta;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.classes.EstacaoDescarga;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-public class FrCadPontosDeColetaController {
+public class EstacaoDescargaController {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("adminPU");
 
-    public void salvarPontoDeColeta(PontoDeColeta pontoDeColeta) {
+    public void salvarEstacaoDescarga(EstacaoDescarga estacaoDescarga) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.persist(pontoDeColeta);
+        em.persist(estacaoDescarga);
         em.getTransaction().commit();
         em.close();
     }
 
-    public PontoDeColeta buscarPontoDeColeta(Long id) {
+    public EstacaoDescarga buscarEstacaoDescarga(Long id) {
         EntityManager em = emf.createEntityManager();
-        PontoDeColeta pontoDeColeta = em.find(PontoDeColeta.class, id);
+        EstacaoDescarga estacaoDescarga = em.find(EstacaoDescarga.class, id);
         em.close();
-        return pontoDeColeta;
+        return estacaoDescarga;
     }
 
-    public void atualizarPontoDeColeta(PontoDeColeta pontoDeColeta) {
+    public void atualizarEstacaoDescarga(EstacaoDescarga estacaoDescarga) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.merge(pontoDeColeta);
+        em.merge(estacaoDescarga);
         em.getTransaction().commit();
         em.close();
     }
 
-    public void deletarPontoDeColeta(Long id) {
+    public void deletarEstacaoDescarga(Long id) {
         EntityManager em = emf.createEntityManager();
-        PontoDeColeta pontoDeColeta = em.find(PontoDeColeta.class, id);
-        if (pontoDeColeta != null) {
+        EstacaoDescarga estacaoDescarga = em.find(EstacaoDescarga.class, id);
+        if (estacaoDescarga != null) {
             em.getTransaction().begin();
-            em.remove(pontoDeColeta);
+            em.remove(estacaoDescarga);
             em.getTransaction().commit();
         }
         em.close();

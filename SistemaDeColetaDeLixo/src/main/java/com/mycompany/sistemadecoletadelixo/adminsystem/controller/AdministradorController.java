@@ -1,42 +1,42 @@
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.classes.Departamento;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.classes.Administrador;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-public class FrCadDepartamentoController {
+public class AdministradorController {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("adminPU");
 
-    public void salvarDepartamento(Departamento departamento) {
+    public void salvarAdministrador(Administrador administrador) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.persist(departamento);
+        em.persist(administrador);
         em.getTransaction().commit();
         em.close();
     }
 
-    public Departamento buscarDepartamento(Long id) {
+    public Administrador buscarAdministrador(Long id) {
         EntityManager em = emf.createEntityManager();
-        Departamento departamento = em.find(Departamento.class, id);
+        Administrador administrador = em.find(Administrador.class, id);
         em.close();
-        return departamento;
+        return administrador;
     }
 
-    public void atualizarDepartamento(Departamento departamento) {
+    public void atualizarAdministrador(Administrador administrador) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.merge(departamento);
+        em.merge(administrador);
         em.getTransaction().commit();
         em.close();
     }
 
-    public void deletarDepartamento(Long id) {
+    public void deletarAdministrador(Long id) {
         EntityManager em = emf.createEntityManager();
-        Departamento departamento = em.find(Departamento.class, id);
-        if (departamento != null) {
+        Administrador administrador = em.find(Administrador.class, id);
+        if (administrador != null) {
             em.getTransaction().begin();
-            em.remove(departamento);
+            em.remove(administrador);
             em.getTransaction().commit();
         }
         em.close();
