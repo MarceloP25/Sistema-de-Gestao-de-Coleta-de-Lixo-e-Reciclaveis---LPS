@@ -43,7 +43,7 @@ public class FrHomeDepartamento extends javax.swing.JFrame {
 
         lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Admin");
+        lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Departamento");
 
         bntEstacaoDescarga.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntEstacaoDescarga.setText("Estações de Descarga");

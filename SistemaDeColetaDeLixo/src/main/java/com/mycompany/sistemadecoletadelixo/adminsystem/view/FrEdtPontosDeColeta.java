@@ -8,12 +8,12 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
  *
  * @author Edu
  */
-public class FrCadPontosDeColeta extends javax.swing.JFrame {
+public class FrEdtPontosDeColeta extends javax.swing.JFrame {
 
     /**
      * Creates new form FrCadRotas
      */
-    public FrCadPontosDeColeta() {
+    public FrEdtPontosDeColeta() {
         initComponents();
     }
 
@@ -33,8 +33,6 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
         tbRuas = new javax.swing.JTable();
         lblInfo = new javax.swing.JLabel();
         bntInserir = new javax.swing.JButton();
-        bntCad = new javax.swing.JButton();
-        bntVoltar = new javax.swing.JButton();
         cbRota = new javax.swing.JComboBox<>();
         cbRuas = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
@@ -50,13 +48,16 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
         jCheckBox8 = new javax.swing.JCheckBox();
         jCheckBox9 = new javax.swing.JCheckBox();
         jCheckBox10 = new javax.swing.JCheckBox();
+        bntCad = new javax.swing.JButton();
+        bntVoltar = new javax.swing.JButton();
+        bntDesativar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Sistema de Coleta de Lixo e Recicláveis - Cadastro de Pontos de Coleta");
+        lblTitulo.setText("Sistema de Coleta de Lixo e Recicláveis - Editar Pontos de Coleta");
 
         lblNome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblNome.setText("Nome da Rota");
@@ -88,17 +89,6 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
                 bntInserirActionPerformed(evt);
             }
         });
-
-        bntCad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bntCad.setText("CADASTRAR");
-        bntCad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntCadActionPerformed(evt);
-            }
-        });
-
-        bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bntVoltar.setText("VOLTAR");
 
         cbRota.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -134,18 +124,31 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
 
         jCheckBox10.setText("Violeta");
 
+        bntCad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntCad.setText("CONFIRMAR");
+        bntCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntCadActionPerformed(evt);
+            }
+        });
+
+        bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntVoltar.setText("VOLTAR");
+
+        bntDesativar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntDesativar.setText("EXCLUIR");
+        bntDesativar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntDesativarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lblDescricao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(bntCad, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(340, 340, 340))
             .addGroup(layout.createSequentialGroup()
                 .addGap(122, 122, 122)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,6 +201,14 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
                                 .addGap(65, 65, 65)
                                 .addComponent(bntInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bntDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bntCad, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(261, 261, 261))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,19 +250,16 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
                         .addComponent(bntInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntVoltar)
                     .addComponent(bntCad)
-                    .addComponent(bntVoltar))
-                .addContainerGap(32, Short.MAX_VALUE))
+                    .addComponent(bntDesativar))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void bntCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bntCadActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
@@ -261,6 +269,14 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bntInserirActionPerformed
 
+    private void bntCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntCadActionPerformed
+
+    private void bntDesativarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntDesativarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntDesativarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -268,6 +284,7 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntCad;
+    private javax.swing.JButton bntDesativar;
     private javax.swing.JButton bntInserir;
     private javax.swing.JButton bntVoltar;
     private javax.swing.JComboBox<String> cbRota;

@@ -27,22 +27,23 @@
           <Component id="lblDescricao" alignment="1" max="32767" attributes="0"/>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="bntEstacaoDescarga" alignment="0" max="32767" attributes="0"/>
-                  <Component id="bntSupervisor" alignment="0" max="32767" attributes="0"/>
-                  <Component id="bntVeiculos" alignment="0" max="32767" attributes="0"/>
-                  <Component id="bntOperador" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="152" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="bntCadastrar" min="-2" pref="176" max="-2" attributes="0"/>
-                  <Component id="bntColetas" min="-2" pref="176" max="-2" attributes="0"/>
-                  <Component id="bntEditar" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
-                  <Component id="bntVoltar" min="-2" pref="176" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="bntVisualizar" alignment="1" min="-2" pref="176" max="-2" attributes="0"/>
+                          <Component id="bntPontosColeta" alignment="1" min="-2" pref="176" max="-2" attributes="0"/>
+                          <Component id="bntCadastrar" alignment="1" min="-2" pref="176" max="-2" attributes="0"/>
+                          <Component id="bntEditar" alignment="1" min="-2" pref="176" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="391" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="bntVoltar" min="-2" pref="176" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="381" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -53,28 +54,21 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblDescricao" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="bntEstacaoDescarga" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="bntVisualizar" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bntSupervisor" min="-2" pref="60" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bntVeiculos" min="-2" pref="60" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bntOperador" min="-2" pref="60" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jScrollPane1" min="-2" pref="258" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="bntColetas" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="bntPontosColeta" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bntCadastrar" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bntEditar" min="-2" pref="60" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bntVoltar" min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="jScrollPane1" min="-2" pref="258" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="134" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="bntVoltar" min="-2" pref="60" max="-2" attributes="0"/>
+              <EmptySpace pref="48" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -86,23 +80,7 @@
           <Font name="Segoe UI" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Sistema de Coleta de Lixo e Recicl&#xe1;veis - Departamento"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="bntEstacaoDescarga">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Esta&#xe7;&#xf5;es de Descarga"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="bntSupervisor">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Supervisores"/>
+        <Property name="text" type="java.lang.String" value="Sistema de Coleta de Lixo e Recicl&#xe1;veis - Rotas"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDescricao">
@@ -111,19 +89,8 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Verifique o estado do seu departamento!!!"/>
+        <Property name="text" type="java.lang.String" value="O caminho para o lixo leva a limpeza!!!"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="bntOperador">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Operadores"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntOperadorActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bntVoltar">
       <Properties>
@@ -133,28 +100,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntVoltarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="bntVeiculos">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Ve&#xed;culos"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="bntColetas">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Coletas"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="bntCadastrar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cadastrar Dep."/>
+        <Property name="text" type="java.lang.String" value="Cadastrar Rota"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -168,7 +119,7 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="1" rowCount="4">
-                <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                <Column editable="true" title="Nome" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -193,6 +144,22 @@
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Editar Dados"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bntPontosColeta">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Pontos de Coleta"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bntVisualizar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Visualizar Dados"/>
       </Properties>
     </Component>
   </SubComponents>
