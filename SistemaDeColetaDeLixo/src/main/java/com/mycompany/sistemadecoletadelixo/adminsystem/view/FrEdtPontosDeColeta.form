@@ -28,13 +28,6 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="lblTitulo" alignment="1" max="32767" attributes="0"/>
           <Component id="lblDescricao" alignment="1" max="32767" attributes="0"/>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="bntVoltar" min="-2" pref="130" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="bntCad" min="-2" pref="130" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="340" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -104,6 +97,15 @@
                   </Group>
               </Group>
           </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="bntVoltar" min="-2" pref="130" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Component id="bntDesativar" min="-2" pref="130" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="bntCad" min="-2" pref="130" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="261" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -154,12 +156,13 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="152" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="bntCad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bntVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bntCad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bntDesativar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -171,7 +174,7 @@
           <Font name="Segoe UI" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Sistema de Coleta de Lixo e Recicl&#xe1;veis - Cadastro de Pontos de Coleta"/>
+        <Property name="text" type="java.lang.String" value="Sistema de Coleta de Lixo e Recicl&#xe1;veis - Editar Pontos de Coleta"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblNome">
@@ -230,25 +233,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntInserirActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="bntCad">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="CADASTRAR"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntCadActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="bntVoltar">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="VOLTAR"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cbRota">
       <Properties>
@@ -347,6 +331,36 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Violeta"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bntCad">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="CONFIRMAR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntCadActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bntVoltar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="VOLTAR"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bntDesativar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="EXCLUIR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntDesativarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
