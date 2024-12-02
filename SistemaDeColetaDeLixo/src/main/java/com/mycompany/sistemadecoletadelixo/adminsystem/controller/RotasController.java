@@ -1,44 +1,84 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.Rota;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.RotaDAO;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateRota;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.RotaException;
 
+/**
+ *
+ * @author eduhe
+ */
 public class RotasController {
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("adminPU");
 
-    public void salvarRota(Rota rota) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.persist(rota);
-        em.getTransaction().commit();
-        em.close();
+    private RotaDAO repositorio;
+
+    public RotasController() {
+        repositorio = new RotaDAO();
     }
 
-    public Rota buscarRota(Long id) {
-        EntityManager em = emf.createEntityManager();
-        Rota rota = em.find(Rota.class, id);
-        em.close();
-        return rota;
-    }
+    public void cadastrarRota(
+            String id,
+            String pontoInicio,
+            String pontoFinalizacao,
+            List<String> ruasPercorridas,
+            List<String> pontosColeta,
+            String supervisor,
+            List<String> operadores) {
 
-    public void atualizarRota(Rota rota) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.merge(rota);
-        em.getTransaction().commit();
-        em.close();
-    }
+        ValidateRota valid = new ValidateRota();
+        Rota novaRota = valid.validacao(id, pontoInicio, pontoFinalizacao, ruasPercorridas, pontosColeta, supervisor, operadores);
 
-    public void deletarRota(Long id) {
-        EntityManager em = emf.createEntityManager();
-        Rota rota = em.find(Rota.class, id);
-        if (rota != null) {
-            em.getTransaction().begin();
-            em.remove(rota);
-            em.getTransaction().commit();
+        if (repositorio.findById(id) == null) {
+            repositorio.save(novaRota);
+        } else {
+            throw new RotaException("Error - Já existe uma rota com este 'ID'.");
         }
-        em.close();
+    }
+
+    public void atualizarRota(
+            String idOriginal,
+            String id,
+            String pontoInicio,
+            String pontoFinalizacao,
+            List<String> ruasPercorridas,
+            List<String> pontosColeta,
+            String supervisor,
+            List<String> operadores) {
+
+        ValidateRota valid = new ValidateRota();
+        Rota rotaAtualizada = valid.validacao(id, pontoInicio, pontoFinalizacao, ruasPercorridas, pontosColeta, supervisor, operadores);
+        rotaAtualizada.setId(idOriginal);
+
+        repositorio.update(rotaAtualizada);
+    }
+
+    public Rota buscarRota(String id) {
+        return this.repositorio.findById(id);
+    }
+
+    public void excluirRota(String id) {
+        Rota rota = repositorio.findById(id);
+        if (rota != null) {
+            repositorio.delete(rota);
+        } else {
+            throw new RotaException("Error - Rota inexistente.");
+        }
+    }
+
+    public String imprimirListaRotas() {
+        String listagemRotas = "";
+
+        for (Object obj : this.repositorio.findAll()) {
+            Rota rota = (Rota) obj;
+            listagemRotas += rota.toString();
+        }
+
+        return listagemRotas;
     }
 }

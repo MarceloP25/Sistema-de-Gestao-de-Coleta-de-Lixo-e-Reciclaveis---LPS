@@ -1,44 +1,78 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.EstacaoDescarga;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.EstaçãoDescargaDAO;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateEstacaoDescarga;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.EstacaoDescargaException;
 
+/**
+ *
+ * @author eduhe
+ */
 public class EstacaoDescargaController {
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("adminPU");
 
-    public void salvarEstacaoDescarga(EstacaoDescarga estacaoDescarga) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.persist(estacaoDescarga);
-        em.getTransaction().commit();
-        em.close();
+    private EstaçãoDescargaDAO repositorio;
+
+    public EstacaoDescargaController() {
+        repositorio = new EstaçãoDescargaDAO();
     }
 
-    public EstacaoDescarga buscarEstacaoDescarga(Long id) {
-        EntityManager em = emf.createEntityManager();
-        EstacaoDescarga estacaoDescarga = em.find(EstacaoDescarga.class, id);
-        em.close();
-        return estacaoDescarga;
-    }
+    public void cadastrarEstacaoDescarga(
+            String id,
+            int numeroSupervisores,
+            String supervisor,
+            int capacidade) {
 
-    public void atualizarEstacaoDescarga(EstacaoDescarga estacaoDescarga) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.merge(estacaoDescarga);
-        em.getTransaction().commit();
-        em.close();
-    }
+        ValidateEstacaoDescarga valid = new ValidateEstacaoDescarga();
+        EstacaoDescarga novaEstacaoDescarga = valid.validacao(id, numeroSupervisores, supervisor, capacidade);
 
-    public void deletarEstacaoDescarga(Long id) {
-        EntityManager em = emf.createEntityManager();
-        EstacaoDescarga estacaoDescarga = em.find(EstacaoDescarga.class, id);
-        if (estacaoDescarga != null) {
-            em.getTransaction().begin();
-            em.remove(estacaoDescarga);
-            em.getTransaction().commit();
+        if (repositorio.findById(id) == null) {
+            repositorio.save(novaEstacaoDescarga);
+        } else {
+            throw new EstacaoDescargaException("Error - Já existe uma estação de descarga com este 'ID'.");
         }
-        em.close();
+    }
+
+    public void atualizarEstacaoDescarga(
+            String idOriginal,
+            String id,
+            int numeroSupervisores,
+            String supervisor,
+            int capacidade) {
+
+        ValidateEstacaoDescarga valid = new ValidateEstacaoDescarga();
+        EstacaoDescarga estacaoAtualizada = valid.validacao(id, numeroSupervisores, supervisor, capacidade);
+        estacaoAtualizada.setId(idOriginal);
+
+        repositorio.update(estacaoAtualizada);
+    }
+
+    public EstacaoDescarga buscarEstacaoDescarga(String id) {
+        return this.repositorio.findById(id);
+    }
+
+    public void excluirEstacaoDescarga(String id) {
+        EstacaoDescarga estacaoDescarga = repositorio.findById(id);
+        if (estacaoDescarga != null) {
+            repositorio.delete(estacaoDescarga);
+        } else {
+            throw new EstacaoDescargaException("Error - Estação de descarga inexistente.");
+        }
+    }
+
+    public String imprimirListaEstacoesDescarga() {
+        String listagemEstacoes = "";
+
+        for (Object obj : this.repositorio.findAll()) {
+            EstacaoDescarga estacaoDescarga = (EstacaoDescarga) obj;
+            listagemEstacoes += estacaoDescarga.toString();
+        }
+
+        return listagemEstacoes;
     }
 }
