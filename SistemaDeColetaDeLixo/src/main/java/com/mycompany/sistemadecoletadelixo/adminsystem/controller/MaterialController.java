@@ -1,44 +1,80 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.Material;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.MaterialDAO;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateMaterial;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.MaterialException;
 
+/**
+ *
+ * @author eduhe
+ */
 public class MaterialController {
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("adminPU");
 
-    public void salvarMaterial(Material material) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.persist(material);
-        em.getTransaction().commit();
-        em.close();
+    private MaterialDAO repositorio;
+
+    public MaterialController() {
+        repositorio = new MaterialDAO();
     }
 
-    public Material buscarMaterial(Long id) {
-        EntityManager em = emf.createEntityManager();
-        Material material = em.find(Material.class, id);
-        em.close();
-        return material;
-    }
+    public void cadastrarMaterial(
+            String id,
+            String nome,
+            String tipo,
+            String lixeiraDescarte,
+            String instrucoesDescarte) {
 
-    public void atualizarMaterial(Material material) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.merge(material);
-        em.getTransaction().commit();
-        em.close();
-    }
+        ValidateMaterial valid = new ValidateMaterial();
+        Material novoMaterial = valid.validacao(id, nome, tipo, lixeiraDescarte, instrucoesDescarte);
 
-    public void deletarMaterial(Long id) {
-        EntityManager em = emf.createEntityManager();
-        Material material = em.find(Material.class, id);
-        if (material != null) {
-            em.getTransaction().begin();
-            em.remove(material);
-            em.getTransaction().commit();
+        if (repositorio.findById(id) == null) {
+            repositorio.save(novoMaterial);
+        } else {
+            throw new MaterialException("Error - Já existe um material com este 'ID'.");
         }
-        em.close();
+    }
+
+    public void atualizarMaterial(
+            String idOriginal,
+            String id,
+            String nome,
+            String tipo,
+            String lixeiraDescarte,
+            String instrucoesDescarte) {
+
+        ValidateMaterial valid = new ValidateMaterial();
+        Material materialAtualizado = valid.validacao(id, nome, tipo, lixeiraDescarte, instrucoesDescarte);
+        materialAtualizado.setId(idOriginal);
+
+        repositorio.update(materialAtualizado);
+    }
+
+    public Material buscarMaterial(String id) {
+        return this.repositorio.findById(id);
+    }
+
+    public void excluirMaterial(String id) {
+        Material material = repositorio.findById(id);
+        if (material != null) {
+            repositorio.delete(material);
+        } else {
+            throw new MaterialException("Error - Material inexistente.");
+        }
+    }
+
+    public String imprimirListaMateriais() {
+        String listagemMateriais = "";
+
+        for (Object obj : this.repositorio.findAll()) {
+            Material material = (Material) obj;
+            listagemMateriais += material.toString();
+        }
+
+        return listagemMateriais;
     }
 }

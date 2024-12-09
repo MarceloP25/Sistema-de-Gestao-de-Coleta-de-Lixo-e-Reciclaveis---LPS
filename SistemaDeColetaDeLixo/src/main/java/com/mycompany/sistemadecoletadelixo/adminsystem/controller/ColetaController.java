@@ -1,44 +1,87 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.Coleta;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.ColetaDAO;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateColeta;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.ColetaException;
 
+/**
+ *
+ * @author eduhe
+ */
 public class ColetaController {
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("adminPU");
 
-    public void salvarColeta(Coleta coleta) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.persist(coleta);
-        em.getTransaction().commit();
-        em.close();
+    private ColetaDAO repositorio;
+
+    public ColetaController() {
+        repositorio = new ColetaDAO();
     }
 
-    public Coleta buscarColeta(Long id) {
-        EntityManager em = emf.createEntityManager();
-        Coleta coleta = em.find(Coleta.class, id);
-        em.close();
-        return coleta;
-    }
+    public void cadastrarColeta(
+            String id,
+            String supervisor,
+            double peso,
+            String materiaisColetados,
+            String operador,
+            String rota,
+            String veiculo) {
 
-    public void atualizarColeta(Coleta coleta) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.merge(coleta);
-        em.getTransaction().commit();
-        em.close();
-    }
+        ValidateColeta valid = new ValidateColeta();
+        Coleta novaColeta = valid.validacao(
+                id, supervisor, peso, materiaisColetados, operador, rota, veiculo);
 
-    public void deletarColeta(Long id) {
-        EntityManager em = emf.createEntityManager();
-        Coleta coleta = em.find(Coleta.class, id);
-        if (coleta != null) {
-            em.getTransaction().begin();
-            em.remove(coleta);
-            em.getTransaction().commit();
+        if (repositorio.findById(id) == null) {
+            repositorio.save(novaColeta);
+        } else {
+            throw new ColetaException("Error - Já existe uma coleta com este 'ID'.");
         }
-        em.close();
+    }
+
+    public void atualizarColeta(
+            String idOriginal,
+            String id,
+            String supervisor,
+            double peso,
+            String materiaisColetados,
+            String operador,
+            String rota,
+            String veiculo) {
+
+        ValidateColeta valid = new ValidateColeta();
+        Coleta coletaAtualizada = valid.validacao(
+                id, supervisor, peso, materiaisColetados, operador, rota, veiculo);
+
+        coletaAtualizada.setId(idOriginal);
+
+        repositorio.update(coletaAtualizada);
+    }
+
+    public Coleta buscarColeta(String id) {
+        return this.repositorio.findById(id);
+    }
+
+    public void excluirColeta(String id) {
+        Coleta coleta = repositorio.findById(id);
+        if (coleta != null) {
+            repositorio.delete(coleta);
+        } else {
+            throw new ColetaException("Error - Coleta inexistente.");
+        }
+    }
+
+    public String imprimirListaColetas() {
+        String listagemColetas = "";
+
+        for (Object obj : this.repositorio.findAll()) {
+            Coleta coleta = (Coleta) obj;
+            listagemColetas += coleta.toString();
+        }
+
+        return listagemColetas;
     }
 }

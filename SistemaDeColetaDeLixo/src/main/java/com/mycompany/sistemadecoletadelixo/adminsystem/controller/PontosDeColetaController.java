@@ -1,44 +1,78 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.PontoDeColeta;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.PontoDeColetaDAO;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidatePontoDeColeta;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.PontoDeColetaException;
 
+/**
+ *
+ * @author eduhe
+ */
 public class PontosDeColetaController {
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("adminPU");
 
-    public void salvarPontoDeColeta(PontoDeColeta pontoDeColeta) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.persist(pontoDeColeta);
-        em.getTransaction().commit();
-        em.close();
+    private PontoDeColetaDAO repositorio;
+
+    public PontosDeColetaController() {
+        repositorio = new PontoDeColetaDAO();
     }
 
-    public PontoDeColeta buscarPontoDeColeta(Long id) {
-        EntityManager em = emf.createEntityManager();
-        PontoDeColeta pontoDeColeta = em.find(PontoDeColeta.class, id);
-        em.close();
-        return pontoDeColeta;
-    }
+    public void cadastrarPontoColeta(
+            String id,
+            String localizacao,
+            int numeroLixeiras,
+            List<String> tiposLixeira) {
 
-    public void atualizarPontoDeColeta(PontoDeColeta pontoDeColeta) {
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.merge(pontoDeColeta);
-        em.getTransaction().commit();
-        em.close();
-    }
+        ValidatePontoDeColeta valid = new ValidatePontoDeColeta();
+        PontoDeColeta novoPontoColeta = valid.validacao(id, localizacao, numeroLixeiras, tiposLixeira);
 
-    public void deletarPontoDeColeta(Long id) {
-        EntityManager em = emf.createEntityManager();
-        PontoDeColeta pontoDeColeta = em.find(PontoDeColeta.class, id);
-        if (pontoDeColeta != null) {
-            em.getTransaction().begin();
-            em.remove(pontoDeColeta);
-            em.getTransaction().commit();
+        if (repositorio.findById(id) == null) {
+            repositorio.save(novoPontoColeta);
+        } else {
+            throw new PontoColetaException("Error - Já existe um ponto de coleta com este 'ID'.");
         }
-        em.close();
+    }
+
+    public void atualizarPontoColeta(
+            String idOriginal,
+            String id,
+            String localizacao,
+            int numeroLixeiras,
+            List<String> tiposLixeira) {
+
+        ValidatePontoColeta valid = new ValidatePontoColeta();
+        PontoDeColeta pontoColetaAtualizado = valid.validacao(id, localizacao, numeroLixeiras, tiposLixeira);
+        pontoColetaAtualizado.setId(idOriginal);
+
+        repositorio.update(pontoColetaAtualizado);
+    }
+
+    public PontoDeColeta buscarPontoColeta(String id) {
+        return this.repositorio.findById(id);
+    }
+
+    public void excluirPontoColeta(String id) {
+        PontoDeColeta pontoColeta = repositorio.findById(id);
+        if (pontoColeta != null) {
+            repositorio.delete(pontoColeta);
+        } else {
+            throw new PontoColetaException("Error - Ponto de coleta inexistente.");
+        }
+    }
+
+    public String imprimirListaPontosColeta() {
+        String listagemPontosColeta = "";
+
+        for (Object obj : this.repositorio.findAll()) {
+            PontoDeColeta pontoColeta = (PontoDeColeta) obj;
+            listagemPontosColeta += pontoColeta.toString();
+        }
+
+        return listagemPontosColeta;
     }
 }
