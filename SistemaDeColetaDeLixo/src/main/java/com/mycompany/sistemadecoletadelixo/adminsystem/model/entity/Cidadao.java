@@ -9,6 +9,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entity;
  * @author marce
  */
 import jakarta.persistence.*;
+import javax.persistence.Entity;
 
 @Entity
 @Table(name = "cidadao")
