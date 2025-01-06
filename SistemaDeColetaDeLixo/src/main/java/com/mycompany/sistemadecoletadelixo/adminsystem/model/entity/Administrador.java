@@ -8,22 +8,21 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entity;
  *
  * @author marce
  */
-import jakarta.persistence.*;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 @Entity
-@Table(name = "administrador")
 public class Administrador extends Pessoa {
-    @Column(name = "id_departamento")
-    private Long idDepartamento;
+    
+    private int idDepartamento;
 
-    // Getters e Setters
-    public Long getIdDepartamento() {
-        return idDepartamento;
-    }
-
-    public void setIdDepartamento(Long idDepartamento) {
-        this.idDepartamento = idDepartamento;
+    @OneToMany(mappedBy = "administrador")
+    private List<Departamento> departamentos;
+    
+    public Administrador(){
+        super();
+        this.idDepartamento = -1;
     }
 }
 
