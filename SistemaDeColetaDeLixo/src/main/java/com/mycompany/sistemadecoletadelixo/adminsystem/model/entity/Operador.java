@@ -8,32 +8,76 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entity;
  *
  * @author marce
  */
-import jakarta.persistence.*;
+
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 
 @Entity
-@Table(name = "operador")
 public class Operador extends Pessoa {
-    @Column(name = "turno_trabalho", nullable = false)
-    private String turnoTrabalho;
+    
+    private int idDepartamento;
+    private String dataContrato;
+    
+    @ManyToMany(mappedBy = "operador") // terminar
+    private List<Veiculos> veiculos;
 
-    @Column(name = "veiculo_alocado")
-    private String veiculoAlocado;
-
-    // Getters e Setters
-    public String getTurnoTrabalho() {
-        return turnoTrabalho;
+    @ManyToMany(mappedBy = "operador") // terminar
+    private List<Rota> rotas;
+    
+    public Operador(){
+        super();
+        this.idDepartamento = -1;
+        this.dataContrato = "00/00/0000";
+    }
+    
+    public Operador(          
+            String nome, 
+            char sexo, 
+            String dataNascimento, 
+            String cpf, 
+            String email,
+            String senha,
+            String telefone, 
+            String cep,
+            String rua,
+            String bairro,
+            String cidade,
+            String numero,
+            String complemento){
+        super(
+            nome, 
+            sexo, 
+            dataNascimento, 
+            cpf, 
+            email,
+            senha,
+            telefone, 
+            cep,
+            rua,
+            bairro,
+            cidade,
+            numero,
+            complemento);
+        this.idDepartamento = idDepartamento;
+        this.dataContrato = dataContrato;
+        
+    }
+    
+    public int getIdDepartamento() {
+        return idDepartamento;
     }
 
-    public void setTurnoTrabalho(String turnoTrabalho) {
-        this.turnoTrabalho = turnoTrabalho;
+    public void setIdDepartamento(int idDepartamento) {
+        this.idDepartamento = idDepartamento;
     }
-
-    public String getVeiculoAlocado() {
-        return veiculoAlocado;
+    
+    public String getDataContrato(){
+        return dataContrato;
     }
-
-    public void setVeiculoAlocado(String veiculoAlocado) {
-        this.veiculoAlocado = veiculoAlocado;
+    
+    public void setDataContrato(String dataContrato){
+        this.dataContrato = dataContrato;
     }
 }
 

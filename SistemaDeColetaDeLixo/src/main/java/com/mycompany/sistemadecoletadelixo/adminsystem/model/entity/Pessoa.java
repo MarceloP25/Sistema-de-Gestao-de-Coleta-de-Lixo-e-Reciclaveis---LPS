@@ -27,7 +27,7 @@ public abstract class Pessoa {
 
     protected String nome;
     protected char sexo;
-    protected LocalDate dataNascimento;
+    protected String dataNascimento;
     protected String cpf;
     protected String email;
     protected String senha;
@@ -43,6 +43,7 @@ public abstract class Pessoa {
         this.id = -1L;
         this.nome = "";
         this.sexo = '-';
+        this.dataNascimento = "00/00/0000";
         this.cpf = "000.000.000-00";
         this.email = "user@email.com";
         this.senha = "123456789";
@@ -57,8 +58,8 @@ public abstract class Pessoa {
     
     public Pessoa(
             String nome, 
-            char sexo, 
-            LocalDate dataNascimento, 
+            char sexo,
+            String dataNascimento, 
             String cpf, 
             String email,
             String senha,

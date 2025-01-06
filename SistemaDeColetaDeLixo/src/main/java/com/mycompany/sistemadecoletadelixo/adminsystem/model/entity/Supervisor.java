@@ -8,20 +8,64 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entity;
  *
  * @author marce
  */
-import jakarta.persistence.*;
+import javax.persistence.Entity;
 
 @Entity
-@Table(name = "supervisor")
 public class Supervisor extends Pessoa {
-    @Column(name = "setor_responsavel", nullable = false)
-    private String setorResponsavel;
+    
+    private int idDepartamento;
+    private String dataContrato;
 
-    // Getters e Setters
-    public String getSetorResponsavel() {
-        return setorResponsavel;
+    public Supervisor(){
+        super();
+        this.idDepartamento = -1;
+        this.dataContrato = "00/00/0000";
+    }
+    
+    public Supervisor(          
+            String nome, 
+            char sexo, 
+            String dataNascimento, 
+            String cpf, 
+            String email,
+            String senha,
+            String telefone, 
+            String cep,
+            String rua,
+            String bairro,
+            String cidade,
+            String numero,
+            String complemento){
+        super(
+            nome, 
+            sexo, 
+            dataNascimento, 
+            cpf, 
+            email,
+            senha,
+            telefone, 
+            cep,
+            rua,
+            bairro,
+            cidade,
+            numero,
+            complemento);
+        this.idDepartamento = idDepartamento;
+        this.dataContrato = dataContrato;
+    }
+    
+    public int getIdDepartamento() {
+        return idDepartamento;
     }
 
-    public void setSetorResponsavel(String setorResponsavel) {
-        this.setorResponsavel = setorResponsavel;
+    public void setIdDepartamento(int idDepartamento) {
+        this.idDepartamento = idDepartamento;
+    }
+    public String getDataContrato(){
+        return dataContrato;
+    }
+    
+    public void setDataContrato(String dataContrato){
+        this.dataContrato = dataContrato;
     }
 }
