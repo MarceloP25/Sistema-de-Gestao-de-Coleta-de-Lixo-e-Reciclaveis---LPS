@@ -14,20 +14,22 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 
 @Entity
+@Getter
+@Setter
 public class Operador extends Pessoa {
     
-    private int idDepartamento;
+    private long idDepartamento;
     private String dataContrato;
     
     @ManyToMany(mappedBy = "operador") // terminar
-    private List<Veiculos> veiculos;
+    private List<Veiculo> veiculos;
 
     @ManyToMany(mappedBy = "operador") // terminar
     private List<Rota> rotas;
     
     public Operador(){
         super();
-        this.idDepartamento = -1;
+        this.idDepartamento = -1L;
         this.dataContrato = "00/00/0000";
     }
     
@@ -63,21 +65,6 @@ public class Operador extends Pessoa {
         this.dataContrato = dataContrato;
         
     }
-    
-    public int getIdDepartamento() {
-        return idDepartamento;
-    }
 
-    public void setIdDepartamento(int idDepartamento) {
-        this.idDepartamento = idDepartamento;
-    }
-    
-    public String getDataContrato(){
-        return dataContrato;
-    }
-    
-    public void setDataContrato(String dataContrato){
-        this.dataContrato = dataContrato;
-    }
 }
 

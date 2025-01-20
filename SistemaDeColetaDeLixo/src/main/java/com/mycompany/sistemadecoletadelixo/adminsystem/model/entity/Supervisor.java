@@ -11,14 +11,16 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entity;
 import javax.persistence.Entity;
 
 @Entity
+@Getter
+@Setter
 public class Supervisor extends Pessoa {
     
-    private int idDepartamento;
+    private long idDepartamento;
     private String dataContrato;
 
     public Supervisor(){
         super();
-        this.idDepartamento = -1;
+        this.idDepartamento = -1L;
         this.dataContrato = "00/00/0000";
     }
     
@@ -54,18 +56,4 @@ public class Supervisor extends Pessoa {
         this.dataContrato = dataContrato;
     }
     
-    public int getIdDepartamento() {
-        return idDepartamento;
-    }
-
-    public void setIdDepartamento(int idDepartamento) {
-        this.idDepartamento = idDepartamento;
-    }
-    public String getDataContrato(){
-        return dataContrato;
-    }
-    
-    public void setDataContrato(String dataContrato){
-        this.dataContrato = dataContrato;
-    }
 }

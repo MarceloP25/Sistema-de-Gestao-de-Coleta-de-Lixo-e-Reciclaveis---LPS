@@ -22,5 +22,5 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Cidadao extends Pessoa {
 
-    
+   
 }
