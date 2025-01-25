@@ -5,7 +5,7 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.Material;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Material;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.MaterialDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateMaterial;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.MaterialException;

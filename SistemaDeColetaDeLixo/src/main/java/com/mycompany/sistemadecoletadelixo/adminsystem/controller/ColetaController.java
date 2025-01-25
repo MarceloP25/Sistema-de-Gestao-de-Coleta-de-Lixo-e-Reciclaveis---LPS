@@ -5,7 +5,7 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.Coleta;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Coleta;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.ColetaDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateColeta;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.ColetaException;

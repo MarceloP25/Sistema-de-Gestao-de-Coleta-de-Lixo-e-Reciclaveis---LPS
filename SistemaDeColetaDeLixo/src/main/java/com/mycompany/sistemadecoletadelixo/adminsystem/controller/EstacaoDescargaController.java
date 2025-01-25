@@ -5,7 +5,7 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.EstacaoDescarga;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.EstacaoDescarga;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.EstaçãoDescargaDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateEstacaoDescarga;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.EstacaoDescargaException;

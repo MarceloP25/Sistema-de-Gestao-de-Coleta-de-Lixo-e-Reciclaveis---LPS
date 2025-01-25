@@ -5,7 +5,7 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.Departamento;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Departamento;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.DepartamentoDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateDepartamento;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.DepartamentoException;

@@ -5,7 +5,7 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.Operador;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Operador;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.OperadorDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateOperador;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.OperadorException;

@@ -5,7 +5,7 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.PontoDeColeta;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.PontoDeColeta;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.PontoDeColetaDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidatePontoDeColeta;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.PontoDeColetaException;

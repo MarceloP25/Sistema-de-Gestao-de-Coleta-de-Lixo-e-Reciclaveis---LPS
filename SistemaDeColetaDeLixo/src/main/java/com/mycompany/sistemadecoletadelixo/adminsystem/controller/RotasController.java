@@ -5,7 +5,7 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entity.Rota;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Rota;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.RotaDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateRota;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.RotaException;
