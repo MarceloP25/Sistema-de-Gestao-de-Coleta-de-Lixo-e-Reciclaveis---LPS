@@ -8,165 +8,105 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  *
  * @author marce
  */
-package com.seuprojeto.modelo;
 
-import jakarta.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
-@Table(name = "departamento")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Departamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_departamento")
     private Long id;
 
-    @Column(name = "nome", nullable = false)
     private String nome;
-
-    @Column(name = "rua", nullable = false)
     private String rua;
-
-    @Column(name = "bairro", nullable = false)
     private String bairro;
-
-    @Column(name = "cidade", nullable = false)
     private String cidade;
-
-    @Column(name = "numero", nullable = false)
-    private Integer numero;
-
-    @Column(name = "complemento")
+    private String numero;
     private String complemento;
-
-    @Column(name = "cep", nullable = false)
     private String cep;
+    
+    @ManyToOne
+    private Administrador administrador;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        joinColumns = @JoinColumn(name = "departamento_id"),
+        inverseJoinColumns = @JoinColumn(name = "estacao_id")
+    )
+    private List<EstacaoDescarga> estacoesDescarga;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        joinColumns = @JoinColumn(name = "departamento_id"),
+        inverseJoinColumns = @JoinColumn(name = "veiculo_id")
+    )
+    private List<Veiculo> veiculos;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        joinColumns = @JoinColumn(name = "departamento_id"),
+        inverseJoinColumns = @JoinColumn(name = "supervisor_id")
+    )
+    private List<Supervisor> supervisores;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        joinColumns = @JoinColumn(name = "departamento_id"),
+        inverseJoinColumns = @JoinColumn(name = "operador_id")
+    )
+    private List<Operador> operadores;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        joinColumns = @JoinColumn(name = "departamento_id"),
+        inverseJoinColumns = @JoinColumn(name = "rota_id")
+    )
+    private List<Rota> rotas;
 
-    @Column(name = "numero_estacoes_descarga", nullable = false)
-    private Integer numeroEstacoesDescarga;
-
-    @Column(name = "numero_veiculos", nullable = false)
-    private Integer numeroVeiculos;
-
-    @Column(name = "numero_supervisores", nullable = false)
-    private Integer numeroSupervisores;
-
-    @Column(name = "numero_operadores", nullable = false)
-    private Integer numeroOperadores;
-
-    // Construtores
-    public Departamento() {}
-
-    public Departamento(String nome, String rua, String bairro, String cidade, Integer numero, String complemento, String cep, 
-                        Integer numeroEstacoesDescarga, Integer numeroVeiculos, Integer numeroSupervisores, Integer numeroOperadores) {
-        this.nome = nome;
-        this.rua = rua;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.cep = cep;
-        this.numeroEstacoesDescarga = numeroEstacoesDescarga;
-        this.numeroVeiculos = numeroVeiculos;
-        this.numeroSupervisores = numeroSupervisores;
-        this.numeroOperadores = numeroOperadores;
+    public Departamento() {
+        this.id = -1L;
+        this.nome = "";
+        this.cep = "00000-000";
+        this.rua = "";
+        this.bairro = "";
+        this.cidade = "";
+        this.numero = "";
+        this.complemento = "";
+        this.administrador = new Administrador();
+        this.estacoesDescarga = new ArrayList<>();
+        this.veiculos = new ArrayList<>();
+        this.supervisores = new ArrayList<>();
+        this.operadores = new ArrayList<>();
+        this.rotas = new ArrayList<>();
     }
 
-    // Getters e Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getRua() {
-        return rua;
-    }
-
-    public void setRua(String rua) {
-        this.rua = rua;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public Integer getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public String getCep() {
-        return cep;
-    }
-
-    public void setCep(String cep) {
-        this.cep = cep;
-    }
-
-    public Integer getNumeroEstacoesDescarga() {
-        return numeroEstacoesDescarga;
-    }
-
-    public void setNumeroEstacoesDescarga(Integer numeroEstacoesDescarga) {
-        this.numeroEstacoesDescarga = numeroEstacoesDescarga;
-    }
-
-    public Integer getNumeroVeiculos() {
-        return numeroVeiculos;
-    }
-
-    public void setNumeroVeiculos(Integer numeroVeiculos) {
-        this.numeroVeiculos = numeroVeiculos;
-    }
-
-    public Integer getNumeroSupervisores() {
-        return numeroSupervisores;
-    }
-
-    public void setNumeroSupervisores(Integer numeroSupervisores) {
-        this.numeroSupervisores = numeroSupervisores;
-    }
-
-    public Integer getNumeroOperadores() {
-        return numeroOperadores;
-    }
-
-    public void setNumeroOperadores(Integer numeroOperadores) {
-        this.numeroOperadores = numeroOperadores;
-    }
+   public Departamento(
+           String nome,
+           String cep,
+           String rua,
+           String bairro,
+           String cidade,
+           String numero,
+           String complemento,
+           
+   ){
+   
+   }
 }

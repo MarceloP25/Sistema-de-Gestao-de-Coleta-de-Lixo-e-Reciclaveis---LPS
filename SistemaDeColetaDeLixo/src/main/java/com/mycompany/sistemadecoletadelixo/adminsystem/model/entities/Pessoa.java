@@ -1,149 +1,117 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
+package com.mycompany.sistemadecoletadelixo.adminsystem.model.entity;
 
 /**
  *
  * @author marce
  */
-import jakarta.persistence.*;
 import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import lombok.Getter;
+import lombok.Setter;
 
-@MappedSuperclass
+
+@Getter
+@Setter
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Pessoa {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
 
-    @Column(name = "nome", nullable = false)
-    private String nome;
+    protected String nome;
+    protected char sexo;
+    protected String dataNascimento;
+    protected String cpf;
+    protected String email;
+    protected String senha;
+    protected String telefone;
+    protected String cep;
+    protected String rua;
+    protected String bairro;
+    protected String cidade;
+    protected String numero;
+    protected String complemento;
 
-    @Column(name = "data_nascimento", nullable = false)
-    private LocalDate dataNascimento;
-
-    @Column(name = "cpf_cnpj", unique = true, nullable = false)
-    private String cpfCnpj;
-
-    @Column(name = "email", unique = true, nullable = false)
-    private String email;
-
-    @Column(name = "telefone")
-    private String telefone;
-
-    @Column(name = "cep", nullable = false)
-    private String cep;
-
-    @Column(name = "rua")
-    private String rua;
-
-    @Column(name = "bairro")
-    private String bairro;
-
-    @Column(name = "cidade")
-    private String cidade;
-
-    @Column(name = "numero")
-    private String numero;
-
-    @Column(name = "complemento")
-    private String complemento;
-
-    // Getters e Setters
-    public Long getId() {
-        return id;
+    public Pessoa(){
+        this.id = -1L;
+        this.nome = "";
+        this.sexo = '-';
+        this.dataNascimento = "00/00/0000";
+        this.cpf = "000.000.000-00";
+        this.email = "user@email.com";
+        this.senha = "123456789";
+        this.telefone = "(00)00000-0000";
+        this.cep = "00000-000";
+        this.rua = "";
+        this.bairro = "";
+        this.cidade = "";
+        this.numero = "";
+        this.complemento = "";
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
+    
+    public Pessoa(
+            String nome, 
+            char sexo,
+            String dataNascimento, 
+            String cpf, 
+            String email,
+            String senha,
+            String telefone, 
+            String cep,
+            String rua,
+            String bairro,
+            String cidade,
+            String numero,
+            String complemento
+            ){
         this.nome = nome;
-    }
-
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
+        this.sexo = sexo;
         this.dataNascimento = dataNascimento;
-    }
-
-    public String getCpfCnpj() {
-        return cpfCnpj;
-    }
-
-    public void setCpfCnpj(String cpfCnpj) {
-        this.cpfCnpj = cpfCnpj;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
+        this.cpf = cpf;
         this.email = email;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
+        this.senha = senha;
         this.telefone = telefone;
-    }
-
-    public String getCep() {
-        return cep;
-    }
-
-    public void setCep(String cep) {
         this.cep = cep;
-    }
-
-    public String getRua() {
-        return rua;
-    }
-
-    public void setRua(String rua) {
         this.rua = rua;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
         this.bairro = bairro;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
         this.cidade = cidade;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
         this.numero = numero;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
         this.complemento = complemento;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        Pessoa outro = (Pessoa) obj;
+        if(!this.nome.equals(outro.getNome()))
+            return false;
+        else if(this.email != outro.getEmail())
+            return false;
+        else if(this.cpf != outro.getCpf())
+            return false;
+        
+        return true;
+    }
+    
+    public void copiar(Pessoa outro) {
+        this.nome = outro.getNome();
+        this.sexo = outro.getSexo();
+        this.dataNascimento = outro.getDataNascimento();
+        this.cpf = outro.getCpf();
+        this.email = outro.getEmail();
+        this.senha = outro.getSenha();
+        this.telefone = outro.getTelefone();
+        this.cep = outro.getCep();
+        this.rua = outro.getRua();
+        this.bairro = outro.getBairro();
+        this.cidade = outro.getCidade();
+        this.numero = outro.getNumero();
+        this.complemento = outro.getComplemento();
     }
 }

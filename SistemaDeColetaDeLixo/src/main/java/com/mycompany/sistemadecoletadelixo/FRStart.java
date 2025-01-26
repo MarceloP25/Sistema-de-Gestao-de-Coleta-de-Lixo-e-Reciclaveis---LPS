@@ -110,6 +110,9 @@ public class FRStart extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    public void main(){
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntAdmin;

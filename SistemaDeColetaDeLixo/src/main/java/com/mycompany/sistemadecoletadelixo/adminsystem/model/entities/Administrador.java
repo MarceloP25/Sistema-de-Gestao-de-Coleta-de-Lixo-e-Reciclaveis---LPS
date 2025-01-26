@@ -8,21 +8,60 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  *
  * @author marce
  */
-import jakarta.persistence.*;
+import java.time.LocalDate;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 @Entity
-@Table(name = "administrador")
 public class Administrador extends Pessoa {
-    @Column(name = "id_departamento")
-    private Long idDepartamento;
+    
+    private int idDepartamento;
 
-    // Getters e Setters
-    public Long getIdDepartamento() {
+    @OneToMany(mappedBy = "administrador")
+    private List<Departamento> departamentos;
+    
+    public Administrador(){
+        super();
+        this.idDepartamento = -1;
+    }
+    
+    public Administrador(          
+            String nome, 
+            char sexo, 
+            String dataNascimento, 
+            String cpf, 
+            String email,
+            String senha,
+            String telefone, 
+            String cep,
+            String rua,
+            String bairro,
+            String cidade,
+            String numero,
+            String complemento){
+        super(
+            nome, 
+            sexo, 
+            dataNascimento, 
+            cpf, 
+            email,
+            senha,
+            telefone, 
+            cep,
+            rua,
+            bairro,
+            cidade,
+            numero,
+            complemento);
+        this.idDepartamento = idDepartamento;
+    }
+    
+    public int getIdDepartamento() {
         return idDepartamento;
     }
 
-    public void setIdDepartamento(Long idDepartamento) {
+    public void setIdDepartamento(int idDepartamento) {
         this.idDepartamento = idDepartamento;
     }
 }
