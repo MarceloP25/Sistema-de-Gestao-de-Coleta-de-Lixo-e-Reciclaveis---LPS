@@ -8,6 +8,6 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.valid;
  *
  * @author Edu
  */
-public class ValidateCidadao {
+public class ValidateSupervisor {
     
 }

@@ -326,9 +326,6 @@ public class FrCadOperador extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bntCad;
-    private javax.swing.JButton bntCad1;
-    private javax.swing.JButton bntCad2;
     private javax.swing.JButton bntCadastrar;
     private javax.swing.JButton bntVoltar;
     private javax.swing.JComboBox<String> cbDepartamento;
