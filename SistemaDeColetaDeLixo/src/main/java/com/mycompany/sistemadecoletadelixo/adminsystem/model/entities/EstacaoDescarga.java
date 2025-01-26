@@ -8,34 +8,50 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entity;
  *
  * @author marce
  */
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Departamento;
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
+@Getter
+@Setter
 @Entity
-@Table(name = "estacao_descarga")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class EstacaoDescarga {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_estacao")
     private Long idEstacao;
 
-    @Column(name = "nome_estacao", nullable = false, length = 100)
+    @ManyToMany(mappedBy = "estacoesDescarga")
+    private List<Departamento> departamento;
+    
     private String nomeEstacao;
-
-    @Column(name = "endereco", nullable = false, length = 255)
-    private String endereco;
-
-    @Column(name = "cidade", nullable = false, length = 100)
-    private String cidade;
-
-    @Column(name = "capacidade_maxima", nullable = false)
-    private Double capacidadeMaxima;
-
-    @Column(name = "tipo_material_aceito", length = 100)
+    private float capacidadeMaxima;
+    
     private String tipoMaterialAceito;
-
-    @Column(name = "status_operacao", nullable = false, length = 50)
+    
     private String statusOperacao;
+    
+    public EstacaoDescarga(){
+        this.idEstacao = -1L;
+        this.departamento = new ArrayList<>();
+        this.capacidadeMaxima = 0;
+        this.tipoMaterialAceito = "";
+        this.statusOperacao = "Desativada";
+    }
+    
+    public EstacaoDescarga(
+            List departamento,
+            float capacidadeMaxima,
+            String tipoMaterialAceito,
+            String statusOperacao
+            ){
+        this.departamento = departamento;
+        this.capacidadeMaxima = capacidadeMaxima;
+        this.tipoMaterialAceito = tipoMaterialAceito;
+        this.statusOperacao = statusOperacao;
+    }
 
 }
 

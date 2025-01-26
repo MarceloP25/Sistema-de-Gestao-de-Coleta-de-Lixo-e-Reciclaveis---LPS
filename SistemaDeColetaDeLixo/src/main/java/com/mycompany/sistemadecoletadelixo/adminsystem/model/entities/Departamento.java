@@ -79,6 +79,13 @@ public class Departamento {
         inverseJoinColumns = @JoinColumn(name = "rota_id")
     )
     private List<Rota> rotas;
+    
+        @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        joinColumns = @JoinColumn(name = "departamento_id"),
+        inverseJoinColumns = @JoinColumn(name = "coleta_id")
+    )
+    private List<Coleta> coletas;
 
     public Departamento() {
         this.id = -1L;
@@ -95,6 +102,7 @@ public class Departamento {
         this.supervisores = new ArrayList<>();
         this.operadores = new ArrayList<>();
         this.rotas = new ArrayList<>();
+        this.coletas = new ArrayList<>();
     }
 
    public Departamento(
@@ -104,8 +112,28 @@ public class Departamento {
            String bairro,
            String cidade,
            String numero,
-           String complemento
+           String complemento,
+           Administrador administrador,
+           List estacoesDescarga,
+           List veiculos,
+           List supervisores,
+           List operadores,
+           List rotas,
+           List coletas
            ){
-   
+        this.nome = nome;
+        this.cep = cep;
+        this.rua = rua;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.administrador = administrador;
+        this.estacoesDescarga = estacoesDescarga;
+        this.veiculos = veiculos;
+        this.supervisores = supervisores;
+        this.operadores = operadores;
+        this.rotas = rotas;
+        this.coletas = coletas;
    }
 }

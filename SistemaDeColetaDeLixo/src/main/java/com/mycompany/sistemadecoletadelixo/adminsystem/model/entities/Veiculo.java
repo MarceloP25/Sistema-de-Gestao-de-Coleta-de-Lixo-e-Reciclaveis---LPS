@@ -8,10 +8,28 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  *
  * @author marce
  */
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Getter
 @Setter
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Veiculo {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,18 +42,10 @@ public class Veiculo {
     private Float comprimento;
     private Float altura;
     private Float largura;
-
-    @Column(name = "carteira_conducao")
     private Character carteiraConducao;
-
     private Float carga;
-
     private String combustivel;
-
-    @Column(name = "data_manutencao")
-    private LocalDate dataManutencao;
-
-    @Column(name = "emissao_poluentes")
+    private String dataManutencao;
     private Float emissaoPoluentes;
 
 

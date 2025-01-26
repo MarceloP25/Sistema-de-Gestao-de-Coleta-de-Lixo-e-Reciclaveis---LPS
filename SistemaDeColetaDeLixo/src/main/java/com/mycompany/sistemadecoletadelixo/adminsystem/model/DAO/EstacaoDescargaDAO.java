@@ -8,6 +8,6 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO;
  *
  * @author marce
  */
-public class EstaçãoDescargaDAO {
+public class EstacaoDescargaDAO {
     
 }
