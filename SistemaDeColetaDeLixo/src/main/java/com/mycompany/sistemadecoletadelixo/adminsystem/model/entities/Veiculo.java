@@ -37,16 +37,21 @@ public class Veiculo {
     private String placa;
     private String chassi;
     private String modelo;
-    private Float kilometragem;
-    private Integer eixos;
-    private Float comprimento;
-    private Float altura;
-    private Float largura;
-    private Character carteiraConducao;
-    private Float carga;
+    private float consumoPorKm;
+    private int eixos;
+    private float comprimento;
+    private float altura;
+    private float largura;
+    private char carteiraConducao;
+    private float carga;
     private String combustivel;
     private String dataManutencao;
-    private Float emissaoPoluentes;
-
+    private float emissaoPoluentes;
+    
+    @ManyToOne
+    private Departamento departamento;
+    
+    @ManyToMany(mappedBy = "veiculos")
+    private List<Operador> operador;
 
 }

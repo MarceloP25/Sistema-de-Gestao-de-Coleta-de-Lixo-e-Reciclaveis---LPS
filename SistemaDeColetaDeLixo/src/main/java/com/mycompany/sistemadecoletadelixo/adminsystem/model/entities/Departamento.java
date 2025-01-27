@@ -21,6 +21,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -52,11 +53,7 @@ public class Departamento {
     )
     private List<EstacaoDescarga> estacoesDescarga;
     
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-        joinColumns = @JoinColumn(name = "departamento_id"),
-        inverseJoinColumns = @JoinColumn(name = "veiculo_id")
-    )
+    @OneToMany(mappedBy = "departamento")
     private List<Veiculo> veiculos;
     
     @ManyToMany(fetch = FetchType.EAGER)
@@ -66,11 +63,7 @@ public class Departamento {
     )
     private List<Supervisor> supervisores;
     
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-        joinColumns = @JoinColumn(name = "departamento_id"),
-        inverseJoinColumns = @JoinColumn(name = "operador_id")
-    )
+    @OneToMany(mappedBy = "departamento")
     private List<Operador> operadores;
     
     @ManyToMany(fetch = FetchType.EAGER)

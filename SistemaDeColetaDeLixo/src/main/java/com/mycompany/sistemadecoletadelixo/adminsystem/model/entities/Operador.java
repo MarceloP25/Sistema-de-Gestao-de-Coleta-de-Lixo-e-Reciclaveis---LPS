@@ -9,6 +9,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  * @author marce
  */
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
@@ -18,19 +19,27 @@ import javax.persistence.ManyToMany;
 @Setter
 public class Operador extends Pessoa {
     
-    private long idDepartamento;
+    @ManyToOne
+    private Departamento departamento;
+    
     private String dataContrato;
     
-    @ManyToMany(mappedBy = "operador") // terminar
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        joinColumns = @JoinColumn(name = "operador_id"),
+        inverseJoinColumns = @JoinColumn(name = "veiculo_id")
+    )
     private List<Veiculo> veiculos;
 
-    @ManyToMany(mappedBy = "operador") // terminar
+    @ManyToMany(mappedBy = "operador")
     private List<Rota> rotas;
     
     public Operador(){
         super();
-        this.idDepartamento = -1L;
+        this.departamento = new Departamento();
         this.dataContrato = "00/00/0000";
+        this.veiculos = new ArrayList<>();
+        this.rotas = new ArrayList<>();
     }
     
     public Operador(          
@@ -46,7 +55,11 @@ public class Operador extends Pessoa {
             String bairro,
             String cidade,
             String numero,
-            String complemento){
+            String complemento,
+            Departamento departamento,
+            String dataContrato,
+            List veiculos,
+            List rotas){
         super(
             nome, 
             sexo, 
@@ -61,8 +74,10 @@ public class Operador extends Pessoa {
             cidade,
             numero,
             complemento);
-        this.idDepartamento = idDepartamento;
+        this.departamento = departamento;
         this.dataContrato = dataContrato;
+        this.veiculos = veiculos;
+        this.rotas = rotas;
         
     }
 
