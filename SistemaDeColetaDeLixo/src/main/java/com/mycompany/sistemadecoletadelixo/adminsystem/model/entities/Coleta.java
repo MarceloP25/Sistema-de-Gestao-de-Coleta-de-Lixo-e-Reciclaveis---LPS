@@ -9,6 +9,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  * @author marce
  */
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Coleta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

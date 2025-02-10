@@ -9,7 +9,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  * @author marce
  */
 @Entity
-@Table(name = "ponto_coleta")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class PontoDeColeta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,37 +23,5 @@ public class PontoDeColeta {
     @Column(name = "tipos_lixo")
     private String tiposLixo;
 
-    // Getters e Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getLocalizacao() {
-        return localizacao;
-    }
-
-    public void setLocalizacao(String localizacao) {
-        this.localizacao = localizacao;
-    }
-
-    public Integer getNumeroLixeiras() {
-        return numeroLixeiras;
-    }
-
-    public void setNumeroLixeiras(Integer numeroLixeiras) {
-        this.numeroLixeiras = numeroLixeiras;
-    }
-
-    public String getTiposLixo() {
-        return tiposLixo;
-    }
-
-    public void setTiposLixo(String tiposLixo) {
-        this.tiposLixo = tiposLixo;
-    }
 }
 

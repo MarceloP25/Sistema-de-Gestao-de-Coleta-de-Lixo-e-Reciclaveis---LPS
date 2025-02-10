@@ -17,8 +17,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import lombok.Getter;
@@ -46,12 +44,61 @@ public class Veiculo {
     private float carga;
     private String combustivel;
     private String dataManutencao;
-    private float emissaoPoluentes;
     
     @ManyToOne
     private Departamento departamento;
     
     @ManyToMany(mappedBy = "veiculos")
     private List<Operador> operador;
+    
+    public Veiculo(){
+        this.id = -1L;
+        this.placa = "";
+        this.chassi = "";
+        this.modelo = "";
+        this.consumoPorKm = 0;
+        this.eixos = 0;
+        this.comprimento = 0;
+        this.altura = 0;
+        this.largura = 0;
+        this.carteiraConducao = ' ';
+        this.carga = 0;
+        this.combustivel = "";
+        this.dataManutencao = "00/00/0000";
+        this.departamento = new Departamento();
+        this.operador = new ArrayList<>();
+    }
+    
+    public Veiculo(
+            String placa,
+            String chassi,
+            String modelo,
+            float consumoPorKm,
+            int eixos,
+            float comprimento,
+            float altura,
+            float largura,
+            char carteiraConducao,
+            float carga,
+            String combustivel,
+            String dataManutencao,
+            Departamento departamento,
+            List operador
+        ){
+        this.placa = placa;
+        this.chassi = chassi;
+        this.modelo = modelo;
+        this.consumoPorKm = consumoPorKm;
+        this.eixos = eixos;
+        this.comprimento = comprimento;
+        this.altura = altura;
+        this.largura = largura;
+        this.carteiraConducao = carteiraConducao;
+        this.carga = carga;
+        this.combustivel = combustivel;
+        this.dataManutencao = dataManutencao;
+        this.departamento = departamento;
+        this.operador = operador; 
+    }
 
 }

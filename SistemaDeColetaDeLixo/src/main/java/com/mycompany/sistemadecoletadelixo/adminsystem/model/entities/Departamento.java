@@ -73,7 +73,7 @@ public class Departamento {
     )
     private List<Rota> rotas;
     
-        @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         joinColumns = @JoinColumn(name = "departamento_id"),
         inverseJoinColumns = @JoinColumn(name = "coleta_id")
