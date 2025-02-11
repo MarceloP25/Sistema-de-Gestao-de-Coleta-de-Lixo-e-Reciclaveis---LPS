@@ -9,7 +9,6 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  * @author marce
  */
 import jakarta.persistence.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
@@ -35,17 +34,34 @@ public class Rota {
     private Long id;
 
     private String nomeRota;
+    
+    private String ruas[];
+    
+    @OneToMany(mappedBy = "rua")
+    private List<PontoDeColeta> pontosColeta;
 
-    private LocalDate dataCriacao;
-
-    private String pontosColeta;
-
-    private String veiculosAlocados;
-
-    private String responsavelRota;
-
+    private Supervisor responsavelRota;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        joinColumns = @JoinColumn(name = "rota_id"),
+        inverseJoinColumns = @JoinColumn(name = "motorista_id")
+    )
+    private List<Operador> operador;
+    
     private String statusRota; 
 
+    public Rota(){
+        this.id = -1L;
+        this.nomeRota = "";
+        this.ruas = new ArrayList<>();
+        this.pontosColeta = new ArrayList<>();
+        this.responsavelRota = new Supervisor();
+        this.operador = new ArrayList<>();
+        this.statusRota = "Desativada";
+    }
+    
+    
 
 }
 
