@@ -8,7 +8,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions;
  *
  * @author Edu
  */
-public class PontoColetaException extends RuntimeException {
+public class PontoDeColetaException extends RuntimeException {
 
 
     /**
@@ -17,7 +17,7 @@ public class PontoColetaException extends RuntimeException {
      *
      * @param msg the detail message.
      */
-    public PontoColetaException(String msg) {
+    public PontoDeColetaException(String msg) {
         super(msg);
     }
 }

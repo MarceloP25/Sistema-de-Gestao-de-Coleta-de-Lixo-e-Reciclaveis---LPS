@@ -8,7 +8,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions;
  *
  * @author Edu
  */
-public class EstacaoException extends RuntimeException {
+public class EstacaoDescargaException extends RuntimeException {
 
 
     /**
@@ -17,7 +17,7 @@ public class EstacaoException extends RuntimeException {
      *
      * @param msg the detail message.
      */
-    public EstacaoException(String msg) {
+    public EstacaoDescargaException(String msg) {
         super(msg);
     }
 }
