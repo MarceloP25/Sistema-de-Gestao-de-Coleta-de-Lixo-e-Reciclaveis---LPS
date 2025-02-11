@@ -1,10 +1,9 @@
-package com.mycompany.sistemadecoletadelixo.adminsystem.model.entity;
+package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
 
 /**
  *
  * @author marce
  */
-import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -86,32 +85,4 @@ public class Pessoa {
         this.complemento = complemento;
     }
     
-    @Override
-    public boolean equals(Object obj) {
-        Pessoa outro = (Pessoa) obj;
-        if(!this.nome.equals(outro.getNome()))
-            return false;
-        else if(this.email != outro.getEmail())
-            return false;
-        else if(this.cpf != outro.getCpf())
-            return false;
-        
-        return true;
-    }
-    
-    public void copiar(Pessoa outro) {
-        this.nome = outro.getNome();
-        this.sexo = outro.getSexo();
-        this.dataNascimento = outro.getDataNascimento();
-        this.cpf = outro.getCpf();
-        this.email = outro.getEmail();
-        this.senha = outro.getSenha();
-        this.telefone = outro.getTelefone();
-        this.cep = outro.getCep();
-        this.rua = outro.getRua();
-        this.bairro = outro.getBairro();
-        this.cidade = outro.getCidade();
-        this.numero = outro.getNumero();
-        this.complemento = outro.getComplemento();
-    }
 }

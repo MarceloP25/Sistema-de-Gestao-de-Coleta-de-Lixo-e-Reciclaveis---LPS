@@ -8,11 +8,17 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  *
  * @author marce
  */
+
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 public class Administrador extends Pessoa {
     
@@ -52,8 +58,8 @@ public class Administrador extends Pessoa {
             bairro,
             cidade,
             numero,
-            complemento,
-            departamentos);
+            complemento);
+        this.departamentos = departamentos;
         
     }
 }

@@ -8,19 +8,24 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  *
  * @author marce
  */
+
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
 public class Supervisor extends Pessoa {
     
-    private long idDepartamento;
+    @ManyToOne
+    private Departamento departamento;
     private String dataContrato;
 
     public Supervisor(){
         super();
-        this.idDepartamento = -1L;
+        this.departamento = new Departamento();
         this.dataContrato = "00/00/0000";
     }
     
@@ -37,7 +42,9 @@ public class Supervisor extends Pessoa {
             String bairro,
             String cidade,
             String numero,
-            String complemento){
+            String complemento,
+            Departamento departamento,
+            String dataContrato){
         super(
             nome, 
             sexo, 
@@ -52,7 +59,7 @@ public class Supervisor extends Pessoa {
             cidade,
             numero,
             complemento);
-        this.idDepartamento = idDepartamento;
+        this.departamento = departamento;
         this.dataContrato = dataContrato;
     }
     

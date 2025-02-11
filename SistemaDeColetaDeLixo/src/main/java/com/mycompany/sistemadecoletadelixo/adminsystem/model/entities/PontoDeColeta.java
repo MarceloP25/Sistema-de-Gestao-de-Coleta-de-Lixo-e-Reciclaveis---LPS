@@ -9,6 +9,8 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  * @author marce
  */
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,14 +40,14 @@ public class PontoDeColeta {
     private String rua;
     
     private int numeroLixeiras;
-    private String tiposLixo[];
+    private List<String> tiposLixo;
     
     public PontoDeColeta(){
         this.id = -1L;
         this.nomePonto = "";
         this.rua = "";
         this.numeroLixeiras = 0;
-        this.tiposLixo = ;
+        this.tiposLixo = new ArrayList<>();
     }
 
 }
