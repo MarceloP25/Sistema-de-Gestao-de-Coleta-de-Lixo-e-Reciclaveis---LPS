@@ -7,7 +7,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Administrador;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.AdministradorDAO;
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateAdmin;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateAdministrador;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.AdministradorException;
 
 /**
@@ -37,11 +37,11 @@ public class AdministradorController {
             String telefone,
             String idDepartamento) {
 
-        ValidateAdmin valid = new ValidateAdmin();
-        Administrador novoAdmin = valid.validacao(
+        ValidateAdministrador valid = new ValidateAdministrador();
+        Administrador novoAdmin = valid.validaCamposEntrada(
                 id, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento, telefone, idDepartamento);
 
-        if (repositorio.findById(id) == null) {
+        if (repositorio.findByName(nome) == null) {
             repositorio.save(novoAdmin);
         } else {
             throw new AdministradorException("Error - Já existe um administrador com este 'ID'.");
@@ -64,7 +64,7 @@ public class AdministradorController {
             String telefone,
             String idDepartamento) {
 
-        ValidateAdmin valid = new ValidateAdmin();
+        ValidateAdministrador valid = new ValidateAdministrador();
         Administrador adminAtualizado = valid.validacao(
                 id, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento, telefone, idDepartamento);
 

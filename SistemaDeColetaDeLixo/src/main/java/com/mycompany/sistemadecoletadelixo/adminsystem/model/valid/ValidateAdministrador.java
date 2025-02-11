@@ -4,18 +4,18 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.model.valid;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.Admin;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Administrador;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.AdministradorException;
 
 /**
  *
  * @author Edu
  */
-public class ValidateAdmin {
+public class ValidateAdministrador {
 
-    public Admin validaCamposEntrada(String nome, String dataNascimento, String rua, String bairro, String cidade,
+    public Administrador validaCamposEntrada(String nome, String dataNascimento, String rua, String bairro, String cidade,
                                      String numero, String complemento, String cep, String email, String senha) {
-        Admin admin = new Admin();
+        Administrador admin = new Administrador();
 
         if (nome.isEmpty())
             throw new AdministradorException("Error - Campo vazio: 'nome'.");

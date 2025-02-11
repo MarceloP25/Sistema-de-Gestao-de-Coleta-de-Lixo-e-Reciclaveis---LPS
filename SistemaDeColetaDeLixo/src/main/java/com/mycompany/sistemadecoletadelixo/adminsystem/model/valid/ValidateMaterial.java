@@ -10,7 +10,7 @@ import javax.swing.JRadioButton;
  *
  * @author Edu
  */
-public class ValidateMateriais {
+public class ValidateMaterial {
 
     public Material validaCamposEntrada(String nome, JRadioButton[] tipos, JRadioButton[] lixeiras, String descricao) {
         Material material = new Material();
