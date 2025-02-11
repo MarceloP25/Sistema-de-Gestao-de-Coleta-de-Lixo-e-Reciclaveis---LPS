@@ -8,7 +8,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  *
  * @author marce
  */
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -16,14 +16,12 @@ import javax.persistence.OneToMany;
 @Entity
 public class Administrador extends Pessoa {
     
-    private int idDepartamento;
-
     @OneToMany(mappedBy = "administrador")
     private List<Departamento> departamentos;
     
     public Administrador(){
         super();
-        this.idDepartamento = -1;
+        this.departamentos = new ArrayList<>();
     }
     
     public Administrador(          
@@ -39,7 +37,8 @@ public class Administrador extends Pessoa {
             String bairro,
             String cidade,
             String numero,
-            String complemento){
+            String complemento,
+            ArrayList departamentos){
         super(
             nome, 
             sexo, 
@@ -53,16 +52,9 @@ public class Administrador extends Pessoa {
             bairro,
             cidade,
             numero,
-            complemento);
-        this.idDepartamento = idDepartamento;
-    }
-    
-    public int getIdDepartamento() {
-        return idDepartamento;
-    }
-
-    public void setIdDepartamento(int idDepartamento) {
-        this.idDepartamento = idDepartamento;
+            complemento,
+            departamentos);
+        
     }
 }
 

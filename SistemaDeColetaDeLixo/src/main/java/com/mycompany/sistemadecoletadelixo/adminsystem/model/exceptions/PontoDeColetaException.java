@@ -8,16 +8,16 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions;
  *
  * @author Edu
  */
-public class EstacaoException extends RuntimeException {
+public class PontoDeColetaException extends RuntimeException {
 
 
     /**
-     * Constructs an instance of <code>EstacaoException</code> with the
+     * Constructs an instance of <code>PontoColetaException</code> with the
      * specified detail message.
      *
      * @param msg the detail message.
      */
-    public EstacaoException(String msg) {
+    public PontoDeColetaException(String msg) {
         super(msg);
     }
 }

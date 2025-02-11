@@ -8,77 +8,73 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  *
  * @author marce
  */
+import jakarta.persistence.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
-@Table(name = "coleta")
+@Getter
+@Setter
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Coleta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private Long supervisor;
-    private Float peso;
-
-    @Column(name = "materiais_coletados")
-    private String materiaisColetados;
-
-    private Long operador;
-    private Long rota;
-    private Long veiculo;
-
-    // Getters e Setters
-    public Long getId() {
-        return id;
+    
+    @OneToMany
+    private Departamento departamento;
+    
+    private EstacaoDescarga estacaoDeDescarga;
+    private Supervisor supervisor;
+    private float peso;
+    private List<Material> materiaisColetados;
+    private Operador operador;
+    private Rota rota;
+    private Veiculo veiculo;
+    
+    public Coleta(){
+        this.id = -1L;
+        this.departamento = new Departamento();
+        this.estacaoDeDescarga = new EstacaoDescarga();
+        this.supervisor = new Supervisor();
+        this.peso = 0;
+        this.materiaisColetados = new ArrayList<>();
+        this.operador = new Operador();
+        this.rota = new Rota();
+        this.veiculo = new Veiculo();
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getSupervisor() {
-        return supervisor;
-    }
-
-    public void setSupervisor(Long supervisor) {
+    
+    public Coleta(
+            Departamento departamento,
+            EstacaoDescarga estacaoDeDescarga,
+            Supervisor supervisor,
+            float peso,
+            List materiaisColetados,
+            Operador operador,
+            Rota rota,
+            Veiculo veiculo
+        ){
+        this.departamento = departamento;
+        this.estacaoDeDescarga = estacaoDeDescarga;
         this.supervisor = supervisor;
-    }
-
-    public Float getPeso() {
-        return peso;
-    }
-
-    public void setPeso(Float peso) {
         this.peso = peso;
-    }
-
-    public String getMateriaisColetados() {
-        return materiaisColetados;
-    }
-
-    public void setMateriaisColetados(String materiaisColetados) {
         this.materiaisColetados = materiaisColetados;
-    }
-
-    public Long getOperador() {
-        return operador;
-    }
-
-    public void setOperador(Long operador) {
         this.operador = operador;
-    }
-
-    public Long getRota() {
-        return rota;
-    }
-
-    public void setRota(Long rota) {
         this.rota = rota;
-    }
-
-    public Long getVeiculo() {
-        return veiculo;
-    }
-
-    public void setVeiculo(Long veiculo) {
         this.veiculo = veiculo;
     }
 }

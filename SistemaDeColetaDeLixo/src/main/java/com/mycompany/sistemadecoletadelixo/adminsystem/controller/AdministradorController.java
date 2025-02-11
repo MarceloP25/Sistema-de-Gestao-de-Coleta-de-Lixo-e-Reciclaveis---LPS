@@ -8,7 +8,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Administrador;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.AdministradorDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateAdmin;
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.AdminException;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.AdministradorException;
 
 /**
  *
@@ -44,7 +44,7 @@ public class AdministradorController {
         if (repositorio.findById(id) == null) {
             repositorio.save(novoAdmin);
         } else {
-            throw new AdminException("Error - Já existe um administrador com este 'ID'.");
+            throw new AdministradorException("Error - Já existe um administrador com este 'ID'.");
         }
     }
 
@@ -82,7 +82,7 @@ public class AdministradorController {
         if (admin != null) {
             repositorio.delete(admin);
         } else {
-            throw new AdminException("Error - Administrador inexistente.");
+            throw new AdministradorException("Error - Administrador inexistente.");
         }
     }
 

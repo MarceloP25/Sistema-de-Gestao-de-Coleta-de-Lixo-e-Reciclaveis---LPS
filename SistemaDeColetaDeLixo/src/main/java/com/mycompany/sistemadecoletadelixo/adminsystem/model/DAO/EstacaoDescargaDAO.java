@@ -9,20 +9,20 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO;
  * @author marce
  */
 import com.mycompany.sistemadecoletadelixo.adminsystem.factory.DatabaseJPA;
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Material;
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.MaterialException;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.EstacaoDescarga;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.EstacaoDescargaException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 
 
-public class MaterialDAO implements IDAO<Material> {
+public class EstacaoDescargaDAO implements IDAO<EstacaoDescarga> {
 
     private EntityManager entityManager;
     
     @Override
-    public void save(Material obj) { 
+    public void save(EstacaoDescarga obj) { 
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
         this.entityManager.getTransaction().begin();
         this.entityManager.persist(obj);
@@ -31,7 +31,7 @@ public class MaterialDAO implements IDAO<Material> {
     }
 
     @Override
-    public void update(Material obj) {  
+    public void update(EstacaoDescarga obj) {  
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
         this.entityManager.getTransaction().begin();
         this.entityManager.merge(obj);
@@ -40,15 +40,15 @@ public class MaterialDAO implements IDAO<Material> {
     }
 
     @Override
-    public Material find(Long id) {
+    public EstacaoDescarga find(Long id) {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
 
-        Material material = this.entityManager.find(Material.class, id);
+        EstacaoDescarga estacaoDescarga = this.entityManager.find(EstacaoDescarga.class, id);
 
         this.entityManager.close();
 
-        return material;
+        return estacaoDescarga;
     }
 
     @Override
@@ -56,12 +56,12 @@ public class MaterialDAO implements IDAO<Material> {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
         this.entityManager.getTransaction().begin();
 
-        Material materialJPA = this.entityManager.find(Material.class, id);
-        if (materialJPA != null) {
-            this.entityManager.remove(materialJPA);
+        EstacaoDescarga estacaoDescargaJPA = this.entityManager.find(EstacaoDescarga.class, id);
+        if (estacaoDescargaJPA != null) {
+            this.entityManager.remove(estacaoDescargaJPA);
         } else {
             this.entityManager.getTransaction().rollback();
-            throw new MaterialException("Error - Material inexistente.");
+            throw new EstacaoDescargaException("Error - Estacao de Descarga inexistente.");
         }
 
         this.entityManager.getTransaction().commit();
@@ -70,47 +70,46 @@ public class MaterialDAO implements IDAO<Material> {
     }
 
     @Override
-    public List<Material> findAll() {
+    public List<EstacaoDescarga> findAll() {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
-        String jpql = "SELECT a FROM Material a";
-        TypedQuery qry = this.entityManager.createQuery(jpql, Material.class);
+        String jpql = "SELECT a FROM EstacaoDescarga a";
+        TypedQuery qry = this.entityManager.createQuery(jpql, EstacaoDescarga.class);
 
-        List<Material> lst = qry.getResultList();
+        List<EstacaoDescarga> lst = qry.getResultList();
 
         this.entityManager.close();
         return lst;
     }
     
-    public List<Material> filterByName(String nome) {
+    public List<EstacaoDescarga> filterByDepartamento(String departamento) {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
         String jpql = " SELECT a "
-                + " FROM Material a "
-                + " WHERE a.nome like :nome ";
-        TypedQuery<Material> qry = this.entityManager.createQuery(jpql, Material.class);
-        qry.setParameter("nome", nome + "%");
+                + " FROM EstacaoDescarga a "
+                + " WHERE a.departamento like :departamento ";
+        TypedQuery<EstacaoDescarga> qry = this.entityManager.createQuery(jpql, EstacaoDescarga.class);
+        qry.setParameter("departamento", departamento + "%");
 
-        List<Material> lst = qry.getResultList();
+        List<EstacaoDescarga> lst = qry.getResultList();
 
         this.entityManager.close();
         return lst;
     }
     
-    public List<Material> filterByType(String tipo) {
+    public List<EstacaoDescarga> filterByName(String nomeEstacao) {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
         String jpql = " SELECT a "
-                + " FROM Material a "
-                + " WHERE a.tipo like :tipo ";
-        TypedQuery<Material> qry = this.entityManager.createQuery(jpql, Material.class);
-        qry.setParameter("nome", tipo + "%");
+                + " FROM EstacaoDescarga a "
+                + " WHERE a.nomeEstacao like :nomeEstacao ";
+        TypedQuery<EstacaoDescarga> qry = this.entityManager.createQuery(jpql, EstacaoDescarga.class);
+        qry.setParameter("nomeEstacao", nomeEstacao + "%");
 
-        List<Material> lst = qry.getResultList();
+        List<EstacaoDescarga> lst = qry.getResultList();
 
         this.entityManager.close();
         return lst;
     }
 
 }
-

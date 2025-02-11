@@ -7,7 +7,6 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO;
 
 import java.util.*;
 
-
 public interface IDAO<T> {
     void save(T obj);
     void update(T obj);

@@ -21,6 +21,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -52,11 +53,7 @@ public class Departamento {
     )
     private List<EstacaoDescarga> estacoesDescarga;
     
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-        joinColumns = @JoinColumn(name = "departamento_id"),
-        inverseJoinColumns = @JoinColumn(name = "veiculo_id")
-    )
+    @OneToMany(mappedBy = "departamento")
     private List<Veiculo> veiculos;
     
     @ManyToMany(fetch = FetchType.EAGER)
@@ -66,11 +63,7 @@ public class Departamento {
     )
     private List<Supervisor> supervisores;
     
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-        joinColumns = @JoinColumn(name = "departamento_id"),
-        inverseJoinColumns = @JoinColumn(name = "operador_id")
-    )
+    @OneToMany(mappedBy = "departamento")
     private List<Operador> operadores;
     
     @ManyToMany(fetch = FetchType.EAGER)
@@ -79,6 +72,9 @@ public class Departamento {
         inverseJoinColumns = @JoinColumn(name = "rota_id")
     )
     private List<Rota> rotas;
+    
+    @OneToMany(mappedBy = "departamento")
+    private List<Coleta> coletas;
 
     public Departamento() {
         this.id = -1L;
@@ -95,6 +91,7 @@ public class Departamento {
         this.supervisores = new ArrayList<>();
         this.operadores = new ArrayList<>();
         this.rotas = new ArrayList<>();
+        this.coletas = new ArrayList<>();
     }
 
    public Departamento(
@@ -105,8 +102,27 @@ public class Departamento {
            String cidade,
            String numero,
            String complemento,
-           
-   ){
-   
+           Administrador administrador,
+           List estacoesDescarga,
+           List veiculos,
+           List supervisores,
+           List operadores,
+           List rotas,
+           List coletas
+           ){
+        this.nome = nome;
+        this.cep = cep;
+        this.rua = rua;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.administrador = administrador;
+        this.estacoesDescarga = estacoesDescarga;
+        this.veiculos = veiculos;
+        this.supervisores = supervisores;
+        this.operadores = operadores;
+        this.rotas = rotas;
+        this.coletas = coletas;
    }
 }

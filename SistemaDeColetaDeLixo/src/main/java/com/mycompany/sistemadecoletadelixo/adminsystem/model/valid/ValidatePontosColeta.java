@@ -4,7 +4,7 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.model.valid;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.PontoDeColeta;
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.PontoColetaException;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.PontoDeColetaException;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 /**
@@ -19,22 +19,22 @@ public class ValidatePontosColeta {
 
         // Validação do Nome da Rota (JComboBox)
         if (nomeRota.getSelectedItem() == null || nomeRota.getSelectedItem().toString().isEmpty()) {
-            throw new PontoColetaException("Error - Nenhuma rota selecionada.");
+            throw new PontoDeColetaException("Error - Nenhuma rota selecionada.");
         }
         pontoColeta.setNomeRota(nomeRota.getSelectedItem().toString());
 
         // Validação do Nome das Ruas (JComboBox)
         if (nomeRuas.getSelectedItem() == null || nomeRuas.getSelectedItem().toString().isEmpty()) {
-            throw new PontoColetaException("Error - Nenhuma rua selecionada.");
+            throw new PontoDeColetaException("Error - Nenhuma rua selecionada.");
         }
         pontoColeta.setNomeRua(nomeRuas.getSelectedItem().toString());
 
         // Validação do Número de Lixeiras
         if (numeroLixeiras.isEmpty()) {
-            throw new PontoColetaException("Error - Campo vazio: 'número de lixeiras'.");
+            throw new PontoDeColetaException("Error - Campo vazio: 'número de lixeiras'.");
         }
         if (!numeroLixeiras.matches("\\d+")) {
-            throw new PontoColetaException("Error - Valor inválido no campo 'número de lixeiras'. Apenas números são permitidos.");
+            throw new PontoDeColetaException("Error - Valor inválido no campo 'número de lixeiras'. Apenas números são permitidos.");
         }
         pontoColeta.setNumeroLixeiras(Integer.parseInt(numeroLixeiras));
 
@@ -47,7 +47,7 @@ public class ValidatePontosColeta {
             }
         }
         if (!peloMenosUmSelecionado) {
-            throw new PontoColetaException("Error - Pelo menos um tipo de lixeira deve ser selecionado.");
+            throw new PontoDeColetaException("Error - Pelo menos um tipo de lixeira deve ser selecionado.");
         }
 
         StringBuilder tiposSelecionados = new StringBuilder();

@@ -8,16 +8,15 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions;
  *
  * @author Edu
  */
-public class PontoColetaException extends RuntimeException {
-
+public class AdministradorException extends RuntimeException {
 
     /**
-     * Constructs an instance of <code>PontoColetaException</code> with the
-     * specified detail message.
+     * Constructs an instance of <code>AdmException</code> with the specified
+     * detail message.
      *
      * @param msg the detail message.
      */
-    public PontoColetaException(String msg) {
+    public AdministradorException(String msg) {
         super(msg);
     }
 }

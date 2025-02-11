@@ -9,88 +9,59 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  * @author marce
  */
 import jakarta.persistence.*;
-import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Table(name = "rota")
+@Getter
+@Setter
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Rota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome_rota")
     private String nomeRota;
+    
+    private String ruas[];
+    
+    @OneToMany(mappedBy = "rua")
+    private List<PontoDeColeta> pontosColeta;
 
-    @Column(name = "data_criacao")
-    private LocalDate dataCriacao;
+    private Supervisor responsavelRota;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        joinColumns = @JoinColumn(name = "rota_id"),
+        inverseJoinColumns = @JoinColumn(name = "motorista_id")
+    )
+    private List<Operador> operador;
+    
+    private String statusRota; 
 
-    @Column(name = "pontos_coleta")
-    private String pontosColeta;
-
-    @Column(name = "veiculos_alocados")
-    private String veiculosAlocados;
-
-    @Column(name = "responsavel_rota")
-    private String responsavelRota;
-
-    @Column(name = "status_rota")
-    private String statusRota; // Exemplo: "Ativa", "Inativa", "Concluída".
-
-    // Getters e Setters
-    public Long getId() {
-        return id;
+    public Rota(){
+        this.id = -1L;
+        this.nomeRota = "";
+        this.ruas = new ArrayList<>();
+        this.pontosColeta = new ArrayList<>();
+        this.responsavelRota = new Supervisor();
+        this.operador = new ArrayList<>();
+        this.statusRota = "Desativada";
     }
+    
+    
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNomeRota() {
-        return nomeRota;
-    }
-
-    public void setNomeRota(String nomeRota) {
-        this.nomeRota = nomeRota;
-    }
-
-    public LocalDate getDataCriacao() {
-        return dataCriacao;
-    }
-
-    public void setDataCriacao(LocalDate dataCriacao) {
-        this.dataCriacao = dataCriacao;
-    }
-
-    public String getPontosColeta() {
-        return pontosColeta;
-    }
-
-    public void setPontosColeta(String pontosColeta) {
-        this.pontosColeta = pontosColeta;
-    }
-
-    public String getVeiculosAlocados() {
-        return veiculosAlocados;
-    }
-
-    public void setVeiculosAlocados(String veiculosAlocados) {
-        this.veiculosAlocados = veiculosAlocados;
-    }
-
-    public String getResponsavelRota() {
-        return responsavelRota;
-    }
-
-    public void setResponsavelRota(String responsavelRota) {
-        this.responsavelRota = responsavelRota;
-    }
-
-    public String getStatusRota() {
-        return statusRota;
-    }
-
-    public void setStatusRota(String statusRota) {
-        this.statusRota = statusRota;
-    }
 }
 

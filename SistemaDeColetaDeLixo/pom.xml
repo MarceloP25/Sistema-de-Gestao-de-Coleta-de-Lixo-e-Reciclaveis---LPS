@@ -41,6 +41,12 @@
             <artifactId>hibernate-sqlite-dialect</artifactId>
             <version>0.1.2</version>
         </dependency>
+        <dependency>
+            <groupId>cn.itlym</groupId>
+            <artifactId>shoulder-lombok</artifactId>
+            <version>0.0.1</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     
     <properties>
