@@ -56,9 +56,9 @@ public class PontoDeColetaDAO implements IDAO<PontoDeColeta> {
         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
         this.entityManager.getTransaction().begin();
 
-        PontoDeColeta PontoDeColetaJPA = this.entityManager.find(PontoDeColeta.class, id);
-        if (pontoDeColetaJPA != null) {
-            this.entityManager.remove(pontoDeColetaJPA);
+        PontoDeColeta ptColetaJPA = this.entityManager.find(PontoDeColeta.class, id);
+        if (ptColetaJPA != null) {
+            this.entityManager.remove(ptColetaJPA);
         } else {
             this.entityManager.getTransaction().rollback();
             throw new PontoDeColetaException("Error - PontoDeColeta inexistente.");

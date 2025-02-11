@@ -10,6 +10,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO;
  */
 import com.mycompany.sistemadecoletadelixo.adminsystem.factory.DatabaseJPA;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Departamento;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.DepartamentoException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
