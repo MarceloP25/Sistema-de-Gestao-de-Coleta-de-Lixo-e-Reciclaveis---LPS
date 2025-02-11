@@ -8,7 +8,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions;
  *
  * @author Edu
  */
-public class AdminException extends RuntimeException {
+public class AdministradorException extends RuntimeException {
 
     /**
      * Constructs an instance of <code>AdmException</code> with the specified
@@ -16,7 +16,7 @@ public class AdminException extends RuntimeException {
      *
      * @param msg the detail message.
      */
-    public AdminException(String msg) {
+    public AdministradorException(String msg) {
         super(msg);
     }
 }

@@ -10,6 +10,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO;
  */
 import com.mycompany.sistemadecoletadelixo.adminsystem.factory.DatabaseJPA;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Cidadao;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.CidadaoException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -59,7 +60,7 @@ public class CidadaoDAO implements IDAO<Cidadao> {
             this.entityManager.remove(cidadaoJPA);
         } else {
             this.entityManager.getTransaction().rollback();
-            throw new CidadaoException("Error - Aluno inexistente.");
+            throw new CidadaoException("Error - Cidadao inexistente.");
         }
 
         this.entityManager.getTransaction().commit();

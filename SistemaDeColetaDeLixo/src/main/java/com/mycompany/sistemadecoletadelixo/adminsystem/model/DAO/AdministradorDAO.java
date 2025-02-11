@@ -10,6 +10,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO;
  */
 import com.mycompany.sistemadecoletadelixo.adminsystem.factory.DatabaseJPA;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Administrador;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.AdministradorException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -60,7 +61,7 @@ public class AdministradorDAO implements IDAO<Administrador> {
             this.entityManager.remove(adminJPA);
         } else {
             this.entityManager.getTransaction().rollback();
-            throw new AdministradorException("Error - Aluno inexistente.");
+            throw new AdministradorException("Error - Administrador inexistente.");
         }
 
         this.entityManager.getTransaction().commit();
