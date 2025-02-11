@@ -47,6 +47,12 @@
             <version>0.0.1</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>com.chavaillaz</groupId>
+            <artifactId>light-jpa-repository</artifactId>
+            <version>1.0.0</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     
     <properties>
