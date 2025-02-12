@@ -47,7 +47,7 @@ public class FrGerenciarRotas extends javax.swing.JFrame {
         lblSup = new javax.swing.JLabel();
         btnExcluir = new javax.swing.JButton();
         btnCad = new javax.swing.JButton();
-        btnEditar = new javax.swing.JButton();
+        btnEdt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 600));
@@ -112,7 +112,7 @@ public class FrGerenciarRotas extends javax.swing.JFrame {
 
         btnCad.setText("CADASTRAR");
 
-        btnEditar.setText("EDITAR");
+        btnEdt.setText("EDITAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,7 +168,7 @@ public class FrGerenciarRotas extends javax.swing.JFrame {
                         .addGap(288, 288, 288)
                         .addComponent(btnCad)
                         .addGap(186, 186, 186)
-                        .addComponent(btnEditar)))
+                        .addComponent(btnEdt)))
                 .addContainerGap(153, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -181,7 +181,7 @@ public class FrGerenciarRotas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCad)
-                    .addComponent(btnEditar))
+                    .addComponent(btnEdt))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome)
@@ -230,7 +230,7 @@ public class FrGerenciarRotas extends javax.swing.JFrame {
     private javax.swing.JButton bntInserir;
     private javax.swing.JButton bntVoltar;
     private javax.swing.JButton btnCad;
-    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEdt;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JComboBox<String> cbDepartamento;
     private javax.swing.JComboBox<String> cbSup;

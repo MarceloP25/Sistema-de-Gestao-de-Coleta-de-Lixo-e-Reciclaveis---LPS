@@ -8,12 +8,12 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
  *
  * @author Edu
  */
-public class FrCadPontosDeColeta extends javax.swing.JFrame {
+public class FrGerenciarPontosDeColeta extends javax.swing.JFrame {
 
     /**
      * Creates new form FrCadRotas
      */
-    public FrCadPontosDeColeta() {
+    public FrGerenciarPontosDeColeta() {
         initComponents();
     }
 
@@ -50,6 +50,8 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
         jCheckBox8 = new javax.swing.JCheckBox();
         jCheckBox9 = new javax.swing.JCheckBox();
         jCheckBox10 = new javax.swing.JCheckBox();
+        btnCad = new javax.swing.JButton();
+        btnEdt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -134,6 +136,15 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
 
         jCheckBox10.setText("Violeta");
 
+        btnCad.setText("CADASTRAR");
+        btnCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadActionPerformed(evt);
+            }
+        });
+
+        btnEdt.setText("EDITAR");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -198,14 +209,24 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
                                 .addGap(65, 65, 65)
                                 .addComponent(bntInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(264, 264, 264)
+                .addComponent(btnCad)
+                .addGap(106, 106, 106)
+                .addComponent(btnEdt)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblDescricao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCad)
+                    .addComponent(btnEdt))
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome)
                     .addComponent(lblInfo))
@@ -261,6 +282,10 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bntInserirActionPerformed
 
+    private void btnCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -270,6 +295,8 @@ public class FrCadPontosDeColeta extends javax.swing.JFrame {
     private javax.swing.JButton bntCad;
     private javax.swing.JButton bntInserir;
     private javax.swing.JButton bntVoltar;
+    private javax.swing.JButton btnCad;
+    private javax.swing.JButton btnEdt;
     private javax.swing.JComboBox<String> cbRota;
     private javax.swing.JComboBox<String> cbRuas;
     private javax.swing.JTextField edtNumLixeira;

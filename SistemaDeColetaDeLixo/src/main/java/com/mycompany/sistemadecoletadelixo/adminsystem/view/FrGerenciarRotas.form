@@ -96,7 +96,7 @@
                       <EmptySpace min="-2" pref="288" max="-2" attributes="0"/>
                       <Component id="btnCad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
-                      <Component id="btnEditar" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEdt" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="153" max="32767" attributes="0"/>
@@ -113,7 +113,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnCad" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEdt" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="6" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -307,7 +307,7 @@
         <Property name="text" type="java.lang.String" value="CADASTRAR"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnEditar">
+    <Component class="javax.swing.JButton" name="btnEdt">
       <Properties>
         <Property name="text" type="java.lang.String" value="EDITAR"/>
       </Properties>
