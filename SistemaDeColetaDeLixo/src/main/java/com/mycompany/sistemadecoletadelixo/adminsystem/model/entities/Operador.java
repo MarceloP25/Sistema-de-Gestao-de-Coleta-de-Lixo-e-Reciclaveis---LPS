@@ -10,6 +10,10 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  */
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+import javax.persistence.*;
+>>>>>>> Stashed changes
 =======
 import javax.persistence.*;
 >>>>>>> Stashed changes
