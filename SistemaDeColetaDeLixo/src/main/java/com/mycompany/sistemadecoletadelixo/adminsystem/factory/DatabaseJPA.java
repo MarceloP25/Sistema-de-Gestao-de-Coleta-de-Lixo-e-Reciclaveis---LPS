@@ -25,14 +25,6 @@ public class DatabaseJPA {
 
         return INSTANCE;
     }
-
-    /**
-     * Construtor da classe. 
-     * - No padrão SINGLETON ele deve ser PRIVADO
-     * - Só pode ser chamado pelo método getInstance()
-     * - O método getInstance() gerencia a regra SINGLETON, que permite apenas 
-     * uma instancia do objeto Database
-     */
     private DatabaseJPA() {
         factory = Persistence.createEntityManagerFactory("adminPU");        
     }

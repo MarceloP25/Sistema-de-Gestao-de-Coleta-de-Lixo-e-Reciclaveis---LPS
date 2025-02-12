@@ -10,7 +10,10 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  */
 
 import javax.persistence.Entity;
+<<<<<<< Updated upstream
 import javax.persistence.ManyToOne;
+=======
+>>>>>>> Stashed changes
 import lombok.Getter;
 import lombok.Setter;
 
