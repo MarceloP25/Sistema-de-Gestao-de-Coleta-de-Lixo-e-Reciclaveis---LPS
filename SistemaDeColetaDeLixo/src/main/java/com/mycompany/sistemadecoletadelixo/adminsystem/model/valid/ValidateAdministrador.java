@@ -13,8 +13,7 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.Administ
  */
 public class ValidateAdministrador {
 
-    public Administrador validaCamposEntrada(String nome, String dataNascimento, String rua, String bairro, String cidade,
-                                     String numero, String complemento, String cep, String email, String senha) {
+    public Administrador validaCamposEntrada(String nome, String dataNascimento, String rua, String bairro, String cidade, String numero, String complemento, String cep, String email, String senha, String complemento1, String telefone) {
         Administrador admin = new Administrador();
 
         if (nome.isEmpty())

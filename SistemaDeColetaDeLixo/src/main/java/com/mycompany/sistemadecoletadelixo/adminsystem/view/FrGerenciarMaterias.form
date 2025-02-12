@@ -26,7 +26,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="lblTitle" alignment="0" pref="940" max="32767" attributes="0"/>
+          <Component id="lblTitle" alignment="0" pref="1028" max="32767" attributes="0"/>
           <Component id="lblDescricao" alignment="1" max="32767" attributes="0"/>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
@@ -34,20 +34,12 @@
               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               <Component id="bntExcluir" min="-2" pref="127" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Component id="bntCadastrar1" min="-2" pref="127" max="-2" attributes="0"/>
+              <Component id="bntConf" min="-2" pref="127" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="265" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="lblDescarte" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="640" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
@@ -93,6 +85,13 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lblDescarte" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="0" min="-2" pref="686" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -162,7 +161,7 @@
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="bntCadastrar1" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="bntConf" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="bntExcluir" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="bntVoltar" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
@@ -289,12 +288,12 @@
         <Property name="text" type="java.lang.String" value="Laranja"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="bntCadastrar1">
+    <Component class="javax.swing.JButton" name="bntConf">
       <Properties>
         <Property name="text" type="java.lang.String" value="CONFIRMAR"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntCadastrar1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntConfActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bntExcluir">

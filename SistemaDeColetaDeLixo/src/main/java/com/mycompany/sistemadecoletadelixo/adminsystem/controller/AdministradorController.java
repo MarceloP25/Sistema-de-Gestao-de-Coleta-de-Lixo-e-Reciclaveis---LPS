@@ -34,14 +34,14 @@ public class AdministradorController {
             String cidade,
             String numero,
             String complemento,
-            String telefone,
-            String idDepartamento) {
+            String telefone
+            ) {
 
         ValidateAdministrador valid = new ValidateAdministrador();
         Administrador novoAdmin = valid.validaCamposEntrada(
-                id, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento, telefone, idDepartamento);
+                id, nome, dataNascimento, cpf, email, cep, rua, bairro, cidade, numero, complemento, telefone);
 
-        if (repositorio.findByName(nome) == null) {
+        if (repositorio.findByCpf(cpf) == null) {
             repositorio.save(novoAdmin);
         } else {
             throw new AdministradorException("Error - Já existe um administrador com este 'ID'.");
