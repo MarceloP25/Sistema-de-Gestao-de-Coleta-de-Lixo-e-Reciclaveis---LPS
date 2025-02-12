@@ -52,6 +52,7 @@ public class FrGerenciarPontosDeColeta extends javax.swing.JFrame {
         jCheckBox10 = new javax.swing.JCheckBox();
         btnCad = new javax.swing.JButton();
         btnEdt = new javax.swing.JButton();
+        btnDesativar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -145,6 +146,9 @@ public class FrGerenciarPontosDeColeta extends javax.swing.JFrame {
 
         btnEdt.setText("EDITAR");
 
+        btnDesativar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDesativar.setText("EXCLUIR");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -154,14 +158,17 @@ public class FrGerenciarPontosDeColeta extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(72, 72, 72)
+                .addComponent(btnDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
                 .addComponent(bntCad, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(340, 340, 340))
+                .addGap(256, 256, 256))
             .addGroup(layout.createSequentialGroup()
                 .addGap(122, 122, 122)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -170,10 +177,14 @@ public class FrGerenciarPontosDeColeta extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(lblNome)
                                         .addGap(92, 92, 92)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbRuas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnCad)
+                                        .addGap(189, 189, 189)
+                                        .addComponent(btnEdt))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(lblInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cbRuas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addContainerGap(111, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -209,12 +220,6 @@ public class FrGerenciarPontosDeColeta extends javax.swing.JFrame {
                                 .addGap(65, 65, 65)
                                 .addComponent(bntInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(264, 264, 264)
-                .addComponent(btnCad)
-                .addGap(106, 106, 106)
-                .addComponent(btnEdt)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,7 +268,8 @@ public class FrGerenciarPontosDeColeta extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bntCad)
-                    .addComponent(bntVoltar))
+                    .addComponent(bntVoltar)
+                    .addComponent(btnDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -296,6 +302,7 @@ public class FrGerenciarPontosDeColeta extends javax.swing.JFrame {
     private javax.swing.JButton bntInserir;
     private javax.swing.JButton bntVoltar;
     private javax.swing.JButton btnCad;
+    private javax.swing.JButton btnDesativar;
     private javax.swing.JButton btnEdt;
     private javax.swing.JComboBox<String> cbRota;
     private javax.swing.JComboBox<String> cbRuas;

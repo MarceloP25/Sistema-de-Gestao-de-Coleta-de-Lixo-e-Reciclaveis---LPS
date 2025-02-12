@@ -31,15 +31,18 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Component id="bntVoltar" min="-2" pref="130" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+              <Component id="btnDesativar" min="-2" pref="107" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
               <Component id="bntCad" min="-2" pref="130" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="340" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane1" alignment="0" min="-2" pref="725" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -51,12 +54,18 @@
                                       <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lblInfo" max="32767" attributes="0"/>
-                                  <Component id="cbRuas" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="btnCad" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
+                                      <Component id="btnEdt" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="lblInfo" max="32767" attributes="0"/>
+                                      <Component id="cbRuas" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <Component id="jScrollPane1" alignment="0" min="-2" pref="725" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="111" max="32767" attributes="0"/>
                   </Group>
@@ -103,13 +112,6 @@
                       </Group>
                   </Group>
               </Group>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="264" max="-2" attributes="0"/>
-              <Component id="btnCad" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-              <Component id="btnEdt" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -170,6 +172,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bntCad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bntVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDesativar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="32" max="32767" attributes="0"/>
           </Group>
@@ -371,6 +374,14 @@
     <Component class="javax.swing.JButton" name="btnEdt">
       <Properties>
         <Property name="text" type="java.lang.String" value="EDITAR"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnDesativar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="EXCLUIR"/>
       </Properties>
     </Component>
   </SubComponents>

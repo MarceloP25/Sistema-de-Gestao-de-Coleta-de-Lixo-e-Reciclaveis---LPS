@@ -88,9 +88,11 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="bntVoltar" min="-2" pref="130" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+              <Component id="btnDesativar" min="-2" pref="112" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               <Component id="bntConf" min="-2" pref="130" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="316" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
           </Group>
           <Component id="lblDescricao" alignment="0" max="32767" attributes="0"/>
       </Group>
@@ -137,6 +139,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bntConf" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bntVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDesativar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
           </Group>
@@ -346,6 +349,14 @@
     <Component class="javax.swing.JButton" name="bntEdt">
       <Properties>
         <Property name="text" type="java.lang.String" value="EDITAR"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnDesativar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="EXCLUIR"/>
       </Properties>
     </Component>
   </SubComponents>

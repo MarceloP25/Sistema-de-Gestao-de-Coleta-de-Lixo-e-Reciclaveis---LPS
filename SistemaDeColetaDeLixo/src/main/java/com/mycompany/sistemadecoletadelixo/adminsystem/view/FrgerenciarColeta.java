@@ -8,12 +8,12 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
  *
  * @author Edu
  */
-public class FrGerenciarColeta extends javax.swing.JFrame {
+public class FrgerenciarColeta extends javax.swing.JFrame {
 
     /**
      * Creates new form FrColeta
      */
-    public FrGerenciarColeta() {
+    public FrgerenciarColeta() {
         initComponents();
     }
 
@@ -47,6 +47,7 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
         bntVoltar = new javax.swing.JButton();
         bntCad = new javax.swing.JButton();
         bntEdt = new javax.swing.JButton();
+        btnDesativar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -122,6 +123,9 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
 
         bntEdt.setText("EDITAR");
 
+        btnDesativar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDesativar.setText("EXCLUIR");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -174,9 +178,11 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
+                .addGap(57, 57, 57)
+                .addComponent(btnDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
                 .addComponent(bntConf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(316, 316, 316))
+                .addGap(241, 241, 241))
             .addComponent(lblDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -215,7 +221,8 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bntConf)
-                    .addComponent(bntVoltar))
+                    .addComponent(bntVoltar)
+                    .addComponent(btnDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 55, Short.MAX_VALUE))
         );
 
@@ -240,6 +247,7 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
     private javax.swing.JButton bntEdt;
     private javax.swing.JButton bntInserir;
     private javax.swing.JButton bntVoltar;
+    private javax.swing.JButton btnDesativar;
     private javax.swing.JComboBox<String> cbMateriais;
     private javax.swing.JComboBox<String> cbOp;
     private javax.swing.JComboBox<String> cbRota;
