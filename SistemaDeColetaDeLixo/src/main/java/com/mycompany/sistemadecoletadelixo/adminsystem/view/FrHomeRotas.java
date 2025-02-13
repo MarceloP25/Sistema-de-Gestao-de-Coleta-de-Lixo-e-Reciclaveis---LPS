@@ -58,13 +58,13 @@ public class FrHomeRotas extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nome"
+                "Nome", "Status", "Pontos de Coleta", "Feedbacks"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -73,7 +73,12 @@ public class FrHomeRotas extends javax.swing.JFrame {
         bntEditar.setText("Editar Dados");
 
         bntPontosColeta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bntPontosColeta.setText("Pontos de Coleta");
+        bntPontosColeta.setText("Feedbacks");
+        bntPontosColeta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntPontosColetaActionPerformed(evt);
+            }
+        });
 
         bntVisualizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntVisualizar.setText("Visualizar Dados");
@@ -128,6 +133,10 @@ public class FrHomeRotas extends javax.swing.JFrame {
     private void bntVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntVoltarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bntVoltarActionPerformed
+
+    private void bntPontosColetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntPontosColetaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntPontosColetaActionPerformed
 
     /**
      * @param args the command line arguments
