@@ -8,12 +8,12 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
  *
  * @author Edu
  */
-public class FrgerenciarColeta extends javax.swing.JFrame {
+public class FrGerenciarColeta extends javax.swing.JFrame {
 
     /**
      * Creates new form FrColeta
      */
-    public FrgerenciarColeta() {
+    public FrGerenciarColeta() {
         initComponents();
     }
 
