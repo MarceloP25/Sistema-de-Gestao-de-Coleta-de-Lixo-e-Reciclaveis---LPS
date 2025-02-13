@@ -1,28 +1,15 @@
-<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
-    <persistence-unit name="adminPU" transaction-type="RESOURCE_LOCAL">
-        <class>model.entity.Administrador</class>
-        <class>model.entity.Cidadao</class>
-        <class>model.entity.Coleta</class>
-        <class>model.entity.Departamento</class>
-        <class>model.entity.EstaçãoDescarga</class>
-        <class>model.entity.Material</class>
-        <class>model.entity.Operador</class>
-        <class>model.entity.Pessoa</class>
-        <class>model.entity.PontoDeColeta</class>
-        <class>model.entity.Rota</class>
-        <class>model.entity.Supervisor</class>
-        <class>model.entity.Veiculo</class>
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence     http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="adminPU" transaction-type="RESOURCE_LOCAL">
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:database/sistemadelixo.db"/>
+      <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+      <property name="hibernate.dialect" value="org.sqlite.hibernate.dialect.SQLiteDialect"/>
+      
 
-        <properties>
-            <!-- Configuração de conexão com o SQLite -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:database/sistemadelixo.db" />
-            <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
-
-            <!-- Configurações do Hibernate -->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLiteDialect" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
-        </properties>
-    </persistence-unit>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+    </properties>
+  </persistence-unit>
 </persistence>
