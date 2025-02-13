@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence     http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence 
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  
   <persistence-unit name="adminPU" transaction-type="RESOURCE_LOCAL">
-    <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:database/sistemadelixo.db"/>
-      <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
-      <property name="hibernate.dialect" value="org.sqlite.hibernate.dialect.SQLiteDialect"/>
+    <properties>      
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:database.db"/>
       
-      <property name="hibernate.hbm2ddl.auto" value="update"/>
-      <property name="hibernate.show_sql" value="true"/>
+      <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+      
+      <property name="hibernate.dialect" value="org.hibernate.dialect.SQLiteDialect"/>
+      
+      <property name="hibernate.hbm2ddl.auto" value="update"/>     
       <property name="hibernate.format_sql" value="true"/>
+      <property name="hibernate.show_sql" value="true"/>
+      
+      <property name="hibernate.connection.pool_size" value="1"/>
     </properties>
   </persistence-unit>
 </persistence>
