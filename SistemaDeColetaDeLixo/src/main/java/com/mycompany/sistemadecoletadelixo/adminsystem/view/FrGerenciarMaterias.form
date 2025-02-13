@@ -32,7 +32,7 @@
               <EmptySpace max="32767" attributes="0"/>
               <Component id="bntVoltar" min="-2" pref="127" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-              <Component id="bntExcluir" min="-2" pref="127" max="-2" attributes="0"/>
+              <Component id="bntDesativar" min="-2" pref="127" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               <Component id="bntConf" min="-2" pref="127" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="265" max="-2" attributes="0"/>
@@ -42,16 +42,6 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lblNome" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblTipo" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="rbtOrganico" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="rbtRadioativo" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="edtNome" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="rbtReciclavel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
@@ -61,6 +51,16 @@
                               <Component id="rbtPerigoso" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                               <Component id="rbtNaoReciclavel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="lblNome" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblTipo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="rbtOrganico" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="rbtRadioativo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="edtNome" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -95,6 +95,13 @@
                   </Group>
               </Group>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
+              <Component id="btnCad" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+              <Component id="btnEdt" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -103,9 +110,14 @@
               <Component id="lblTitle" min="-2" pref="59" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblDescricao" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnCad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEdt" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="lblNome" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="edtNome" min="-2" max="-2" attributes="0"/>
@@ -127,7 +139,7 @@
                           <Component id="rbtNaoReciclavel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="lblLixeira" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -162,10 +174,10 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bntConf" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="bntExcluir" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="bntDesativar" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="bntVoltar" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -290,14 +302,20 @@
     </Component>
     <Component class="javax.swing.JButton" name="bntConf">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="CONFIRMAR"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntConfActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="bntExcluir">
+    <Component class="javax.swing.JButton" name="bntDesativar">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="EXCLUIR"/>
       </Properties>
     </Component>
@@ -336,7 +354,20 @@
     </Component>
     <Component class="javax.swing.JButton" name="bntVoltar">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="VOLTAR"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CADASTRAR"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEdt">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="EDITAR"/>
       </Properties>
     </Component>
   </SubComponents>

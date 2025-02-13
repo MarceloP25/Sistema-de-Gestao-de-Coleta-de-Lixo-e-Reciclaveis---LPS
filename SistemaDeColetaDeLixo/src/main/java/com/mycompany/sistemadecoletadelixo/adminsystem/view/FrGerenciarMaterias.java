@@ -46,7 +46,7 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
         edtDescricaoDescarte = new javax.swing.JTextArea();
         jRadioButton8 = new javax.swing.JRadioButton();
         bntConf = new javax.swing.JButton();
-        bntExcluir = new javax.swing.JButton();
+        bntDesativar = new javax.swing.JButton();
         rbtRadioativo = new javax.swing.JRadioButton();
         rbtHospitalar = new javax.swing.JRadioButton();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -54,6 +54,8 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
         jRadioButton6 = new javax.swing.JRadioButton();
         jRadioButton9 = new javax.swing.JRadioButton();
         bntVoltar = new javax.swing.JButton();
+        btnCad = new javax.swing.JButton();
+        btnEdt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -115,6 +117,7 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
 
         jRadioButton8.setText("Laranja");
 
+        bntConf.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntConf.setText("CONFIRMAR");
         bntConf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +125,8 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
             }
         });
 
-        bntExcluir.setText("EXCLUIR");
+        bntDesativar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntDesativar.setText("EXCLUIR");
 
         rbtRadioativo.setText("Radioativo");
 
@@ -141,7 +145,12 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
 
         jRadioButton9.setText("Violeta");
 
+        bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntVoltar.setText("VOLTAR");
+
+        btnCad.setText("CADASTRAR");
+
+        btnEdt.setText("EDITAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,7 +162,7 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
-                .addComponent(bntExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bntDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(bntConf, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(265, 265, 265))
@@ -162,14 +171,6 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblNome)
-                                .addComponent(lblTipo)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(rbtOrganico)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(rbtRadioativo))
-                                .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(rbtReciclavel)
                                 .addGap(62, 62, 62)
@@ -177,7 +178,15 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(rbtPerigoso)
                                 .addGap(69, 69, 69)
-                                .addComponent(rbtNaoReciclavel)))
+                                .addComponent(rbtNaoReciclavel))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lblNome)
+                                .addComponent(lblTipo)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(rbtOrganico)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(rbtRadioativo))
+                                .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblLixeira)
@@ -201,6 +210,12 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
                             .addComponent(lblDescarte, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(355, 355, 355)
+                .addComponent(btnCad)
+                .addGap(165, 165, 165)
+                .addComponent(btnEdt)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,7 +223,11 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblDescricao)
-                .addGap(36, 36, 36)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCad)
+                    .addComponent(btnEdt))
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblNome)
@@ -257,9 +276,9 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bntConf, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bntExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bntDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -292,8 +311,10 @@ public class FrGerenciarMaterias extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntConf;
-    private javax.swing.JButton bntExcluir;
+    private javax.swing.JButton bntDesativar;
     private javax.swing.JButton bntVoltar;
+    private javax.swing.JButton btnCad;
+    private javax.swing.JButton btnEdt;
     private javax.swing.JTextArea edtDescricaoDescarte;
     private javax.swing.JTextField edtNome;
     private javax.swing.JRadioButton jRadioButton1;

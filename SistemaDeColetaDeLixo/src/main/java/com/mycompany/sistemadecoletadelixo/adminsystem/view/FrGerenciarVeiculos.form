@@ -33,10 +33,6 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="267" max="-2" attributes="0"/>
-                      <Component id="lblDescricao" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -63,8 +59,8 @@
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblPesoVeiculo" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="edtPesoVeiculo" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
+                                              <Component id="lblPesoVeiculo" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -99,15 +95,33 @@
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnEdt" min="-2" pref="89" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="267" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                                  <Component id="btnCad" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="lblDescricao" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace pref="108" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="bntVoltar" min="-2" pref="130" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Component id="bntCad" min="-2" pref="130" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="342" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+              <Component id="btnDesativar" min="-2" pref="104" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+              <Component id="btnConf" min="-2" pref="130" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -116,8 +130,13 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="lblTitle" min="-2" pref="57" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="lblDescricao" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="lblDescricao" min="-2" pref="37" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnCad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEdt" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblChassi" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -167,10 +186,11 @@
                   <Component id="cbConsumo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cbEmissao" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="84" max="32767" attributes="0"/>
+              <EmptySpace pref="46" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="bntCad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnConf" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bntVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDesativar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
           </Group>
@@ -352,15 +372,15 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="bntCad">
+    <Component class="javax.swing.JButton" name="btnConf">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="CADASTRAR"/>
+        <Property name="text" type="java.lang.String" value="CONFIRMAR"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntCadActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bntVoltar">
@@ -369,6 +389,24 @@
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="VOLTAR"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnDesativar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="EXCLUIR"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCad">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CADASTRAR"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEdt">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="EDITAR"/>
       </Properties>
     </Component>
   </SubComponents>

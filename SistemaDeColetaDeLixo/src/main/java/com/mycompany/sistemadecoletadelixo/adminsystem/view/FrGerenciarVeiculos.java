@@ -8,12 +8,12 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
  *
  * @author Edu
  */
-public class FrCadVeiculos extends javax.swing.JFrame {
+public class FrGerenciarVeiculos extends javax.swing.JFrame {
 
     /**
      * Creates new form FrCadVeiculos
      */
-    public FrCadVeiculos() {
+    public FrGerenciarVeiculos() {
         initComponents();
     }
 
@@ -54,8 +54,11 @@ public class FrCadVeiculos extends javax.swing.JFrame {
         edtCombustivel = new javax.swing.JTextField();
         cbConsumo = new javax.swing.JComboBox<>();
         cbEmissao = new javax.swing.JComboBox<>();
-        bntCad = new javax.swing.JButton();
+        btnConf = new javax.swing.JButton();
         bntVoltar = new javax.swing.JButton();
+        btnDesativar = new javax.swing.JButton();
+        btnCad = new javax.swing.JButton();
+        btnEdt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 600));
@@ -112,16 +115,23 @@ public class FrCadVeiculos extends javax.swing.JFrame {
 
         cbEmissao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        bntCad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bntCad.setText("CADASTRAR");
-        bntCad.addActionListener(new java.awt.event.ActionListener() {
+        btnConf.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnConf.setText("CONFIRMAR");
+        btnConf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntCadActionPerformed(evt);
+                btnConfActionPerformed(evt);
             }
         });
 
         bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntVoltar.setText("VOLTAR");
+
+        btnDesativar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDesativar.setText("EXCLUIR");
+
+        btnCad.setText("CADASTRAR");
+
+        btnEdt.setText("EDITAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,9 +140,6 @@ public class FrCadVeiculos extends javax.swing.JFrame {
             .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(267, 267, 267)
-                        .addComponent(lblDescricao))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,8 +165,8 @@ public class FrCadVeiculos extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(layout.createSequentialGroup()
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(lblPesoVeiculo)
-                                                .addComponent(edtPesoVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(edtPesoVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblPesoVeiculo))
                                             .addGap(32, 32, 32)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(lblEixos)
@@ -180,22 +187,39 @@ public class FrCadVeiculos extends javax.swing.JFrame {
                                 .addGap(145, 145, 145)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblPoluentes)
-                                    .addComponent(cbEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(cbEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(btnEdt, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(267, 267, 267)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(12, 12, 12)
+                                    .addComponent(btnCad))
+                                .addComponent(lblDescricao)))))
                 .addContainerGap(108, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(bntCad, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(342, 342, 342))
+                .addGap(74, 74, 74)
+                .addComponent(btnDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(btnConf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(220, 220, 220))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDescricao)
-                .addGap(18, 18, 18)
+                .addComponent(lblDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCad)
+                    .addComponent(btnEdt))
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPlaca)
                     .addComponent(lblChassi)
@@ -237,19 +261,20 @@ public class FrCadVeiculos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbEmissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bntCad)
-                    .addComponent(bntVoltar))
+                    .addComponent(btnConf)
+                    .addComponent(bntVoltar)
+                    .addComponent(btnDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bntCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadActionPerformed
+    private void btnConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bntCadActionPerformed
+    }//GEN-LAST:event_btnConfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,9 +282,12 @@ public class FrCadVeiculos extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bntCad;
     private javax.swing.JTextField bntPlaca;
     private javax.swing.JButton bntVoltar;
+    private javax.swing.JButton btnCad;
+    private javax.swing.JButton btnConf;
+    private javax.swing.JButton btnDesativar;
+    private javax.swing.JButton btnEdt;
     private javax.swing.JComboBox<String> cbConsumo;
     private javax.swing.JComboBox<String> cbEmissao;
     private javax.swing.JTextField edtAltura;
