@@ -7,7 +7,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.PontoDeColeta;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.PontoDeColetaDAO;
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidatePontoDeColeta;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidatePontosColeta;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.PontoDeColetaException;
 
 /**
@@ -28,13 +28,13 @@ public class PontosDeColetaController {
             int numeroLixeiras,
             List<String> tiposLixeira) {
 
-        ValidatePontoDeColeta valid = new ValidatePontoDeColeta();
+        ValidatePontosColeta valid = new ValidatePontosColeta();
         PontoDeColeta novoPontoColeta = valid.validacao(id, localizacao, numeroLixeiras, tiposLixeira);
 
         if (repositorio.findById(id) == null) {
             repositorio.save(novoPontoColeta);
         } else {
-            throw new PontoColetaException("Error - Já existe um ponto de coleta com este 'ID'.");
+            throw new PontoDeColetaException("Error - Já existe um ponto de coleta com este 'ID'.");
         }
     }
 
@@ -45,7 +45,7 @@ public class PontosDeColetaController {
             int numeroLixeiras,
             List<String> tiposLixeira) {
 
-        ValidatePontoColeta valid = new ValidatePontoColeta();
+        ValidatePontosColeta valid = new ValidatePontosColeta();
         PontoDeColeta pontoColetaAtualizado = valid.validacao(id, localizacao, numeroLixeiras, tiposLixeira);
         pontoColetaAtualizado.setId(idOriginal);
 
@@ -61,7 +61,7 @@ public class PontosDeColetaController {
         if (pontoColeta != null) {
             repositorio.delete(pontoColeta);
         } else {
-            throw new PontoColetaException("Error - Ponto de coleta inexistente.");
+            throw new PontoDeColetaException("Error - Ponto de coleta inexistente.");
         }
     }
 

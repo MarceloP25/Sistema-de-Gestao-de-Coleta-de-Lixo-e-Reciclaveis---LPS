@@ -6,7 +6,7 @@
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.EstacaoDescarga;
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.EstaçãoDescargaDAO;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.EstacaoDescargaDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateEstacaoDescarga;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.EstacaoDescargaException;
 
@@ -16,10 +16,10 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.EstacaoD
  */
 public class EstacaoDescargaController {
 
-    private EstaçãoDescargaDAO repositorio;
+    private EstacaoDescargaDAO repositorio;
 
     public EstacaoDescargaController() {
-        repositorio = new EstaçãoDescargaDAO();
+        repositorio = new EstacaoDescargaDAO();
     }
 
     public void cadastrarEstacaoDescarga(
