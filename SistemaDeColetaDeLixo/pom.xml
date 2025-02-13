@@ -31,9 +31,10 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
+            <version>1.18.16</version>
             <type>jar</type>
-        </dependency>               
+        </dependency>
+             
     
         <dependency>
             <groupId>org.netbeans.external</groupId>
