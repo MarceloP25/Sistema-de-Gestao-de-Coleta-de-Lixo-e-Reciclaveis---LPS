@@ -3,6 +3,12 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1000, 600]"/>
+    </Property>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1000, 600]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -23,9 +29,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="lblTittle" alignment="0" pref="940" max="32767" attributes="0"/>
+          <Component id="lblTittle" alignment="0" pref="1000" max="32767" attributes="0"/>
           <Component id="lblDescricao" alignment="1" max="32767" attributes="0"/>
           <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="bntVoltar" min="-2" pref="111" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Component id="bntEstacaoDescarga" alignment="0" max="32767" attributes="0"/>
@@ -40,7 +48,6 @@
                   <Component id="bntCadastrar" min="-2" pref="176" max="-2" attributes="0"/>
                   <Component id="bntColetas" min="-2" pref="176" max="-2" attributes="0"/>
                   <Component id="bntEditar" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
-                  <Component id="bntVoltar" min="-2" pref="176" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
           </Group>
@@ -52,17 +59,8 @@
               <Component id="lblTittle" min="-2" pref="61" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblDescricao" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="bntEstacaoDescarga" min="-2" pref="60" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bntSupervisor" min="-2" pref="60" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bntVeiculos" min="-2" pref="60" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bntOperador" min="-2" pref="60" max="-2" attributes="0"/>
-                  </Group>
                   <Component id="jScrollPane1" min="-2" pref="258" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="bntColetas" min="-2" pref="60" max="-2" attributes="0"/>
@@ -70,11 +68,27 @@
                       <Component id="bntCadastrar" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bntEditar" min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="bntEstacaoDescarga" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="bntVoltar" min="-2" pref="41" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="bntSupervisor" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bntVoltar" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="bntVeiculos" min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="bntOperador" min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="134" max="32767" attributes="0"/>
+              <EmptySpace pref="203" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
