@@ -27,8 +27,6 @@ public class FrGerenciarDepartamento extends javax.swing.JFrame {
     private void initComponents() {
 
         lblTittle = new javax.swing.JLabel();
-        lblNumVeiculo = new javax.swing.JLabel();
-        edtNumVeiculo = new javax.swing.JTextField();
         edtCep = new javax.swing.JTextField();
         lblEndereco = new javax.swing.JLabel();
         edtEnderecoRua = new javax.swing.JTextField();
@@ -37,19 +35,10 @@ public class FrGerenciarDepartamento extends javax.swing.JFrame {
         edtEnderecoCidade = new javax.swing.JTextField();
         edtNome = new javax.swing.JTextField();
         edtEnderecoNumero = new javax.swing.JTextField();
-        lblNumEstacao = new javax.swing.JLabel();
         edtEnderecoComplemento = new javax.swing.JTextField();
-        edtNumEstacao = new javax.swing.JTextField();
         bntConf = new javax.swing.JButton();
         bntVoltar = new javax.swing.JButton();
         lblDescricao = new javax.swing.JLabel();
-        lblNumOp = new javax.swing.JLabel();
-        edtNumSup = new javax.swing.JTextField();
-        lblNumSup = new javax.swing.JLabel();
-        edtNumOp = new javax.swing.JTextField();
-        bntDesativar = new javax.swing.JButton();
-        bntCad = new javax.swing.JButton();
-        bntEdt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -57,9 +46,6 @@ public class FrGerenciarDepartamento extends javax.swing.JFrame {
         lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Gerenciar Departamento");
-
-        lblNumVeiculo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblNumVeiculo.setText("Número de Veículos:");
 
         edtCep.setText("CEP");
 
@@ -98,19 +84,10 @@ public class FrGerenciarDepartamento extends javax.swing.JFrame {
             }
         });
 
-        lblNumEstacao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblNumEstacao.setText("Número de Estações de Descarga:");
-
         edtEnderecoComplemento.setText("Complemento");
         edtEnderecoComplemento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edtEnderecoComplementoActionPerformed(evt);
-            }
-        });
-
-        edtNumEstacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtNumEstacaoActionPerformed(evt);
             }
         });
 
@@ -129,35 +106,6 @@ public class FrGerenciarDepartamento extends javax.swing.JFrame {
         lblDescricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDescricao.setText("Gerencie os dados do departamento.");
 
-        lblNumOp.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblNumOp.setText("Número de Supervisores:");
-
-        lblNumSup.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblNumSup.setText("Número de Operadores:");
-
-        edtNumOp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtNumOpActionPerformed(evt);
-            }
-        });
-
-        bntDesativar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bntDesativar.setText("EXCLUIR");
-        bntDesativar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntDesativarActionPerformed(evt);
-            }
-        });
-
-        bntCad.setText("CADASTRAR");
-        bntCad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntCadActionPerformed(evt);
-            }
-        });
-
-        bntEdt.setText("EDITAR");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -166,54 +114,31 @@ public class FrGerenciarDepartamento extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(367, 367, 367)
-                .addComponent(bntCad)
-                .addGap(150, 150, 150)
-                .addComponent(bntEdt)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(bntDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(166, 166, 166)
                 .addComponent(bntConf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(309, 309, 309))
             .addGroup(layout.createSequentialGroup()
                 .addGap(234, 234, 234)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(edtNumVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(edtEnderecoNumero))
-                                .addComponent(lblNome, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(edtNome, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblEndereco, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(edtEnderecoRua, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblNumEstacao))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(edtEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(edtEnderecoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lblNumSup)
-                                .addComponent(edtEnderecoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNumOp)
-                                    .addComponent(edtNumOp, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(edtNumSup, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(edtNumEstacao, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNumVeiculo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(edtEnderecoNumero))
+                    .addComponent(lblNome, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(edtNome, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblEndereco, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(edtEnderecoRua, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(edtEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(edtEnderecoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtEnderecoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(315, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,11 +146,7 @@ public class FrGerenciarDepartamento extends javax.swing.JFrame {
                 .addComponent(lblTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblDescricao)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bntCad)
-                    .addComponent(bntEdt))
-                .addGap(18, 18, 18)
+                .addGap(59, 59, 59)
                 .addComponent(lblNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -241,27 +162,10 @@ public class FrGerenciarDepartamento extends javax.swing.JFrame {
                     .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edtEnderecoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edtEnderecoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNumEstacao)
-                    .addComponent(lblNumSup))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtNumEstacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtNumOp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNumVeiculo)
-                    .addComponent(lblNumOp))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edtNumVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtNumSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bntVoltar)
-                    .addComponent(bntConf)
-                    .addComponent(bntDesativar))
+                    .addComponent(bntConf))
                 .addGap(67, 67, 67))
         );
 
@@ -292,32 +196,13 @@ public class FrGerenciarDepartamento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_edtEnderecoComplementoActionPerformed
 
-    private void edtNumEstacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNumEstacaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edtNumEstacaoActionPerformed
-
-    private void edtNumOpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNumOpActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edtNumOpActionPerformed
-
-    private void bntDesativarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntDesativarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bntDesativarActionPerformed
-
-    private void bntCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bntCadActionPerformed
-
     /**
      * @param args the command line arguments
      */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bntCad;
     private javax.swing.JButton bntConf;
-    private javax.swing.JButton bntDesativar;
-    private javax.swing.JButton bntEdt;
     private javax.swing.JButton bntVoltar;
     private javax.swing.JTextField edtCep;
     private javax.swing.JTextField edtEnderecoBairro;
@@ -326,17 +211,9 @@ public class FrGerenciarDepartamento extends javax.swing.JFrame {
     private javax.swing.JTextField edtEnderecoNumero;
     private javax.swing.JTextField edtEnderecoRua;
     private javax.swing.JTextField edtNome;
-    private javax.swing.JTextField edtNumEstacao;
-    private javax.swing.JTextField edtNumOp;
-    private javax.swing.JTextField edtNumSup;
-    private javax.swing.JTextField edtNumVeiculo;
     private javax.swing.JLabel lblDescricao;
     private javax.swing.JLabel lblEndereco;
     private javax.swing.JLabel lblNome;
-    private javax.swing.JLabel lblNumEstacao;
-    private javax.swing.JLabel lblNumOp;
-    private javax.swing.JLabel lblNumSup;
-    private javax.swing.JLabel lblNumVeiculo;
     private javax.swing.JLabel lblTittle;
     // End of variables declaration//GEN-END:variables
 }
