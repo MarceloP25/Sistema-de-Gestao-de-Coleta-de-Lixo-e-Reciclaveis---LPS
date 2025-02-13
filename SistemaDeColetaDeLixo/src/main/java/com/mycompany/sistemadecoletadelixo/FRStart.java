@@ -4,6 +4,10 @@
  */
 package com.mycompany.sistemadecoletadelixo;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 /**
  *
  * @author marce
@@ -112,6 +116,11 @@ public class FRStart extends javax.swing.JFrame {
      */
     public void main(){
         
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("adminPU");
+        EntityManager entityManager = factory.createEntityManager();
+        
+        entityManager.close();
+        factory.close();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

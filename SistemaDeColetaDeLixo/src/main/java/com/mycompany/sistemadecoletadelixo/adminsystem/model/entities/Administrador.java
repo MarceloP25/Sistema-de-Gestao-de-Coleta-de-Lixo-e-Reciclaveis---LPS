@@ -44,7 +44,7 @@ public class Administrador extends Pessoa {
             String cidade,
             String numero,
             String complemento,
-            ArrayList departamentos){
+            List<Departamento> departamentos){
         super(
             nome, 
             sexo, 

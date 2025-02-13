@@ -5,6 +5,9 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
+import javax.persistence.EntityManager;
+import com.mycompany.sistemadecoletadelixo.adminsystem.Admin;
+import com.mycompany.sistemadecoletadelixo.adminsystem.factory.DatabaseJPA;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Administrador;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.AdministradorDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateAdministrador;
@@ -26,7 +29,7 @@ public class AdministradorController {
             String id,
             String nome,
             String dataNascimento,
-            String cpfCnpj,
+            String cpf,
             String email,
             String cep,
             String rua,
@@ -74,11 +77,17 @@ public class AdministradorController {
     }
 
     public Administrador buscarAdmin(String id) {
-        return this.repositorio.findById(id);
+         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
+
+        Administrador admin = this.entityManager.find(Admin.class, id);
+
+        this.entityManager.close();
+
+        return admin;
     }
 
     public void excluirAdmin(String id) {
-        Administrador admin = repositorio.findById(id);
+        Administrador admin = repositorio.find(id);
         if (admin != null) {
             repositorio.delete(admin);
         } else {
