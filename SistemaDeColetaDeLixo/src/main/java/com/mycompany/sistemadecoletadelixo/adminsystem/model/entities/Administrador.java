@@ -22,6 +22,7 @@ import lombok.Setter;
 @Entity
 public class Administrador extends Pessoa {
     
+    
     @OneToMany(mappedBy = "administrador")
     private List<Departamento> departamentos;
     
