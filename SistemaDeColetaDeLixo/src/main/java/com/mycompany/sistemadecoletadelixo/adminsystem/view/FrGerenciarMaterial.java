@@ -8,12 +8,12 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
  *
  * @author Edu
  */
-public class FrGerenciarMaterias extends javax.swing.JFrame {
+public class FrGerenciarMaterial extends javax.swing.JFrame {
 
     /**
      * Creates new form FrCadMaterias
      */
-    public FrGerenciarMaterias() {
+    public FrGerenciarMaterial() {
         initComponents();
     }
 
