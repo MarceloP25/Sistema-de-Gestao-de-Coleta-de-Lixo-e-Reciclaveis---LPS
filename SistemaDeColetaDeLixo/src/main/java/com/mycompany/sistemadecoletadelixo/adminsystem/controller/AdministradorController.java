@@ -5,7 +5,6 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
-import javax.persistence.EntityManager;
 import com.mycompany.sistemadecoletadelixo.adminsystem.Admin;
 import com.mycompany.sistemadecoletadelixo.adminsystem.factory.DatabaseJPA;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Administrador;
