@@ -9,33 +9,13 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  * @author marce
  */
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Departamento;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.ManyToMany;
-=======
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
->>>>>>> Stashed changes
-=======
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
->>>>>>> Stashed changes
 import lombok.Getter;
 import lombok.Setter;
 

@@ -8,15 +8,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  *
  * @author marce
  */
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
-=======
-import javax.persistence.*;
->>>>>>> Stashed changes
-=======
-import javax.persistence.*;
->>>>>>> Stashed changes
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
