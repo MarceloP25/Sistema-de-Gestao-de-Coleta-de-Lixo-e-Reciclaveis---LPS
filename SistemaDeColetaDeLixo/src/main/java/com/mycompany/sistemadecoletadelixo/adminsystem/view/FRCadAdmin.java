@@ -33,21 +33,24 @@ public class FrCadAdmin extends javax.swing.JFrame {
         edtSenha = new javax.swing.JTextField();
         bntCad = new javax.swing.JButton();
         bntVoltar = new javax.swing.JButton();
-        edtCPFCNPJ = new javax.swing.JTextField();
-        lblNome = new javax.swing.JLabel();
-        edtNome = new javax.swing.JTextField();
-        lblCpfCnpj = new javax.swing.JLabel();
-        lblDataNasc = new javax.swing.JLabel();
-        edtDataNasc = new javax.swing.JTextField();
         edtCep = new javax.swing.JTextField();
         lblEndereco = new javax.swing.JLabel();
         edtEnderecoRua = new javax.swing.JTextField();
         edtEnderecoBairro = new javax.swing.JTextField();
-        edtEnderecoCidade = new javax.swing.JTextField();
+        lblNome = new javax.swing.JLabel();
+        edtEnderecoCidade2 = new javax.swing.JTextField();
+        edtNome2 = new javax.swing.JTextField();
         edtEnderecoNumero = new javax.swing.JTextField();
         edtEnderecoComplemento = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        cbSexo = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        edtDataNasc = new javax.swing.JTextField();
+        lblCPF = new javax.swing.JLabel();
+        edtCpf = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
         lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -71,31 +74,10 @@ public class FrCadAdmin extends javax.swing.JFrame {
         bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntVoltar.setText("VOLTAR");
 
-        edtCPFCNPJ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtCPFCNPJActionPerformed(evt);
-            }
-        });
-
-        lblNome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblNome.setText("Nome:");
-
-        edtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtNomeActionPerformed(evt);
-            }
-        });
-
-        lblCpfCnpj.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblCpfCnpj.setText("CPF:");
-
-        lblDataNasc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDataNasc.setText("Data de nascimento:");
-
         edtCep.setText("CEP");
 
         lblEndereco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblEndereco.setText("Endereço:");
+        lblEndereco.setText("Endereço");
 
         edtEnderecoRua.setText("Rua");
 
@@ -106,10 +88,19 @@ public class FrCadAdmin extends javax.swing.JFrame {
             }
         });
 
-        edtEnderecoCidade.setText("Cidade");
-        edtEnderecoCidade.addActionListener(new java.awt.event.ActionListener() {
+        lblNome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNome.setText("Nome");
+
+        edtEnderecoCidade2.setText("Cidade");
+        edtEnderecoCidade2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtEnderecoCidadeActionPerformed(evt);
+                edtEnderecoCidade2ActionPerformed(evt);
+            }
+        });
+
+        edtNome2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edtNome2ActionPerformed(evt);
             }
         });
 
@@ -127,103 +118,133 @@ public class FrCadAdmin extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setText("Sexo");
+
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("Data de nascimento");
+
+        edtDataNasc.setText("dd/mm/aaaa");
+
+        lblCPF.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCPF.setText("CPF");
+
+        edtCpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edtCpfActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTittle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblTittle, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(296, 296, 296)
-                .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addComponent(bntCad, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(329, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(edtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(24, 24, 24)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(91, 91, 91)
+                            .addComponent(jLabel2))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(125, 125, 125)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(lblEmail))
+                                    .addComponent(edtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(lblEndereco)
+                                .addGap(119, 119, 119))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(edtEnderecoRua)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(edtEnderecoBairro)
+                                        .addComponent(edtEnderecoNumero))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(edtCep)
+                                        .addComponent(edtEnderecoCidade2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(edtEnderecoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(131, 131, 131)
+                            .addComponent(lblSenha)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(474, 474, 474)
+                            .addComponent(lblNome))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGap(346, 346, 346)
+                            .addComponent(edtNome2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(166, 166, 166)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(276, 276, 276)
-                                .addComponent(lblSenha))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(278, 278, 278)
-                                .addComponent(lblEmail)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblEndereco, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(edtEnderecoComplemento, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(edtEnderecoRua, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblNome, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(edtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(edtEnderecoBairro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(edtEnderecoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)
-                                .addComponent(edtEnderecoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCpfCnpj)
-                                    .addComponent(edtCPFCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblDataNasc)
-                                    .addComponent(edtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(144, 144, 144))
+                        .addGap(296, 296, 296)
+                        .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(75, 75, 75)
+                        .addComponent(bntCad, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(482, 482, 482)
+                        .addComponent(lblCPF)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(lblTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblEndereco)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(edtEnderecoRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(edtEnderecoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblCpfCnpj)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(edtCPFCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblDataNasc)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(edtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(edtEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edtEnderecoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(edtEnderecoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(lblEmail)
+                .addComponent(lblTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edtNome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCPF)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblEndereco)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edtEnderecoRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(edtEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtEnderecoCidade2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(edtEnderecoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(edtEnderecoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblEmail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bntCad, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -237,21 +258,17 @@ public class FrCadAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bntCadActionPerformed
 
-    private void edtCPFCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCPFCNPJActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edtCPFCNPJActionPerformed
-
-    private void edtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edtNomeActionPerformed
-
     private void edtEnderecoBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoBairroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtEnderecoBairroActionPerformed
 
-    private void edtEnderecoCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoCidadeActionPerformed
+    private void edtEnderecoCidade2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoCidade2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtEnderecoCidadeActionPerformed
+    }//GEN-LAST:event_edtEnderecoCidade2ActionPerformed
+
+    private void edtNome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNome2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtNome2ActionPerformed
 
     private void edtEnderecoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEnderecoNumeroActionPerformed
         // TODO add your handling code here:
@@ -261,6 +278,10 @@ public class FrCadAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_edtEnderecoComplementoActionPerformed
 
+    private void edtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtCpfActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -269,19 +290,25 @@ public class FrCadAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntCad;
     private javax.swing.JButton bntVoltar;
-    private javax.swing.JTextField edtCPFCNPJ;
+    private javax.swing.JComboBox<String> cbSexo;
     private javax.swing.JTextField edtCep;
+    private javax.swing.JTextField edtCpf;
     private javax.swing.JTextField edtDataNasc;
     private javax.swing.JTextField edtEmail;
     private javax.swing.JTextField edtEnderecoBairro;
     private javax.swing.JTextField edtEnderecoCidade;
+    private javax.swing.JTextField edtEnderecoCidade1;
+    private javax.swing.JTextField edtEnderecoCidade2;
     private javax.swing.JTextField edtEnderecoComplemento;
     private javax.swing.JTextField edtEnderecoNumero;
     private javax.swing.JTextField edtEnderecoRua;
     private javax.swing.JTextField edtNome;
+    private javax.swing.JTextField edtNome1;
+    private javax.swing.JTextField edtNome2;
     private javax.swing.JTextField edtSenha;
-    private javax.swing.JLabel lblCpfCnpj;
-    private javax.swing.JLabel lblDataNasc;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEndereco;
     private javax.swing.JLabel lblNome;

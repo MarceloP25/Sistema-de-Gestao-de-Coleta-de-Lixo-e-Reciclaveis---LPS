@@ -45,8 +45,6 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         bntConf = new javax.swing.JButton();
         bntVoltar = new javax.swing.JButton();
-        bntCad = new javax.swing.JButton();
-        bntEdt = new javax.swing.JButton();
         btnDesativar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -113,18 +111,14 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
 
         bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntVoltar.setText("VOLTAR");
-
-        bntCad.setText("CADASTRAR");
-        bntCad.addActionListener(new java.awt.event.ActionListener() {
+        bntVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bntCadActionPerformed(evt);
+                bntVoltarActionPerformed(evt);
             }
         });
 
-        bntEdt.setText("EDITAR");
-
         btnDesativar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnDesativar.setText("EXCLUIR");
+        btnDesativar.setText("Excluir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,9 +137,11 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(edtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(46, 46, 46)
-                                .addComponent(bntInserir))
+                                .addComponent(bntInserir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnDesativar))
                             .addComponent(jLabel6))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(283, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1)
@@ -156,31 +152,20 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cbRota, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(25, 25, 25)
-                                        .addComponent(bntCad)))
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(cbOp, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel4))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(cbVeiculo, 0, 172, Short.MAX_VALUE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(38, 38, 38)
-                                        .addComponent(bntEdt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                                    .addComponent(cbOp, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(cbVeiculo, 0, 172, Short.MAX_VALUE))))
                         .addGap(129, 129, 129))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(btnDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
+                .addGap(238, 238, 238)
                 .addComponent(bntConf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(241, 241, 241))
             .addComponent(lblDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -191,11 +176,7 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
                 .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblDescricao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bntEdt)
-                    .addComponent(bntCad))
-                .addGap(10, 10, 10)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel3)
@@ -215,15 +196,15 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbMateriais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bntInserir))
+                    .addComponent(bntInserir)
+                    .addComponent(btnDesativar))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bntConf)
-                    .addComponent(bntVoltar)
-                    .addComponent(btnDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 55, Short.MAX_VALUE))
+                    .addComponent(bntConf, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 47, Short.MAX_VALUE))
         );
 
         pack();
@@ -233,18 +214,16 @@ public class FrGerenciarColeta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bntConfActionPerformed
 
-    private void bntCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadActionPerformed
+    private void bntVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntVoltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bntCadActionPerformed
+    }//GEN-LAST:event_bntVoltarActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bntCad;
     private javax.swing.JButton bntConf;
-    private javax.swing.JButton bntEdt;
     private javax.swing.JButton bntInserir;
     private javax.swing.JButton bntVoltar;
     private javax.swing.JButton btnDesativar;

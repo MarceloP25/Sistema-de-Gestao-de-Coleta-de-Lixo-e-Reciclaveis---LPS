@@ -8,12 +8,12 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
  *
  * @author marce
  */
-public class FrHomeCidadao extends javax.swing.JFrame {
+public class FrHomeEstacaoDescarga extends javax.swing.JFrame {
 
     /**
      * Creates new form FrHomeDepartamento
      */
-    public FrHomeCidadao() {
+    public FrHomeEstacaoDescarga() {
         initComponents();
     }
 
@@ -29,6 +29,7 @@ public class FrHomeCidadao extends javax.swing.JFrame {
         lblTittle = new javax.swing.JLabel();
         lblDescricao = new javax.swing.JLabel();
         bntVoltar = new javax.swing.JButton();
+        bntCadastrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         bntEditar = new javax.swing.JButton();
@@ -36,15 +37,16 @@ public class FrHomeCidadao extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
         lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Cidadãos");
+        lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Gerenciar Estação de Descarga");
 
         lblDescricao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblDescricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblDescricao.setText("Verifique os seus clientes!!!");
+        lblDescricao.setText("Verifique a força de trabalho do seu departamento!!!");
 
         bntVoltar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         bntVoltar.setText("VOLTAR");
@@ -54,6 +56,9 @@ public class FrHomeCidadao extends javax.swing.JFrame {
             }
         });
 
+        bntCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntCadastrar.setText("CADASTRAR");
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -62,11 +67,11 @@ public class FrHomeCidadao extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Nome", "CPF", "Feedbacks"
+                "Nome", "Status", "Departamento"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -76,7 +81,7 @@ public class FrHomeCidadao extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         bntEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bntEditar.setText("VER FEEDBACKS");
+        bntEditar.setText("EDITAR DADOS");
 
         btnDesativar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnDesativar.setText("EXCLUIR");
@@ -98,7 +103,9 @@ public class FrHomeCidadao extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bntEditar))
+                        .addComponent(bntEditar)
+                        .addGap(55, 55, 55)
+                        .addComponent(bntCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -118,6 +125,7 @@ public class FrHomeCidadao extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bntEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bntCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDesativar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
@@ -135,6 +143,7 @@ public class FrHomeCidadao extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bntCadastrar;
     private javax.swing.JButton bntEditar;
     private javax.swing.JButton bntVoltar;
     private javax.swing.JButton btnDesativar;

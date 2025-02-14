@@ -51,6 +51,8 @@ public class FrGerenciarSupervisor extends javax.swing.JFrame {
         bntVoltar = new javax.swing.JButton();
         lblData = new javax.swing.JLabel();
         edtDataContrato = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        cbSexo = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 600));
@@ -145,15 +147,16 @@ public class FrGerenciarSupervisor extends javax.swing.JFrame {
         lblData.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblData.setText("Data de Contratação:");
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setText("Sexo:");
+
+        cbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTittle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(160, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -165,45 +168,58 @@ public class FrGerenciarSupervisor extends javax.swing.JFrame {
                         .addComponent(edtEnderecoRua, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lblNome, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(edtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(edtEnderecoBairro)
+                        .addComponent(edtEnderecoBairro, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(edtEnderecoCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(edtEnderecoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(edtEnderecoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(161, 161, 161))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCpfCnpj)
-                            .addComponent(edtCPFCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblDataNasc)
-                            .addComponent(edtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblData)
-                    .addComponent(edtDataContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(134, 134, 134))
+                            .addComponent(edtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblData)
+                            .addComponent(edtDataContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCpfCnpj)
+                                    .addComponent(edtCPFCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblDataNasc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(edtDataNasc))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(378, 378, 378)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(edtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                            .addComponent(edtEmail)))
+                        .addContainerGap()
+                        .addComponent(lblDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(476, 476, 476)
-                        .addComponent(lblSenha))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(476, 476, 476)
-                        .addComponent(lblEmail))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(287, 287, 287)
-                        .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(183, 183, 183)
-                        .addComponent(bntConf)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(378, 378, 378)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(edtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                                    .addComponent(edtEmail)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(476, 476, 476)
+                                .addComponent(lblSenha))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(476, 476, 476)
+                                .addComponent(lblEmail))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(287, 287, 287)
+                                .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(183, 183, 183)
+                                .addComponent(bntConf)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,9 +253,13 @@ public class FrGerenciarSupervisor extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(edtCPFCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblDataNasc)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblDataNasc)
+                                    .addComponent(jLabel1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(edtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(edtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(edtEnderecoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -306,6 +326,7 @@ public class FrGerenciarSupervisor extends javax.swing.JFrame {
     private javax.swing.JButton bntConf;
     private javax.swing.JButton bntVoltar;
     private javax.swing.JComboBox<String> cbDepartamento;
+    private javax.swing.JComboBox<String> cbSexo;
     private javax.swing.JTextField edtCPFCNPJ;
     private javax.swing.JTextField edtCep;
     private javax.swing.JTextField edtDataContrato;
@@ -318,6 +339,7 @@ public class FrGerenciarSupervisor extends javax.swing.JFrame {
     private javax.swing.JTextField edtEnderecoRua;
     private javax.swing.JTextField edtNome;
     private javax.swing.JTextField edtSenha;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCpfCnpj;
     private javax.swing.JLabel lblData;
     private javax.swing.JLabel lblDataNasc;
