@@ -4,13 +4,15 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller.TableModel;
 
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Operador;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Departamento;
+
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Supervisor;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-public class TMOperador extends AbstractTableModel {
+public class TMSupervisor extends AbstractTableModel {
 
-    private List<Operador> lista;
+    private List<Supervisor> lista;
 
     // Constantes para as colunas
     private final int COL_NOME = 0;
@@ -19,11 +21,9 @@ public class TMOperador extends AbstractTableModel {
     private final int COL_TELEFONE = 3;
     private final int COL_DEPARTAMENTO = 4;
     private final int COL_DATA_CONTRATO = 5;
-    private final int COL_VEICULOS = 6;
-    private final int COL_ROTAS = 7;
 
-    public TMOperador(List<Operador> lstOperadores) {
-        this.lista = lstOperadores;
+    public TMSupervisor(List<Supervisor> lstSupervisores) {
+        this.lista = lstSupervisores;
     }
 
     @Override
@@ -33,7 +33,7 @@ public class TMOperador extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 8; // Número de colunas
+        return 6; // Número de colunas
     }
 
     @Override
@@ -51,10 +51,6 @@ public class TMOperador extends AbstractTableModel {
                 return "Departamento";
             case COL_DATA_CONTRATO:
                 return "Data de Contrato";
-            case COL_VEICULOS:
-                return "Número de Veículos";
-            case COL_ROTAS:
-                return "Número de Rotas";
             default:
                 return "";
         }
@@ -62,7 +58,7 @@ public class TMOperador extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Operador aux = lista.get(rowIndex);
+        Supervisor aux = lista.get(rowIndex);
 
         switch (columnIndex) {
             case COL_NOME:
@@ -74,13 +70,9 @@ public class TMOperador extends AbstractTableModel {
             case COL_TELEFONE:
                 return aux.getTelefone();
             case COL_DEPARTAMENTO:
-                return aux.getDepartamento().getNomeDepartamento(); 
+                return aux.getDepartamento().getNomeDepartamento(); // Supondo que Departamento tenha um método getNomeDepartamento()
             case COL_DATA_CONTRATO:
                 return aux.getDataContrato();
-            case COL_VEICULOS:
-                return aux.getVeiculos().size(); // Número de veículos associados
-            case COL_ROTAS:
-                return aux.getRotas().size(); // Número de rotas associadas
             default:
                 return null;
         }
@@ -89,13 +81,10 @@ public class TMOperador extends AbstractTableModel {
     @Override
     public Class<?> getColumnClass(int columnIndex) {
         // Tipos das colunas
-        if (columnIndex == COL_VEICULOS || columnIndex == COL_ROTAS) {
-            return Integer.class; // Colunas de números inteiros
-        }
-        return String.class; // Todas as outras colunas são do tipo String
+        return String.class; // Todas as colunas são do tipo String
     }
 
-    public List<Operador> getLista() {
+    public List<Supervisor> getLista() {
         return this.lista;
     }
 }

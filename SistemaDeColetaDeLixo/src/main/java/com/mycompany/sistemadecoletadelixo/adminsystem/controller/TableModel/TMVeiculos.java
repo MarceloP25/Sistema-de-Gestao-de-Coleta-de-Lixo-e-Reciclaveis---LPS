@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.sistemadecoletadelixo.adminsystem.controller.TableModel;
+    package com.mycompany.sistemadecoletadelixo.adminsystem.controller.TableModel;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Veiculo;
 import java.util.List;
@@ -13,6 +9,7 @@ public class TMVeiculos extends AbstractTableModel {
     private List<Veiculo> lista;
 
     // Constantes para as colunas
+
     private final int COL_CHASSI = 0;
     private final int COL_PLACA = 1;
     private final int COL_MODELO = 2;
@@ -45,14 +42,34 @@ public class TMVeiculos extends AbstractTableModel {
     @Override
     public String getColumnName(int column) {
         switch (column) {
+            case COL_PLACA:
+                return "Placa";
+            case COL_CHASSI:
+                return "Chassi";
             case COL_MODELO:
                 return "Modelo";
             case COL_CONSUMO_POR_KM:
                 return "Consumo por Km";
+            case COL_EIXOS:
+                return "Eixos";
+            case COL_COMPRIMENTO:
+                return "Comprimento";
+            case COL_ALTURA:
+                return "Altura";
+            case COL_LARGURA:
+                return "Largura";
+            case COL_CARTEIRA_CONDUCAO:
+                return "Carteira de Condução";
             case COL_CARGA:
                 return "Carga";
+            case COL_COMBUSTIVEL:
+                return "Combustível";
+            case COL_DATA_MANUTENCAO:
+                return "Data de Manutenção";
             case COL_DEPARTAMENTO:
                 return "Departamento";
+            case COL_OPERADORES:
+                return "Número de Operadores";
             default:
                 return "";
         }
@@ -88,9 +105,7 @@ public class TMVeiculos extends AbstractTableModel {
             case COL_DATA_MANUTENCAO:
                 return aux.getDataManutencao();
             case COL_DEPARTAMENTO:
-                return aux.getDepartamento().getNomeDepartamento(); // Supondo que Departamento tenha um método getNomeDepartamento()
-            case COL_OPERADORES:
-                return aux.getOperador().size(); // Número de operadores associados ao veículo
+                return aux.getDepartamento().getNomeDepartamento();
             default:
                 return null;
         }
