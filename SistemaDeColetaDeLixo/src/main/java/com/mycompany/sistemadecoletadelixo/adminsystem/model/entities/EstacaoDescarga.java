@@ -8,7 +8,6 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  *
  * @author marce
  */
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Departamento;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -16,11 +15,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class EstacaoDescarga {
@@ -48,7 +43,7 @@ public class EstacaoDescarga {
     }
     
     public EstacaoDescarga(
-            List departamento,
+            List<Departamento> departamento,
             float capacidadeMaxima,
             String tipoMaterialAceito,
             String statusOperacao
@@ -59,5 +54,51 @@ public class EstacaoDescarga {
         this.statusOperacao = statusOperacao;
     }
 
-}
+    public Long getIdEstacao() {
+        return idEstacao;
+    }
 
+    public void setIdEstacao(Long idEstacao) {
+        this.idEstacao = idEstacao;
+    }
+
+    public List<Departamento> getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(List<Departamento> departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getNomeEstacao() {
+        return nomeEstacao;
+    }
+
+    public void setNomeEstacao(String nomeEstacao) {
+        this.nomeEstacao = nomeEstacao;
+    }
+
+    public float getCapacidadeMaxima() {
+        return capacidadeMaxima;
+    }
+
+    public void setCapacidadeMaxima(float capacidadeMaxima) {
+        this.capacidadeMaxima = capacidadeMaxima;
+    }
+
+    public String getTipoMaterialAceito() {
+        return tipoMaterialAceito;
+    }
+
+    public void setTipoMaterialAceito(String tipoMaterialAceito) {
+        this.tipoMaterialAceito = tipoMaterialAceito;
+    }
+
+    public String getStatusOperacao() {
+        return statusOperacao;
+    }
+
+    public void setStatusOperacao(String statusOperacao) {
+        this.statusOperacao = statusOperacao;
+    }
+}

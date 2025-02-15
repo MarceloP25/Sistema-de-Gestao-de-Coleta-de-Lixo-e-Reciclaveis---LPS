@@ -23,11 +23,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Departamento {
@@ -104,12 +100,12 @@ public class Departamento {
            String numero,
            String complemento,
            Administrador administrador,
-           List estacoesDescarga,
-           List veiculos,
-           List supervisores,
-           List operadores,
-           List rotas,
-           List coletas
+           List<EstacaoDescarga> estacoesDescarga,
+           List<Veiculo> veiculos,
+           List<Supervisor> supervisores,
+           List<Operador> operadores,
+           List<Rota> rotas,
+           List<Coleta> coletas
            ){
         this.nome = nome;
         this.cep = cep;
@@ -125,5 +121,85 @@ public class Departamento {
         this.operadores = operadores;
         this.rotas = rotas;
         this.coletas = coletas;
+   }
+
+   public Long getId() {
+       return id;
+   }
+
+   public void setId(Long id) {
+       this.id = id;
+   }
+
+   public String getNome() {
+       return nome;
+   }
+
+   public void setNome(String nome) {
+       this.nome = nome;
+   }
+
+   public String getRua() {
+       return rua;
+   }
+
+   public void setRua(String rua) {
+       this.rua = rua;
+   }
+
+   public String getBairro() {
+       return bairro;
+   }
+
+   public void setBairro(String bairro) {
+       this.bairro = bairro;
+   }
+
+   public String getCidade() {
+       return cidade;
+   }
+
+   public void setCidade(String cidade) {
+       this.cidade = cidade;
+   }
+
+   public String getNumero() {
+       return numero;
+   }
+
+   public void setNumero(String numero) {
+       this.numero = numero;
+   }
+
+   public String getComplemento() {
+       return complemento;
+   }
+
+   public void setComplemento(String complemento) {
+       this.complemento = complemento;
+   }
+
+   public String getCep() {
+       return cep;
+   }
+
+   public void setCep(String cep) {
+       this.cep = cep;
+   }
+
+   public Administrador getAdministrador() {
+       return administrador;
+   }
+
+   public void setAdministrador(Administrador administrador) {
+       this.administrador = administrador;
+   }
+
+   public List<EstacaoDescarga> getEstacoesDescarga() {
+       return estacoesDescarga;
+   }
+
+   public void setEstacoesDescarga(List<EstacaoDescarga> estacoesDescarga) {
+       this.estacoesDescarga = estacoesDescarga;
    }
 }

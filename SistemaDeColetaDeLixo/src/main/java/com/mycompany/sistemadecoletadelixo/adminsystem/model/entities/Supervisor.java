@@ -11,12 +11,8 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 public class Supervisor extends Pessoa {
     
     @ManyToOne
@@ -63,4 +59,19 @@ public class Supervisor extends Pessoa {
         this.dataContrato = dataContrato;
     }
     
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getDataContrato() {
+        return dataContrato;
+    }
+
+    public void setDataContrato(String dataContrato) {
+        this.dataContrato = dataContrato;
+    }
 }

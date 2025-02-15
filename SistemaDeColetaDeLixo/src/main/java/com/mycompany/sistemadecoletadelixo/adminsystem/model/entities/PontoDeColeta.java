@@ -11,23 +11,15 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.ManyToOne;
-import lombok.Getter;
-import lombok.Setter;
 
-/**
- *
- * @author marce
- */
 @Entity
-@Getter
-@Setter
 @Inheritance(strategy = InheritanceType.JOINED)
 public class PontoDeColeta {
     @Id
@@ -35,14 +27,14 @@ public class PontoDeColeta {
     private Long id;
     
     private String nomePonto;
-    
-    @ManyToOne
-    private String rua;
+    private String rua; // Removida a anotação @ManyToOne
     
     private int numeroLixeiras;
-    private List<String> tiposLixo;
     
-    public PontoDeColeta(){
+    @ElementCollection
+    private List<String> tiposLixo;
+
+    public PontoDeColeta() {
         this.id = -1L;
         this.nomePonto = "";
         this.rua = "";
@@ -50,5 +42,43 @@ public class PontoDeColeta {
         this.tiposLixo = new ArrayList<>();
     }
 
-}
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNomePonto() {
+        return nomePonto;
+    }
+
+    public void setNomePonto(String nomePonto) {
+        this.nomePonto = nomePonto;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public int getNumeroLixeiras() {
+        return numeroLixeiras;
+    }
+
+    public void setNumeroLixeiras(int numeroLixeiras) {
+        this.numeroLixeiras = numeroLixeiras;
+    }
+
+    public List<String> getTiposLixo() {
+        return tiposLixo;
+    }
+
+    public void setTiposLixo(List<String> tiposLixo) {
+        this.tiposLixo = tiposLixo;
+    }
+}

@@ -9,7 +9,6 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  * @author marce
  */
 
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
@@ -20,12 +19,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Operador extends Pessoa {
     
@@ -68,8 +63,8 @@ public class Operador extends Pessoa {
             String complemento,
             Departamento departamento,
             String dataContrato,
-            List veiculos,
-            List rotas){
+            List<Veiculo> veiculos,
+            List<Rota> rotas){
         super(
             nome, 
             sexo, 
@@ -91,5 +86,35 @@ public class Operador extends Pessoa {
         
     }
 
-}
+    public Departamento getDepartamento() {
+        return departamento;
+    }
 
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getDataContrato() {
+        return dataContrato;
+    }
+
+    public void setDataContrato(String dataContrato) {
+        this.dataContrato = dataContrato;
+    }
+
+    public List<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+
+    public void setVeiculos(List<Veiculo> veiculos) {
+        this.veiculos = veiculos;
+    }
+
+    public List<Rota> getRotas() {
+        return rotas;
+    }
+
+    public void setRotas(List<Rota> rotas) {
+        this.rotas = rotas;
+    }
+}

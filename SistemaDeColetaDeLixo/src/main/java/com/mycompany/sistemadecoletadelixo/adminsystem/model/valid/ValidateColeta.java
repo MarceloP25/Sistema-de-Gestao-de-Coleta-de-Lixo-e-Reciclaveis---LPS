@@ -48,7 +48,7 @@ public class ValidateColeta {
             throw new ColetaException("Error - Campo vazio: 'peso'.");
         if (!peso.matches("^[0-9]+(\\.[0-9]+)?$")) // Valida números inteiros ou decimais
             throw new ColetaException("Error - Valor inválido no campo 'peso'. Use um número válido.");
-        coleta.setPeso(Double.parseDouble(peso));
+        coleta.setPeso(peso);
 
         return coleta;
     }

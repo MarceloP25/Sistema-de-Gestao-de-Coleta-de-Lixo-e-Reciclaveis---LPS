@@ -22,12 +22,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Rota {
     @Id
@@ -50,7 +46,7 @@ public class Rota {
     )
     private List<Operador> operador;
     
-    private String statusRota; 
+    private String statusRota;
 
     public Rota(){
         this.id = -1L;
@@ -62,7 +58,59 @@ public class Rota {
         this.statusRota = "Desativada";
     }
     
-    
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNomeRota() {
+        return nomeRota;
+    }
+
+    public void setNomeRota(String nomeRota) {
+        this.nomeRota = nomeRota;
+    }
+
+    public List<String> getRuas() {
+        return ruas;
+    }
+
+    public void setRuas(List<String> ruas) {
+        this.ruas = ruas;
+    }
+
+    public List<PontoDeColeta> getPontosColeta() {
+        return pontosColeta;
+    }
+
+    public void setPontosColeta(List<PontoDeColeta> pontosColeta) {
+        this.pontosColeta = pontosColeta;
+    }
+
+    public Supervisor getResponsavelRota() {
+        return responsavelRota;
+    }
+
+    public void setResponsavelRota(Supervisor responsavelRota) {
+        this.responsavelRota = responsavelRota;
+    }
+
+    public List<Operador> getOperador() {
+        return operador;
+    }
+
+    public void setOperador(List<Operador> operador) {
+        this.operador = operador;
+    }
+
+    public String getStatusRota() {
+        return statusRota;
+    }
+
+    public void setStatusRota(String statusRota) {
+        this.statusRota = statusRota;
+    }
 }
-

@@ -19,12 +19,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Veiculo {
     
@@ -100,5 +96,124 @@ public class Veiculo {
         this.departamento = departamento;
         this.operador = operador; 
     }
+    
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public String getChassi() {
+        return chassi;
+    }
+
+    public void setChassi(String chassi) {
+        this.chassi = chassi;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public float getConsumoPorKm() {
+        return consumoPorKm;
+    }
+
+    public void setConsumoPorKm(float consumoPorKm) {
+        this.consumoPorKm = consumoPorKm;
+    }
+
+    public int getEixos() {
+        return eixos;
+    }
+
+    public void setEixos(int eixos) {
+        this.eixos = eixos;
+    }
+
+    public float getComprimento() {
+        return comprimento;
+    }
+
+    public void setComprimento(float comprimento) {
+        this.comprimento = comprimento;
+    }
+
+    public float getAltura() {
+        return altura;
+    }
+
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
+
+    public float getLargura() {
+        return largura;
+    }
+
+    public void setLargura(float largura) {
+        this.largura = largura;
+    }
+
+    public char getCarteiraConducao() {
+        return carteiraConducao;
+    }
+
+    public void setCarteiraConducao(char carteiraConducao) {
+        this.carteiraConducao = carteiraConducao;
+    }
+
+    public float getCarga() {
+        return carga;
+    }
+
+    public void setCarga(float carga) {
+        this.carga = carga;
+    }
+
+    public String getCombustivel() {
+        return combustivel;
+    }
+
+    public void setCombustivel(String combustivel) {
+        this.combustivel = combustivel;
+    }
+
+    public String getDataManutencao() {
+        return dataManutencao;
+    }
+
+    public void setDataManutencao(String dataManutencao) {
+        this.dataManutencao = dataManutencao;
+    }
+
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
+
+    public List<Operador> getOperador() {
+        return operador;
+    }
+
+    public void setOperador(List<Operador> operador) {
+        this.operador = operador;
+    }
 }

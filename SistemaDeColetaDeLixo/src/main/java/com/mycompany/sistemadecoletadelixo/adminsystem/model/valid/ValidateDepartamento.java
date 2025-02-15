@@ -40,7 +40,7 @@ public class ValidateDepartamento {
             throw new DepartamentoException("Error - Campo vazio: 'número'.");
         if (!numero.matches("[0-9]*"))
             throw new DepartamentoException("Error - Valor inválido no campo 'número'.");
-        departamento.setNumero(Integer.parseInt(numero));
+        departamento.setNumero(numero);
 
         if (complemento.isEmpty())
             throw new DepartamentoException("Error - Campo vazio: 'complemento'.");

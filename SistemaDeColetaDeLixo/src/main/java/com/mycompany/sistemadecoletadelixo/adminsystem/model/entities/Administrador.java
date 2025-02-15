@@ -9,24 +9,18 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  * @author marce
  */
 
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 public class Administrador extends Pessoa {
-    
     
     @OneToMany(mappedBy = "administrador")
     private List<Departamento> departamentos;
     
-    public Administrador(){
+    public Administrador() {
         super();
         this.departamentos = new ArrayList<>();
     }
@@ -45,7 +39,7 @@ public class Administrador extends Pessoa {
             String cidade,
             String numero,
             String complemento,
-            List<Departamento> departamentos){
+            List<Departamento> departamentos) {
         super(
             nome, 
             sexo, 
@@ -61,8 +55,13 @@ public class Administrador extends Pessoa {
             numero,
             complemento);
         this.departamentos = departamentos;
-        
+    }
+    
+    public List<Departamento> getDepartamentos() {
+        return departamentos;
+    }
+    
+    public void setDepartamentos(List<Departamento> departamentos) {
+        this.departamentos = departamentos;
     }
 }
-
-
