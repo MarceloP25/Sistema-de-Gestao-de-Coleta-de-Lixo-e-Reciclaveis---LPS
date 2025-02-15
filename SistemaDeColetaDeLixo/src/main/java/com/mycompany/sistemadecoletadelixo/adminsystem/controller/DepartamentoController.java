@@ -9,6 +9,10 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Departamen
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.DepartamentoDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateDepartamento;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.DepartamentoException;
+import com.mycompany.sistemadecoletadelixo.adminsystem.controller.TableModel.TMDepartamento;
+import javax.swing.JTable;
+import java.util.List;
+
 
 /**
  *
@@ -17,13 +21,14 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.Departam
 public class DepartamentoController {
 
     private DepartamentoDAO repositorio;
+    private TMDepartamento TMDepartamento;
 
     public DepartamentoController() {
         repositorio = new DepartamentoDAO();
     }
 
     public void cadastrarDepartamento(
-            String id,
+            long id,
             String nome,
             String rua,
             String bairro,
@@ -37,12 +42,9 @@ public class DepartamentoController {
             int numVeiculos) {
 
         ValidateDepartamento valid = new ValidateDepartamento();
-        Departamento novoDepartamento = valid.validacao(
-                id, nome, rua, bairro, cidade, numero, complemento, cep,
-                numEstacoesDescarga, numOperadores, numSupervisores, numVeiculos
-        );
+        Departamento novoDepartamento = valid.validaCamposEntrada(nome, rua, bairro, cidade, numero, complemento, cep, numero, numero, numero, numero);
 
-        if (repositorio.findById(id) == null) {
+        if (repositorio.find(id) == null) {
             repositorio.save(novoDepartamento);
         } else {
             throw new DepartamentoException("Error - Já existe um departamento com este 'ID'.");
@@ -51,7 +53,7 @@ public class DepartamentoController {
 
     public void atualizarDepartamento(
             String idOriginal,
-            String id,
+            long id,
             String nome,
             String rua,
             String bairro,
@@ -65,28 +67,31 @@ public class DepartamentoController {
             int numVeiculos) {
 
         ValidateDepartamento valid = new ValidateDepartamento();
-        Departamento departamentoAtualizado = valid.validacao(
-                id, nome, rua, bairro, cidade, numero, complemento, cep,
-                numEstacoesDescarga, numOperadores, numSupervisores, numVeiculos
-        );
+        Departamento departamentoAtualizado = valid.validaCamposEntrada(nome, rua, bairro, cidade, numero, complemento, cep, numero, numero, numero, numero);
         departamentoAtualizado.setId(idOriginal);
 
         repositorio.update(departamentoAtualizado);
     }
 
-    public Departamento buscarDepartamento(String id) {
-        return this.repositorio.findById(id);
+    public Departamento buscarDepartamento(long id) {
+        return this.repositorio.find(id);
     }
 
-    public void excluirDepartamento(String id) {
-        Departamento departamento = repositorio.findById(id);
+    public void excluirDepartamento(long id) {
+        Departamento departamento = repositorio.find(id);
         if (departamento != null) {
             repositorio.delete(departamento);
         } else {
             throw new DepartamentoException("Error - Departamento inexistente.");
         }
     }
-
+     public void atualizarTMDepartamento(JTable grd) {
+        List lst = repositorio.findAll();
+        
+        TMDepartamento tableModel = new TMDepartamento(lst);
+        grd.setModel(tableModel);        
+    }
+     
     public String imprimirListaDepartamentos() {
         String listagemDepartamentos = "";
 

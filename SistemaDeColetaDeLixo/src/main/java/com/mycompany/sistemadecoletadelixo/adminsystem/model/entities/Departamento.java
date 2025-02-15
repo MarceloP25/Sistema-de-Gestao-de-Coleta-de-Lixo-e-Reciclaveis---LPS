@@ -28,6 +28,8 @@ import javax.persistence.OneToMany;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Departamento {
 
+     private List<Departamento> departamento;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -39,6 +41,7 @@ public class Departamento {
     private String numero;
     private String complemento;
     private String cep;
+    
     
     @ManyToOne
     private Administrador administrador;
@@ -72,25 +75,46 @@ public class Departamento {
     
     @OneToMany(mappedBy = "departamento")
     private List<Coleta> coletas;
-
-    public Departamento() {
-        this.id = -1L;
-        this.nome = "";
-        this.cep = "00000-000";
-        this.rua = "";
-        this.bairro = "";
-        this.cidade = "";
-        this.numero = "";
-        this.complemento = "";
-        this.administrador = new Administrador();
-        this.estacoesDescarga = new ArrayList<>();
-        this.veiculos = new ArrayList<>();
-        this.supervisores = new ArrayList<>();
-        this.operadores = new ArrayList<>();
-        this.rotas = new ArrayList<>();
-        this.coletas = new ArrayList<>();
+    
+    public List<Departamento> getNomeDepartamento(){
+     return this.departamento;
+}
+    public List<Operador> getOperadores() {
+    return this.operadores;
     }
+    public List<Supervisor> getSupervisores(){
+    return this.supervisores;
+    }
+    public List<Coleta> getColetas(){
+    return this.coletas;
+}
+    public List<Veiculo> getVeiculos(){
+    return this.veiculos;
+    }
+    
+    public List<Rota> getRotas(){
+    return this.rotas;
+}
+    
 
+  public Departamento() {
+    this.id = -1L;
+    this.nome = "";
+    this.cep = "00000-000";
+    this.rua = "";
+    this.bairro = "";
+    this.cidade = "";
+    this.numero = "";
+    this.complemento = "";
+    this.administrador = new Administrador();
+    this.estacoesDescarga = new ArrayList<>();
+    this.veiculos = new ArrayList<>();
+    this.supervisores = new ArrayList<>();
+    this.operadores = new ArrayList<>();
+    this.rotas = new ArrayList<>();
+    this.coletas = new ArrayList<>(); // Inicialize a lista de coletas
+}
+  
    public Departamento(
            String nome,
            String cep,
