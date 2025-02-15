@@ -18,35 +18,29 @@ public class ValidateColeta {
                                       JComboBox<String> veiculo, JComboBox<String> materiaisColetados, String peso) {
         Coleta coleta = new Coleta();
 
-        // Validação do Supervisor
         if (supervisor.getSelectedItem() == null || supervisor.getSelectedItem().toString().isEmpty())
             throw new ColetaException("Error - Nenhum supervisor selecionado.");
         coleta.setSupervisor(supervisor.getSelectedItem().toString());
 
-        // Validação do Operador
         if (operador.getSelectedItem() == null || operador.getSelectedItem().toString().isEmpty())
             throw new ColetaException("Error - Nenhum operador selecionado.");
         coleta.setOperador(operador.getSelectedItem().toString());
 
-        // Validação da Rota
         if (rota.getSelectedItem() == null || rota.getSelectedItem().toString().isEmpty())
             throw new ColetaException("Error - Nenhuma rota selecionada.");
         coleta.setRota(rota.getSelectedItem().toString());
 
-        // Validação do Veículo
         if (veiculo.getSelectedItem() == null || veiculo.getSelectedItem().toString().isEmpty())
             throw new ColetaException("Error - Nenhum veículo selecionado.");
         coleta.setVeiculo(veiculo.getSelectedItem().toString());
 
-        // Validação dos Materiais Coletados
         if (materiaisColetados.getSelectedItem() == null || materiaisColetados.getSelectedItem().toString().isEmpty())
             throw new ColetaException("Error - Nenhum material coletado selecionado.");
         coleta.setMateriaisColetados(materiaisColetados.getSelectedItem().toString());
 
-        // Validação do Peso
         if (peso.isEmpty())
             throw new ColetaException("Error - Campo vazio: 'peso'.");
-        if (!peso.matches("^[0-9]+(\\.[0-9]+)?$")) // Valida números inteiros ou decimais
+        if (!peso.matches("^[0-9]+(\\.[0-9]+)?$"))
             throw new ColetaException("Error - Valor inválido no campo 'peso'. Use um número válido.");
         coleta.setPeso(peso);
 

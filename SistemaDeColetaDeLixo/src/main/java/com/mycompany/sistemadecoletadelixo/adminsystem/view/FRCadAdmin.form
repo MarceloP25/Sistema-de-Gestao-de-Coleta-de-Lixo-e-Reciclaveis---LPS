@@ -74,10 +74,7 @@
                               </Group>
                               <Component id="edtEnderecoComplemento" alignment="0" min="-2" pref="301" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="cbSexo" min="-2" pref="110" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="cbSexo" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>

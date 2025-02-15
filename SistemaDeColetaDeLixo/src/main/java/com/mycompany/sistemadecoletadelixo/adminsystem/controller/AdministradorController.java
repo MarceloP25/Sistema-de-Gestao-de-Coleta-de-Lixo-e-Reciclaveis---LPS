@@ -67,7 +67,7 @@ public class AdministradorController {
             String idDepartamento) {
 
         ValidateAdministrador valid = new ValidateAdministrador();
-        Administrador adminAtualizado = valid.validacao(
+        Administrador adminAtualizado = valid.validaCamposEntrada(
                 id, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento, telefone, idDepartamento);
 
         adminAtualizado.setId(idOriginal);

@@ -176,9 +176,7 @@ public class FrCadAdmin extends javax.swing.JFrame {
                                         .addComponent(edtCep)
                                         .addComponent(edtEnderecoCidade2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addComponent(edtEnderecoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(131, 131, 131)
                             .addComponent(lblSenha)))
@@ -296,14 +294,10 @@ public class FrCadAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField edtDataNasc;
     private javax.swing.JTextField edtEmail;
     private javax.swing.JTextField edtEnderecoBairro;
-    private javax.swing.JTextField edtEnderecoCidade;
-    private javax.swing.JTextField edtEnderecoCidade1;
     private javax.swing.JTextField edtEnderecoCidade2;
     private javax.swing.JTextField edtEnderecoComplemento;
     private javax.swing.JTextField edtEnderecoNumero;
     private javax.swing.JTextField edtEnderecoRua;
-    private javax.swing.JTextField edtNome;
-    private javax.swing.JTextField edtNome1;
     private javax.swing.JTextField edtNome2;
     private javax.swing.JTextField edtSenha;
     private javax.swing.JLabel jLabel1;

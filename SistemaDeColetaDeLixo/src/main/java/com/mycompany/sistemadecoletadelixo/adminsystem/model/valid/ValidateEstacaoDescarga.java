@@ -30,10 +30,9 @@ public class ValidateEstacaoDescarga {
             throw new EstacaoDescargaException("Error - Valor inválido no campo 'capacidade de processamento'. Use um número válido.");
         estacao.setCapacidadeProcessamento(Double.parseDouble(capacidadeProcessamento));
 
-        // Validação do Supervisor do Maquinário
         if (supervisorMaquinario.getSelectedItem() == null || supervisorMaquinario.getSelectedItem().toString().isEmpty())
-            throw new Estacaoxception("Error - Nenhum supervisor do maquinário selecionado.");
-        estacao.setSupervisorMaquinario(supervisorMaquinario.getSelectedItem().toString());
+            throw new EstacaoDescargaException("Error - Nenhum supervisor do maquinário selecionado.");
+        estacao.setSupervisor(supervisorMaquinario.getSelectedItem().toString());
 
         // Validação do Departamento
         if (departamento.getSelectedItem() == null || departamento.getSelectedItem().toString().isEmpty())

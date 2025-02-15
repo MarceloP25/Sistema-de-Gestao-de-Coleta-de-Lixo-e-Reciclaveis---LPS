@@ -13,7 +13,8 @@ public class TMVeiculos extends AbstractTableModel {
     private List<Veiculo> lista;
 
     // Constantes para as colunas
-   colunass
+    private final int COL_CHASSI = 0;
+    private final int COL_PLACA = 1;
     private final int COL_MODELO = 2;
     private final int COL_CONSUMO_POR_KM = 3;
     private final int COL_EIXOS = 4;

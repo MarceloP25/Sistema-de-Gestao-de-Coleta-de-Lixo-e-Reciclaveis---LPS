@@ -52,30 +52,6 @@ public class ValidateDepartamento {
             throw new DepartamentoException("Error - Formato inválido para o campo 'CEP'. Use o formato 12345-678.");
         departamento.setCep(cep);
 
-        if (numEstacoesDescarga.isEmpty())
-            throw new DepartamentoException("Error - Campo vazio: 'número de estações de descarga'.");
-        if (!numEstacoesDescarga.matches("[0-9]*"))
-            throw new DepartamentoException("Error - Valor inválido no campo 'número de estações de descarga'.");
-        departamento.setNumEstacoesDescarga(Integer.parseInt(numEstacoesDescarga));
-
-        if (numOperadores.isEmpty())
-            throw new DepartamentoException("Error - Campo vazio: 'número de operadores'.");
-        if (!numOperadores.matches("[0-9]*"))
-            throw new DepartamentoException("Error - Valor inválido no campo 'número de operadores'.");
-        departamento.setNumOperadores(Integer.parseInt(numOperadores));
-
-        if (numSupervisores.isEmpty())
-            throw new DepartamentoException("Error - Campo vazio: 'número de supervisores'.");
-        if (!numSupervisores.matches("[0-9]*"))
-            throw new DepartamentoException("Error - Valor inválido no campo 'número de supervisores'.");
-        departamento.setNumSupervisores(Integer.parseInt(numSupervisores));
-
-        if (numVeiculos.isEmpty())
-            throw new DepartamentoException("Error - Campo vazio: 'número de veículos'.");
-        if (!numVeiculos.matches("[0-9]*"))
-            throw new DepartamentoException("Error - Valor inválido no campo 'número de veículos'.");
-        departamento.setNumVeiculos(Integer.parseInt(numVeiculos));
-
         return departamento;
     }
 }
