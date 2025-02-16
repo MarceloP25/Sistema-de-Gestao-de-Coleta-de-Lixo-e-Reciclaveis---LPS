@@ -15,8 +15,11 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Getter
+@Setter
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Coleta {
