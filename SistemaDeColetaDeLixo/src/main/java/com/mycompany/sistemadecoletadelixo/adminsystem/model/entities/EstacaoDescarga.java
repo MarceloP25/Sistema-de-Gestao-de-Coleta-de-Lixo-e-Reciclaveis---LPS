@@ -28,28 +28,30 @@ public class EstacaoDescarga {
     private List<Departamento> departamento;
     
     private String nomeEstacao;
-    private float capacidadeMaxima;
+    private float capacidadeProcessamento;
     
     private String tipoMaterialAceito;
     
     private String statusOperacao;
     
+    
+    
     public EstacaoDescarga(){
         this.idEstacao = -1L;
         this.departamento = new ArrayList<>();
-        this.capacidadeMaxima = 0;
+        this.capacidadeProcessamento = 0;
         this.tipoMaterialAceito = "";
         this.statusOperacao = "Desativada";
     }
     
     public EstacaoDescarga(
             List<Departamento> departamento,
-            float capacidadeMaxima,
+            float capacidadeProcessamento,
             String tipoMaterialAceito,
             String statusOperacao
             ){
         this.departamento = departamento;
-        this.capacidadeMaxima = capacidadeMaxima;
+        this.capacidadeProcessamento = capacidadeProcessamento;
         this.tipoMaterialAceito = tipoMaterialAceito;
         this.statusOperacao = statusOperacao;
     }
@@ -70,20 +72,20 @@ public class EstacaoDescarga {
         this.departamento = departamento;
     }
 
-    public String getNomeEstacao() {
+    public String getNome() {
         return nomeEstacao;
     }
 
-    public void setNomeEstacao(String nomeEstacao) {
+    public void setNome(String nomeEstacao) {
         this.nomeEstacao = nomeEstacao;
     }
 
-    public float getCapacidadeMaxima() {
-        return capacidadeMaxima;
+    public float getCapacidadeProcessamento() {
+        return capacidadeProcessamento;
     }
 
-    public void setCapacidadeMaxima(float capacidadeMaxima) {
-        this.capacidadeMaxima = capacidadeMaxima;
+    public void setCapacidadeProcessamento(float capacidadeProcessamento) {
+        this.capacidadeProcessamento = capacidadeProcessamento;
     }
 
     public String getTipoMaterialAceito() {
@@ -100,5 +102,13 @@ public class EstacaoDescarga {
 
     public void setStatusOperacao(String statusOperacao) {
         this.statusOperacao = statusOperacao;
+    }
+
+    public void setSupervisor(String toString) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void setMateriaisProcessamento(String toString) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

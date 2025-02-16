@@ -9,6 +9,8 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.EstacaoDes
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.EstacaoDescargaDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateEstacaoDescarga;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.EstacaoDescargaException;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -23,15 +25,13 @@ public class EstacaoDescargaController {
     }
 
     public void cadastrarEstacaoDescarga(
-            String id,
-            int numeroSupervisores,
-            String supervisor,
-            int capacidade) {
+            Long id, String nome, String capacidadeProcessamento, JComboBox<String> supervisorMaquinario,
+            JComboBox<String> departamento, JCheckBox[] materiaisProcessamento) {
 
         ValidateEstacaoDescarga valid = new ValidateEstacaoDescarga();
-        EstacaoDescarga novaEstacaoDescarga = valid.validaCamposEntrada(id, numeroSupervisores, supervisor, capacidade);
+        EstacaoDescarga novaEstacaoDescarga = valid.validaCamposEntrada(nome, capacidadeProcessamento, supervisorMaquinario, departamento, materiaisProcessamento);
 
-        if (repositorio.findById(id) == null) {
+        if (repositorio.find(id) == null) {
             repositorio.save(novaEstacaoDescarga);
         } else {
             throw new EstacaoDescargaException("Error - Já existe uma estação de descarga com este 'ID'.");
@@ -39,27 +39,24 @@ public class EstacaoDescargaController {
     }
 
     public void atualizarEstacaoDescarga(
-            String idOriginal,
-            String id,
-            int numeroSupervisores,
-            String supervisor,
-            int capacidade) {
+            Long id, String nome, String capacidadeProcessamento, JComboBox<String> supervisorMaquinario,
+            JComboBox<String> departamento, JCheckBox[] materiaisProcessamento) {
 
         ValidateEstacaoDescarga valid = new ValidateEstacaoDescarga();
-        EstacaoDescarga estacaoAtualizada = valid.validaCamposEntrada(id, numeroSupervisores, supervisor, capacidade);
-        estacaoAtualizada.setId(idOriginal);
+        EstacaoDescarga estacaoAtualizada = valid.validaCamposEntrada(nome, capacidadeProcessamento, supervisorMaquinario, departamento, materiaisProcessamento);
+        estacaoAtualizada.setId(id);
 
         repositorio.update(estacaoAtualizada);
     }
 
-    public EstacaoDescarga buscarEstacaoDescarga(String id) {
-        return this.repositorio.findById(id);
+    public EstacaoDescarga buscarEstacaoDescarga(Long id) {
+        return this.repositorio.find(id);
     }
 
-    public void excluirEstacaoDescarga(String id) {
-        EstacaoDescarga estacaoDescarga = repositorio.findById(id);
+    public void excluirEstacaoDescarga(Long id) {
+        EstacaoDescarga estacaoDescarga = repositorio.find(id);
         if (estacaoDescarga != null) {
-            repositorio.delete(Long.parseLong(id));
+            repositorio.delete(id);
         } else {
             throw new EstacaoDescargaException("Error - Estação de descarga inexistente.");
         }

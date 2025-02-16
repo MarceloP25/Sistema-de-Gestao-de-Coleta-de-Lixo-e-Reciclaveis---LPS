@@ -27,18 +27,14 @@ public class ColetaController {
         JComboBox<String> supervisor, JComboBox<String> operador, JComboBox<String> rota,
         JComboBox<String> veiculo, JComboBox<String> materiaisColetados, String peso) {
 
-    String supervisorSelecionado = (String) supervisor.getSelectedItem();
-    String operadorSelecionado = (String) operador.getSelectedItem();
-    String rotaSelecionada = (String) rota.getSelectedItem();
-    String veiculoSelecionado = (String) veiculo.getSelectedItem();
-    String materiaisSelecionados = (String) materiaisColetados.getSelectedItem();
+    
 
     ValidateColeta valid = new ValidateColeta();
     Coleta novaColeta = valid.validaCamposEntrada(
-            supervisorSelecionado, peso, materiaisSelecionados, operadorSelecionado, rotaSelecionada, veiculoSelecionado
+            supervisor, operador, rota, veiculo, materiaisColetados, peso
     );
 
-    if (repositorio.findById(novaColeta.getId()) == null) {
+    if (repositorio.find(novaColeta.getId()) == null) {
         repositorio.save(novaColeta);
     } else {
         throw new ColetaException("Error - Já existe uma coleta com este 'ID'.");
@@ -50,16 +46,9 @@ public class ColetaController {
             Long id, JComboBox<String> supervisor, JComboBox<String> operador, JComboBox<String> rota,
         JComboBox<String> veiculo, JComboBox<String> materiaisColetados, String peso) {
 
-    String supervisorSelecionado = (String) supervisor.getSelectedItem();
-    String operadorSelecionado = (String) operador.getSelectedItem();
-    String rotaSelecionada = (String) rota.getSelectedItem();
-    String veiculoSelecionado = (String) veiculo.getSelectedItem();
-    String materiaisSelecionados = (String) materiaisColetados.getSelectedItem();
- {
-
         ValidateColeta valid = new ValidateColeta();
         Coleta coletaAtualizada = valid.validaCamposEntrada(
-                id, supervisor, peso, materiaisColetados, operador, rota, veiculo);
+                supervisor, operador, rota, veiculo, materiaisColetados, peso);
 
         coletaAtualizada.setId(id);
 
@@ -67,11 +56,11 @@ public class ColetaController {
     }
 
     public Coleta buscarColeta(Long id) {
-        return this.repositorio.findById(id);
+        return this.repositorio.find(id);
     }
 
-    public void excluirColeta(String id) {
-        Coleta coleta = repositorio.findById(id);
+    public void excluirColeta(Long id) {
+        Coleta coleta = repositorio.find(id);
         if (coleta != null) {
             repositorio.delete(id);
         } else {
