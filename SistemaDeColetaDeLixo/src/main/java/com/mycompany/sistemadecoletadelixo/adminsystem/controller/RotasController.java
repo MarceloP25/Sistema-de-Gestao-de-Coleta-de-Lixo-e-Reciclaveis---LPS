@@ -9,6 +9,7 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Rota;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.RotaDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateRota;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.RotaException;
+import java.util.List;
 
 /**
  *
@@ -32,7 +33,7 @@ public class RotasController {
             List<String> operadores) {
 
         ValidateRota valid = new ValidateRota();
-        Rota novaRota = valid.validacao(id, pontoInicio, pontoFinalizacao, ruasPercorridas, pontosColeta, supervisor, operadores);
+        Rota novaRota = valid.validaCamposEntrada(id, pontoInicio, pontoFinalizacao, ruasPercorridas, pontosColeta, supervisor, operadores);
 
         if (repositorio.findById(id) == null) {
             repositorio.save(novaRota);
@@ -42,7 +43,6 @@ public class RotasController {
     }
 
     public void atualizarRota(
-            String idOriginal,
             String id,
             String pontoInicio,
             String pontoFinalizacao,
@@ -52,8 +52,8 @@ public class RotasController {
             List<String> operadores) {
 
         ValidateRota valid = new ValidateRota();
-        Rota rotaAtualizada = valid.validacao(id, pontoInicio, pontoFinalizacao, ruasPercorridas, pontosColeta, supervisor, operadores);
-        rotaAtualizada.setId(idOriginal);
+        Rota rotaAtualizada = valid.validaCamposEntrada(id, pontoInicio, pontoFinalizacao, ruasPercorridas, pontosColeta, supervisor, operadores);
+        rotaAtualizada.setId(Long.parseLong(id));
 
         repositorio.update(rotaAtualizada);
     }
@@ -65,7 +65,7 @@ public class RotasController {
     public void excluirRota(String id) {
         Rota rota = repositorio.findById(id);
         if (rota != null) {
-            repositorio.delete(rota);
+            repositorio.delete(Long.parseLong(id));
         } else {
             throw new RotaException("Error - Rota inexistente.");
         }

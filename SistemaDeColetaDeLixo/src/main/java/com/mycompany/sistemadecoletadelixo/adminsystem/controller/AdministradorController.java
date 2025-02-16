@@ -54,7 +54,7 @@ public class AdministradorController {
             Long id,
             String nome,
             String dataNascimento,
-            String cpfCnpj,
+            String cpf,
             String email,
             String senha,
             String cep,
@@ -68,21 +68,17 @@ public class AdministradorController {
 
         ValidateAdministrador valid = new ValidateAdministrador();
         Administrador adminAtualizado = valid.validaCamposEntrada(
-                 nome, dataNascimento, cpfCnpj, email,senha, cep, rua, bairro, cidade, numero, complemento, telefone);
+                 nome, dataNascimento, cpf, email,senha, cep, rua, bairro, cidade, numero, complemento, telefone);
 
         adminAtualizado.setId(id);
 
         repositorio.update(adminAtualizado);
     }
 
-    public Administrador buscarAdmin(Long id) {
-         this.entityManager = DatabaseJPA.getInstance().getEntityManager();
+    public Administrador buscarAdmin( String cpf) {
+                 return (Administrador) this.repositorio.findByCpf(cpf);
 
-        Administrador admin = this.entityManager.find(Admin.class, id);
 
-        this.entityManager.close();
-
-        return admin;
     }
 
     public void excluirAdmin(Long id) {

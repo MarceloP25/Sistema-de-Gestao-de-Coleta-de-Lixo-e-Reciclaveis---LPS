@@ -16,8 +16,8 @@ public class ValidateDepartamento {
 
     public Departamento validaCamposEntrada(String nome, String rua, String bairro, String cidade, 
                                             String numero, String complemento, String cep,
-                                            String numEstacoesDescarga, String numOperadores, 
-                                            String numSupervisores, String numVeiculos) {
+                                            int numEstacoesDescarga, int numOperadores, 
+                                            int numSupervisores, int numVeiculos) {
         Departamento departamento = new Departamento();
 
         if (nome.isEmpty())

@@ -30,7 +30,7 @@ public class MaterialController {
             String instrucoesDescarte) {
 
         ValidateMaterial valid = new ValidateMaterial();
-        Material novoMaterial = valid.validacao(id, nome, tipo, lixeiraDescarte, instrucoesDescarte);
+        Material novoMaterial = valid.validaCamposEntrada(id, nome, tipo, lixeiraDescarte, instrucoesDescarte);
 
         if (repositorio.findById(id) == null) {
             repositorio.save(novoMaterial);
@@ -40,7 +40,6 @@ public class MaterialController {
     }
 
     public void atualizarMaterial(
-            String idOriginal,
             String id,
             String nome,
             String tipo,
@@ -48,8 +47,8 @@ public class MaterialController {
             String instrucoesDescarte) {
 
         ValidateMaterial valid = new ValidateMaterial();
-        Material materialAtualizado = valid.validacao(id, nome, tipo, lixeiraDescarte, instrucoesDescarte);
-        materialAtualizado.setId(idOriginal);
+        Material materialAtualizado = valid.validaCamposEntrada(id, nome, tipo, lixeiraDescarte, instrucoesDescarte);
+        materialAtualizado.setId(Long.parseLong(id));
 
         repositorio.update(materialAtualizado);
     }
@@ -61,7 +60,7 @@ public class MaterialController {
     public void excluirMaterial(String id) {
         Material material = repositorio.findById(id);
         if (material != null) {
-            repositorio.delete(material);
+            repositorio.delete(Long.parseLong(id));
         } else {
             throw new MaterialException("Error - Material inexistente.");
         }

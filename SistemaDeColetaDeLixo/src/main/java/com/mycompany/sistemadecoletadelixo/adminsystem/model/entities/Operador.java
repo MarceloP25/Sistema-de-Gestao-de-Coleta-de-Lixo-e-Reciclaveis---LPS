@@ -106,9 +106,7 @@ public class Operador extends Pessoa {
         return veiculos;
     }
 
-    public void setVeiculos(List<Veiculo> veiculos) {
-        this.veiculos = veiculos;
-    }
+   
 
     public List<Rota> getRotas() {
         return rotas;
@@ -116,5 +114,15 @@ public class Operador extends Pessoa {
 
     public void setRotas(List<Rota> rotas) {
         this.rotas = rotas;
+    }
+
+    public void setVeiculo(List <Veiculo> veiculos) {
+        this.veiculos = veiculos;
+    }
+
+    
+
+    public void setRota(String toString) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

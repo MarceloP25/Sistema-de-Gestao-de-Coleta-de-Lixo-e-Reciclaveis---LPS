@@ -49,7 +49,7 @@ public class ValidateOperador {
             throw new OperadorException("Error - Campo vazio: 'número'.");
         if (!numero.matches("\\d+"))
             throw new OperadorException("Error - Valor inválido no campo 'número'. Apenas números são permitidos.");
-        operador.setNumero(Integer.parseInt(numero));
+        operador.setNumero(numero);
 
         operador.setComplemento(complemento); // Opcional
 

@@ -29,7 +29,7 @@ public class EstacaoDescargaController {
             int capacidade) {
 
         ValidateEstacaoDescarga valid = new ValidateEstacaoDescarga();
-        EstacaoDescarga novaEstacaoDescarga = valid.validacao(id, numeroSupervisores, supervisor, capacidade);
+        EstacaoDescarga novaEstacaoDescarga = valid.validaCamposEntrada(id, numeroSupervisores, supervisor, capacidade);
 
         if (repositorio.findById(id) == null) {
             repositorio.save(novaEstacaoDescarga);
@@ -46,7 +46,7 @@ public class EstacaoDescargaController {
             int capacidade) {
 
         ValidateEstacaoDescarga valid = new ValidateEstacaoDescarga();
-        EstacaoDescarga estacaoAtualizada = valid.validacao(id, numeroSupervisores, supervisor, capacidade);
+        EstacaoDescarga estacaoAtualizada = valid.validaCamposEntrada(id, numeroSupervisores, supervisor, capacidade);
         estacaoAtualizada.setId(idOriginal);
 
         repositorio.update(estacaoAtualizada);
@@ -59,7 +59,7 @@ public class EstacaoDescargaController {
     public void excluirEstacaoDescarga(String id) {
         EstacaoDescarga estacaoDescarga = repositorio.findById(id);
         if (estacaoDescarga != null) {
-            repositorio.delete(estacaoDescarga);
+            repositorio.delete(Long.parseLong(id));
         } else {
             throw new EstacaoDescargaException("Error - Estação de descarga inexistente.");
         }

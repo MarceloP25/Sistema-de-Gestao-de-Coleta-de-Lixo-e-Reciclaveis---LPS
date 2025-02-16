@@ -5,6 +5,8 @@
 package com.mycompany.sistemadecoletadelixo.adminsystem.model.valid;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.*;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.ColetaException;
+import java.util.Collections;
+import java.util.List;
 import javax.swing.JComboBox;
 /**
  *
@@ -37,13 +39,14 @@ public class ValidateColeta {
 
         if (materiaisColetados.getSelectedItem() == null || materiaisColetados.getSelectedItem().toString().isEmpty())
             throw new ColetaException("Error - Nenhum material coletado selecionado.");
-        coleta.setMateriaisColetados((Material)materiaisColetados.getSelectedItem());
-
+        List<Material> materiais = Collections.singletonList((Material) materiaisColetados.getSelectedItem());
+        coleta.setMateriaisColetados(materiais);
+        
         if (peso.isEmpty())
             throw new ColetaException("Error - Campo vazio: 'peso'.");
         if (!peso.matches("^[0-9]+(\\.[0-9]+)?$"))
             throw new ColetaException("Error - Valor inválido no campo 'peso'. Use um número válido.");
-        coleta.setPeso(peso);
+        coleta.setPeso(Float.parseFloat(peso));
 
         return coleta; 
     }

@@ -38,7 +38,6 @@ public class ColetaController {
             supervisorSelecionado, peso, materiaisSelecionados, operadorSelecionado, rotaSelecionada, veiculoSelecionado
     );
 
-    // Salvar a coleta no repositório
     if (repositorio.findById(novaColeta.getId()) == null) {
         repositorio.save(novaColeta);
     } else {
@@ -48,32 +47,33 @@ public class ColetaController {
 
 
     public void atualizarColeta(
-            String idOriginal,
-            String id,
-            String supervisor,
-            double peso,
-            String materiaisColetados,
-            String operador,
-            String rota,
-            String veiculo) {
+            Long id, JComboBox<String> supervisor, JComboBox<String> operador, JComboBox<String> rota,
+        JComboBox<String> veiculo, JComboBox<String> materiaisColetados, String peso) {
+
+    String supervisorSelecionado = (String) supervisor.getSelectedItem();
+    String operadorSelecionado = (String) operador.getSelectedItem();
+    String rotaSelecionada = (String) rota.getSelectedItem();
+    String veiculoSelecionado = (String) veiculo.getSelectedItem();
+    String materiaisSelecionados = (String) materiaisColetados.getSelectedItem();
+ {
 
         ValidateColeta valid = new ValidateColeta();
-        Coleta coletaAtualizada = valid.validacao(
+        Coleta coletaAtualizada = valid.validaCamposEntrada(
                 id, supervisor, peso, materiaisColetados, operador, rota, veiculo);
 
-        coletaAtualizada.setId(idOriginal);
+        coletaAtualizada.setId(id);
 
         repositorio.update(coletaAtualizada);
     }
 
-    public Coleta buscarColeta(String id) {
+    public Coleta buscarColeta(Long id) {
         return this.repositorio.findById(id);
     }
 
     public void excluirColeta(String id) {
         Coleta coleta = repositorio.findById(id);
         if (coleta != null) {
-            repositorio.delete(coleta);
+            repositorio.delete(id);
         } else {
             throw new ColetaException("Error - Coleta inexistente.");
         }

@@ -42,7 +42,7 @@ public class DepartamentoController {
             int numVeiculos) {
 
         ValidateDepartamento valid = new ValidateDepartamento();
-        Departamento novoDepartamento = valid.validaCamposEntrada(nome, rua, bairro, cidade, numero, complemento, cep, numero, numero, numero, numero);
+        Departamento novoDepartamento = valid.validaCamposEntrada(nome, rua, bairro, cidade, numero, complemento, cep, numEstacoesDescarga, numOperadores, numSupervisores, numVeiculos);
 
         if (repositorio.find(id) == null) {
             repositorio.save(novoDepartamento);
@@ -52,8 +52,7 @@ public class DepartamentoController {
     }
 
     public void atualizarDepartamento(
-            String idOriginal,
-            long id,
+            Long id,
             String nome,
             String rua,
             String bairro,
@@ -67,20 +66,20 @@ public class DepartamentoController {
             int numVeiculos) {
 
         ValidateDepartamento valid = new ValidateDepartamento();
-        Departamento departamentoAtualizado = valid.validaCamposEntrada(nome, rua, bairro, cidade, numero, complemento, cep, numero, numero, numero, numero);
-        departamentoAtualizado.setId(idOriginal);
+        Departamento departamentoAtualizado = valid.validaCamposEntrada(nome, rua, bairro, cidade, numero, complemento, cep, numEstacoesDescarga, numOperadores, numSupervisores, numVeiculos);
+        departamentoAtualizado.setId(id);
 
         repositorio.update(departamentoAtualizado);
     }
 
-    public Departamento buscarDepartamento(long id) {
+    public Departamento buscarDepartamento(Long id) {
         return this.repositorio.find(id);
     }
 
-    public void excluirDepartamento(long id) {
+    public void excluirDepartamento(Long id) {
         Departamento departamento = repositorio.find(id);
         if (departamento != null) {
-            repositorio.delete(departamento);
+            repositorio.delete(id);
         } else {
             throw new DepartamentoException("Error - Departamento inexistente.");
         }
