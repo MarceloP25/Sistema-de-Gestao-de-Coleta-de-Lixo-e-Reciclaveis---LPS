@@ -9,6 +9,7 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Coleta;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.ColetaDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateColeta;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.ColetaException;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -23,24 +24,28 @@ public class ColetaController {
     }
 
     public void cadastrarColeta(
-            String id,
-            String supervisor,
-            double peso,
-            String materiaisColetados,
-            String operador,
-            String rota,
-            String veiculo) {
+        JComboBox<String> supervisor, JComboBox<String> operador, JComboBox<String> rota,
+        JComboBox<String> veiculo, JComboBox<String> materiaisColetados, String peso) {
 
-        ValidateColeta valid = new ValidateColeta();
-        Coleta novaColeta = valid.validacao(
-                id, supervisor, peso, materiaisColetados, operador, rota, veiculo);
+    String supervisorSelecionado = (String) supervisor.getSelectedItem();
+    String operadorSelecionado = (String) operador.getSelectedItem();
+    String rotaSelecionada = (String) rota.getSelectedItem();
+    String veiculoSelecionado = (String) veiculo.getSelectedItem();
+    String materiaisSelecionados = (String) materiaisColetados.getSelectedItem();
 
-        if (repositorio.findById(id) == null) {
-            repositorio.save(novaColeta);
-        } else {
-            throw new ColetaException("Error - Já existe uma coleta com este 'ID'.");
-        }
+    ValidateColeta valid = new ValidateColeta();
+    Coleta novaColeta = valid.validaCamposEntrada(
+            supervisorSelecionado, peso, materiaisSelecionados, operadorSelecionado, rotaSelecionada, veiculoSelecionado
+    );
+
+    // Salvar a coleta no repositório
+    if (repositorio.findById(novaColeta.getId()) == null) {
+        repositorio.save(novaColeta);
+    } else {
+        throw new ColetaException("Error - Já existe uma coleta com este 'ID'.");
     }
+}
+
 
     public void atualizarColeta(
             String idOriginal,

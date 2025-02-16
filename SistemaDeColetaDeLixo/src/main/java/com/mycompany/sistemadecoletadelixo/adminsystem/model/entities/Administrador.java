@@ -64,4 +64,9 @@ public class Administrador extends Pessoa {
     public void setDepartamentos(List<Departamento> departamentos) {
         this.departamentos = departamentos;
     }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;    
+    }
 }

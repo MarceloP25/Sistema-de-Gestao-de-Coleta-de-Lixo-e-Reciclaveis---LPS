@@ -25,7 +25,6 @@ public class AdministradorController {
     }
 
     public void cadastrarAdmin(
-            String id,
             String nome,
             String dataNascimento,
             String cpf,
@@ -36,12 +35,13 @@ public class AdministradorController {
             String cidade,
             String numero,
             String complemento,
-            String telefone
+            String telefone, 
+            String senha
             ) {
 
         ValidateAdministrador valid = new ValidateAdministrador();
         Administrador novoAdmin = valid.validaCamposEntrada(
-                id, nome, dataNascimento, cpf, email, cep, rua, bairro, cidade, numero, complemento, telefone);
+                 nome, dataNascimento, cpf, email,senha, cep, rua, bairro, cidade, numero, complemento, telefone);
 
         if (repositorio.findByCpf(cpf) == null) {
             repositorio.save(novoAdmin);
@@ -51,31 +51,31 @@ public class AdministradorController {
     }
 
     public void atualizarAdmin(
-            String idOriginal,
-            String id,
+            Long id,
             String nome,
             String dataNascimento,
             String cpfCnpj,
             String email,
+            String senha,
             String cep,
             String rua,
             String bairro,
             String cidade,
             String numero,
             String complemento,
-            String telefone,
-            String idDepartamento) {
+            String telefone
+            ) {
 
         ValidateAdministrador valid = new ValidateAdministrador();
         Administrador adminAtualizado = valid.validaCamposEntrada(
-                id, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento, telefone, idDepartamento);
+                 nome, dataNascimento, cpfCnpj, email,senha, cep, rua, bairro, cidade, numero, complemento, telefone);
 
-        adminAtualizado.setId(idOriginal);
+        adminAtualizado.setId(id);
 
         repositorio.update(adminAtualizado);
     }
 
-    public Administrador buscarAdmin(String id) {
+    public Administrador buscarAdmin(Long id) {
          this.entityManager = DatabaseJPA.getInstance().getEntityManager();
 
         Administrador admin = this.entityManager.find(Admin.class, id);
@@ -85,10 +85,9 @@ public class AdministradorController {
         return admin;
     }
 
-    public void excluirAdmin(String id) {
-        Administrador admin = repositorio.find(id);
-        if (admin != null) {
-            repositorio.delete(admin);
+    public void excluirAdmin(Long id) {
+        if (id != null) {
+            repositorio.delete(id);
         } else {
             throw new AdministradorException("Error - Administrador inexistente.");
         }

@@ -26,7 +26,7 @@ public class CidadaoController {
             String id,
             String nome,
             String dataNascimento,
-            String cpfCnpj,
+            String cpf,
             String email,
             String cep,
             String rua,
@@ -38,7 +38,7 @@ public class CidadaoController {
 
         ValidateCidadao valid = new ValidateCidadao();
         Cidadao novoCidadao = valid.validacao(
-                id, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento, telefone);
+                id, nome, dataNascimento, cpf, email, cep, rua, bairro, cidade, numero, complemento, telefone);
 
         if (repositorio.findById(id) == null) {
             repositorio.save(novoCidadao);
