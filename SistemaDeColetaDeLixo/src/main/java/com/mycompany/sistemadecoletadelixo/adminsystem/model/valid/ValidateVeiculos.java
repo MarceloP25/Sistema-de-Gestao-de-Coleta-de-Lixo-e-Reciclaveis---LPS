@@ -15,12 +15,25 @@ import javax.swing.JComboBox;
 
 public class ValidateVeiculos {
 
-    public Veiculo validaCamposEntrada(String placa, String chassi, String pesoVeiculo, String eixos, String quilometragem,
-                                       String comprimento, String altura, String largura, String carteira, String cargaMaxima,
-                                       String combustivel, JComboBox<String> consumo, JComboBox<String> emissaoPoluentes) {
+    public Veiculo validaCamposEntrada(
+            String placa,
+            String chassi,
+            double peso,
+            double quilometragem,
+            int eixos,
+            double comprimento,
+            double altura,
+            double largura,
+            String tipoCarteiraCondutor,
+            double cargaMaxima,
+            double consumo,
+            String tipoCombustivel,
+            boolean manutencao,
+            String dataManutencao,
+            double emissaoPoluentes) {
+        
         Veiculo veiculo = new Veiculo();
 
-        // Validação da Placa
         if (placa == null || placa.isEmpty()) {
             throw new VeiculoException("Error - Campo vazio: 'placa'.");
         }
@@ -29,7 +42,6 @@ public class ValidateVeiculos {
         }
         veiculo.setPlaca(placa);
 
-        // Validação do Chassi
         if (chassi == null || chassi.isEmpty()) {
             throw new VeiculoException("Error - Campo vazio: 'chassi'.");
         }
@@ -38,94 +50,69 @@ public class ValidateVeiculos {
         }
         veiculo.setChassi(chassi);
 
-        // Validação do Peso do Veículo
-        if (pesoVeiculo == null || pesoVeiculo.isEmpty()) {
-            throw new VeiculoException("Error - Campo vazio: 'peso do veículo'.");
+        if (peso <= 0) {
+            throw new VeiculoException("Error - Peso do veículo deve ser maior que zero.");
         }
-        if (!pesoVeiculo.matches("\\d+(\\.\\d{1,2})?")) {
-            throw new VeiculoException("Error - Valor inválido: 'peso do veículo'. Use apenas números (ex: 1500.50).");
+        veiculo.setPesoVeiculo(peso);
+        
+        if (quilometragem < 0) {
+            throw new VeiculoException("Error - Quilometragem não pode ser negativa.");
         }
-        veiculo.setPesoVeiculo(Double.parseDouble(pesoVeiculo));
+        veiculo.setQuilometragem(quilometragem);
 
-        // Validação do Número de Eixos
-        if (eixos == null || eixos.isEmpty()) {
-            throw new VeiculoException("Error - Campo vazio: 'eixos'.");
+        if (eixos <= 0) {
+            throw new VeiculoException("Error - Número de eixos deve ser maior que zero.");
         }
-        if (!eixos.matches("\\d+")) {
-            throw new VeiculoException("Error - Valor inválido: 'eixos'. Deve conter apenas números.");
+        veiculo.setEixos(eixos);
+        
+        if (comprimento <= 0) {
+            throw new VeiculoException("Error - Comprimento deve ser maior que zero.");
         }
-        veiculo.setEixos(Integer.parseInt(eixos));
+        veiculo.setComprimento(comprimento);
+        
+        if (altura <= 0) {
+            throw new VeiculoException("Error - Altura deve ser maior que zero.");
+        }
+        veiculo.setAltura(altura);
+        
+        if (largura <= 0) {
+            throw new VeiculoException("Error - Largura deve ser maior que zero.");
+        }
+        veiculo.setLargura(largura);
+        
+        if (cargaMaxima <= 0) {
+            throw new VeiculoException("Error - Carga máxima deve ser maior que zero.");
+        }
+        veiculo.setCargaMaxima(cargaMaxima);
+        
+        if (consumo <= 0) {
+            throw new VeiculoException("Error - Consumo deve ser maior que zero.");
+        }
+        veiculo.setConsumo(consumo);
+        
+        if (emissaoPoluentes < 0) {
+            throw new VeiculoException("Error - Emissão de poluentes não pode ser negativa.");
+        }
+        veiculo.setEmissaoPoluentes(emissaoPoluentes);
 
-        // Validação da Quilometragem
-        if (quilometragem == null || quilometragem.isEmpty()) {
-            throw new VeiculoException("Error - Campo vazio: 'quilometragem'.");
+        if (tipoCarteiraCondutor == null || tipoCarteiraCondutor.isEmpty()) {
+            throw new VeiculoException("Error - Campo vazio: 'tipoCarteiraCondutor'.");
         }
-        if (!quilometragem.matches("\\d+(\\.\\d{1,2})?")) {
-            throw new VeiculoException("Error - Valor inválido: 'quilometragem'. Use apenas números (ex: 12345.67).");
+        veiculo.setCarteira(tipoCarteiraCondutor);
+        
+        if (tipoCombustivel == null || tipoCombustivel.isEmpty()) {
+            throw new VeiculoException("Error - Campo vazio: 'tipoCombustivel'.");
         }
-        veiculo.setQuilometragem(Double.parseDouble(quilometragem));
+        veiculo.setCombustivel(tipoCombustivel);
 
-        // Validação do Comprimento
-        if (comprimento == null || comprimento.isEmpty()) {
-            throw new VeiculoException("Error - Campo vazio: 'comprimento'.");
+        if (manutencao) {
+            if (dataManutencao == null || dataManutencao.isEmpty()) {
+                throw new VeiculoException("Error - O veículo está em manutenção, mas a data de manutenção não foi informada.");
+            }
         }
-        if (!comprimento.matches("\\d+(\\.\\d{1,2})?")) {
-            throw new VeiculoException("Error - Valor inválido: 'comprimento'. Use apenas números (ex: 12.34).");
-        }
-        veiculo.setComprimento(Double.parseDouble(comprimento));
-
-        // Validação da Altura
-        if (altura == null || altura.isEmpty()) {
-            throw new VeiculoException("Error - Campo vazio: 'altura'.");
-        }
-        if (!altura.matches("\\d+(\\.\\d{1,2})?")) {
-            throw new VeiculoException("Error - Valor inválido: 'altura'. Use apenas números (ex: 3.45).");
-        }
-        veiculo.setAltura(Double.parseDouble(altura));
-
-        // Validação da Largura
-        if (largura == null || largura.isEmpty()) {
-            throw new VeiculoException("Error - Campo vazio: 'largura'.");
-        }
-        if (!largura.matches("\\d+(\\.\\d{1,2})?")) {
-            throw new VeiculoException("Error - Valor inválido: 'largura'. Use apenas números (ex: 2.50).");
-        }
-        veiculo.setLargura(Double.parseDouble(largura));
-
-        // Validação da Carteira
-        if (carteira == null || carteira.isEmpty()) {
-            throw new VeiculoException("Error - Campo vazio: 'carteira'.");
-        }
-        veiculo.setCarteira(carteira);
-
-        // Validação da Carga Máxima
-        if (cargaMaxima == null || cargaMaxima.isEmpty()) {
-            throw new VeiculoException("Error - Campo vazio: 'carga máxima'.");
-        }
-        if (!cargaMaxima.matches("\\d+(\\.\\d{1,2})?")) {
-            throw new VeiculoException("Error - Valor inválido: 'carga máxima'. Use apenas números (ex: 3000.00).");
-        }
-        veiculo.setCargaMaxima(Double.parseDouble(cargaMaxima));
-
-        // Validação do Combustível
-        if (combustivel == null || combustivel.isEmpty()) {
-            throw new VeiculoException("Error - Campo vazio: 'combustível'.");
-        }
-        veiculo.setCombustivel(combustivel);
-
-        // Validação do Consumo (JComboBox)
-        if (consumo.getSelectedItem() == null || consumo.getSelectedItem().toString().isEmpty()) {
-            throw new VeiculoException("Error - Nenhuma opção selecionada no campo 'consumo'.");
-        }
-        veiculo.setConsumo(consumo.getSelectedItem().toString());
-
-        // Validação da Emissão de Poluentes (JComboBox)
-        if (emissaoPoluentes.getSelectedItem() == null || emissaoPoluentes.getSelectedItem().toString().isEmpty()) {
-            throw new VeiculoException("Error - Nenhuma opção selecionada no campo 'emissão de poluentes'.");
-        }
-        veiculo.setEmissaoPoluentes(emissaoPoluentes.getSelectedItem().toString());
+        veiculo.setManutencao(manutencao);
+        veiculo.setDataManutencao(dataManutencao);
 
         return veiculo;
     }
 }
-

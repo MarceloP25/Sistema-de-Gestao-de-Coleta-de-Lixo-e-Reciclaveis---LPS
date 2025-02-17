@@ -72,7 +72,7 @@ public class VeiculosController {
 
         ValidateVeiculos valid = new ValidateVeiculos();
         Veiculo veiculoAtualizado = valid.validaCamposEntrada(
-                id, placa, chassi, peso, quilometragem, eixos, comprimento, altura, largura, tipoCarteiraCondutor,
+                 placa, chassi, peso, quilometragem, eixos, comprimento, altura, largura, tipoCarteiraCondutor,
                 cargaMaxima, consumo, tipoCombustivel, manutencao, dataManutencao, emissaoPoluentes);
 
         veiculoAtualizado.setId(id);
