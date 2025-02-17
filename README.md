@@ -2,6 +2,9 @@
 
 O **Sistema de Gestão de Coleta de Lixo e Recicláveis** tem como objetivo principal otimizar o gerenciamento das operações de coleta seletiva e resíduos recicláveis. Ele busca tornar o processo mais eficiente, sustentável e acessível, promovendo o engajamento da população na separação correta dos materiais e facilitando o trabalho das equipes responsáveis pela coleta. Além disso, o sistema permitirá o monitoramento detalhado dos resíduos coletados, auxiliando na formulação de políticas públicas e no planejamento estratégico das operações de reciclagem.
 
+Link para o Scrum: https://www.notion.so/19845dace40e8068ab44d5a4ed4acb94?v=19845dace40e80788996000c872eba34&pvs=4
+
+
 ## Principais Funcionalidades
 
 O sistema contará com um conjunto abrangente de funcionalidades para garantir o bom funcionamento e a eficiência da coleta seletiva. Entre as principais, destacam-se:
