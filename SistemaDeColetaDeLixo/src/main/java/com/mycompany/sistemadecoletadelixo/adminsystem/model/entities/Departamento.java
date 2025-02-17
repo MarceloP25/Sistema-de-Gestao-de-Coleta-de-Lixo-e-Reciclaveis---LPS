@@ -95,7 +95,6 @@ public class Departamento {
     public List<Rota> getRotas(){
     return this.rotas;
 }
-    
 
   public Departamento() {
     this.id = -1L;
