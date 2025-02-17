@@ -11,6 +11,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,34 +32,43 @@ public class Rota {
     private Long id;
 
     private String nomeRota;
-    
-    private List<String> ruas;
-    
-    @OneToMany(mappedBy = "rua")
-    private List<PontoDeColeta> pontosColeta;
+    private String ruaInicio;
+    private String ruaFim;
 
-    private Supervisor responsavelRota;
-    
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-        joinColumns = @JoinColumn(name = "rota_id"),
-        inverseJoinColumns = @JoinColumn(name = "motorista_id")
-    )
-    private List<Operador> operador;
-    
-    private String statusRota;
+    @ElementCollection
+    private List<String> ruasPercorridas;
 
-    public Rota(){
+    private String departamento; // Agora é String
+    private String supervisor;   // Agora é String
+
+    public Rota() {
         this.id = -1L;
         this.nomeRota = "";
-        this.ruas = new ArrayList<>();
-        this.pontosColeta = new ArrayList<>();
-        this.responsavelRota = new Supervisor();
-        this.operador = new ArrayList<>();
-        this.statusRota = "Desativada";
+        this.ruaInicio = "";
+        this.ruaFim = "";
+        this.ruasPercorridas = new ArrayList<>();
+        this.departamento = "";
+        this.supervisor = "";
     }
-    
-    public Long getId() {
+
+    // Getters e Setters
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getSupervisor() {
+        return supervisor;
+    }
+
+    public void setSupervisor(String supervisor) {
+        this.supervisor = supervisor;
+    }
+
+public Long getId() {
         return id;
     }
 
@@ -74,43 +84,27 @@ public class Rota {
         this.nomeRota = nomeRota;
     }
 
-    public List<String> getRuas() {
-        return ruas;
+    public String getRuaInicio() {
+        return ruaInicio;
     }
 
-    public void setRuas(List<String> ruas) {
-        this.ruas = ruas;
+    public void setRuaInicio(String ruaInicio) {
+        this.ruaInicio = ruaInicio;
     }
 
-    public List<PontoDeColeta> getPontosColeta() {
-        return pontosColeta;
+    public String getRuaFim() {
+        return ruaFim;
     }
 
-    public void setPontosColeta(List<PontoDeColeta> pontosColeta) {
-        this.pontosColeta = pontosColeta;
+    public void setRuaFim(String ruaFim) {
+        this.ruaFim = ruaFim;
     }
 
-    public Supervisor getResponsavelRota() {
-        return responsavelRota;
+    public List<String> getRuasPercorridas() {
+        return ruasPercorridas;
     }
 
-    public void setResponsavelRota(Supervisor responsavelRota) {
-        this.responsavelRota = responsavelRota;
-    }
-
-    public List<Operador> getOperador() {
-        return operador;
-    }
-
-    public void setOperador(List<Operador> operador) {
-        this.operador = operador;
-    }
-
-    public String getStatusRota() {
-        return statusRota;
-    }
-
-    public void setStatusRota(String statusRota) {
-        this.statusRota = statusRota;
+    public void setRuasPercorridas(List<String> ruasPercorridas) {
+        this.ruasPercorridas = ruasPercorridas;
     }
 }

@@ -9,6 +9,9 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.PontoDeCol
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.PontoDeColetaDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidatePontosColeta;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.PontoDeColetaException;
+import java.util.List;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -23,15 +26,13 @@ public class PontosDeColetaController {
     }
 
     public void cadastrarPontoColeta(
-            String id,
-            String localizacao,
-            int numeroLixeiras,
-            List<String> tiposLixeira) {
+            Long id, JComboBox<String> nomeRota, JComboBox<String> nomeRuas, 
+            String numeroLixeiras, JCheckBox[] tiposLixeiras) {
 
         ValidatePontosColeta valid = new ValidatePontosColeta();
-        PontoDeColeta novoPontoColeta = valid.validacao(id, localizacao, numeroLixeiras, tiposLixeira);
+        PontoDeColeta novoPontoColeta = valid.validaCamposEntrada( nomeRota, nomeRuas, numeroLixeiras, tiposLixeiras);
 
-        if (repositorio.findById(id) == null) {
+        if (repositorio.find(id) == null) {
             repositorio.save(novoPontoColeta);
         } else {
             throw new PontoDeColetaException("Error - Já existe um ponto de coleta com este 'ID'.");
@@ -39,27 +40,24 @@ public class PontosDeColetaController {
     }
 
     public void atualizarPontoColeta(
-            String idOriginal,
-            String id,
-            String localizacao,
-            int numeroLixeiras,
-            List<String> tiposLixeira) {
+            Long id, JComboBox<String> nomeRota, JComboBox<String> nomeRuas, 
+            String numeroLixeiras, JCheckBox[] tiposLixeiras) {
 
         ValidatePontosColeta valid = new ValidatePontosColeta();
-        PontoDeColeta pontoColetaAtualizado = valid.validacao(id, localizacao, numeroLixeiras, tiposLixeira);
-        pontoColetaAtualizado.setId(idOriginal);
+        PontoDeColeta pontoColetaAtualizado = valid.validaCamposEntrada( nomeRota, nomeRuas, numeroLixeiras, tiposLixeiras);
+        pontoColetaAtualizado.setId(id);
 
         repositorio.update(pontoColetaAtualizado);
     }
 
-    public PontoDeColeta buscarPontoColeta(String id) {
-        return this.repositorio.findById(id);
+    public PontoDeColeta buscarPontoColeta(Long id) {
+        return this.repositorio.find(id);
     }
 
-    public void excluirPontoColeta(String id) {
-        PontoDeColeta pontoColeta = repositorio.findById(id);
+    public void excluirPontoColeta(Long id) {
+        PontoDeColeta pontoColeta = repositorio.find(id);
         if (pontoColeta != null) {
-            repositorio.delete(pontoColeta);
+            repositorio.delete(id);
         } else {
             throw new PontoDeColetaException("Error - Ponto de coleta inexistente.");
         }

@@ -9,6 +9,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  * @author marce
  */
 
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -17,12 +18,21 @@ public class Supervisor extends Pessoa {
     
     @ManyToOne
     private Departamento departamento;
+    
     private String dataContrato;
+    private String idDepartamento;
+    private String estacaoDescarga;
+    private List<String> rotasSupervisionadas;
+    private List<String> veiculosSupervisionados;
 
     public Supervisor(){
         super();
         this.departamento = new Departamento();
         this.dataContrato = "00/00/0000";
+        this.estacaoDescarga = "";
+        this.rotasSupervisionadas = null;
+        this.veiculosSupervisionados = null;
+        this.departamento = new Departamento();
     }
     
     public Supervisor(          
@@ -74,4 +84,38 @@ public class Supervisor extends Pessoa {
     public void setDataContrato(String dataContrato) {
         this.dataContrato = dataContrato;
     }
+
+
+    public String getIdDepartamento() {
+        return idDepartamento;
+    }
+
+    public void setIdDepartamento(String idDepartamento) {
+        this.idDepartamento = idDepartamento;
+    }
+
+    public String getEstacaoDescarga() {
+        return estacaoDescarga;
+    }
+
+    public void setEstacaoDescarga(String estacaoDescarga) {
+        this.estacaoDescarga = estacaoDescarga;
+    }
+
+    public List<String> getRotasSupervisionadas() {
+        return rotasSupervisionadas;
+    }
+
+    public void setRotasSupervisionadas(List<String> rotasSupervisionadas) {
+        this.rotasSupervisionadas = rotasSupervisionadas;
+    }
+
+    public List<String> getVeiculosSupervisionados() {
+        return veiculosSupervisionados;
+    }
+
+    public void setVeiculosSupervisionados(List<String> veiculosSupervisionados) {
+        this.veiculosSupervisionados = veiculosSupervisionados;
+    }
+
 }

@@ -27,7 +27,8 @@ public class PontoDeColeta {
     private Long id;
     
     private String nomePonto;
-    private String rua; // Removida a anotação @ManyToOne
+    
+    private String rua;
     
     private int numeroLixeiras;
     
@@ -81,4 +82,11 @@ public class PontoDeColeta {
     public void setTiposLixo(List<String> tiposLixo) {
         this.tiposLixo = tiposLixo;
     }
+
+    public void setNomeRota(String toString) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    
+    
 }

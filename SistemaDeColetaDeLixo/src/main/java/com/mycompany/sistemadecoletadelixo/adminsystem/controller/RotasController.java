@@ -10,6 +10,7 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.RotaDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateRota;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.RotaException;
 import java.util.List;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -24,18 +25,13 @@ public class RotasController {
     }
 
     public void cadastrarRota(
-            String id,
-            String pontoInicio,
-            String pontoFinalizacao,
-            List<String> ruasPercorridas,
-            List<String> pontosColeta,
-            String supervisor,
-            List<String> operadores) {
+            Long id, String nomeRota, String ruaInicio, String ruaFim, List<String> ruasPercorridas,
+            JComboBox<String> departamento, JComboBox<String> supervisor) {
 
         ValidateRota valid = new ValidateRota();
-        Rota novaRota = valid.validaCamposEntrada(id, pontoInicio, pontoFinalizacao, ruasPercorridas, pontosColeta, supervisor, operadores);
+        Rota novaRota = valid.validaCamposEntrada( nomeRota, ruaInicio, ruaFim, ruasPercorridas, departamento, supervisor);
 
-        if (repositorio.findById(id) == null) {
+        if (repositorio.find(id) == null) {
             repositorio.save(novaRota);
         } else {
             throw new RotaException("Error - Já existe uma rota com este 'ID'.");
@@ -43,29 +39,24 @@ public class RotasController {
     }
 
     public void atualizarRota(
-            String id,
-            String pontoInicio,
-            String pontoFinalizacao,
-            List<String> ruasPercorridas,
-            List<String> pontosColeta,
-            String supervisor,
-            List<String> operadores) {
+            Long id, String nomeRota, String ruaInicio, String ruaFim, List<String> ruasPercorridas,
+            JComboBox<String> departamento, JComboBox<String> supervisor) {
 
         ValidateRota valid = new ValidateRota();
-        Rota rotaAtualizada = valid.validaCamposEntrada(id, pontoInicio, pontoFinalizacao, ruasPercorridas, pontosColeta, supervisor, operadores);
-        rotaAtualizada.setId(Long.parseLong(id));
+        Rota rotaAtualizada = valid.validaCamposEntrada(nomeRota, ruaInicio, ruaFim, ruasPercorridas, departamento, supervisor);
+        rotaAtualizada.setId(id);
 
         repositorio.update(rotaAtualizada);
     }
 
-    public Rota buscarRota(String id) {
-        return this.repositorio.findById(id);
+    public Rota buscarRota(Long id) {
+        return this.repositorio.find(id);
     }
 
-    public void excluirRota(String id) {
-        Rota rota = repositorio.findById(id);
+    public void excluirRota(Long id) {
+        Rota rota = repositorio.find(id);
         if (rota != null) {
-            repositorio.delete(Long.parseLong(id));
+            repositorio.delete(id);
         } else {
             throw new RotaException("Error - Rota inexistente.");
         }

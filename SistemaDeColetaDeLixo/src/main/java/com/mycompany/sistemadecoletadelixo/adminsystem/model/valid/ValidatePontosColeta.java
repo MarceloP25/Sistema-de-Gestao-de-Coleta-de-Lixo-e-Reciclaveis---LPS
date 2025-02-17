@@ -5,6 +5,9 @@
 package com.mycompany.sistemadecoletadelixo.adminsystem.model.valid;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.PontoDeColeta;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.PontoDeColetaException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 /**
@@ -17,19 +20,16 @@ public class ValidatePontosColeta {
                                            String numeroLixeiras, JCheckBox[] tiposLixeiras) {
         PontoDeColeta pontoColeta = new PontoDeColeta();
 
-        // Validação do Nome da Rota (JComboBox)
         if (nomeRota.getSelectedItem() == null || nomeRota.getSelectedItem().toString().isEmpty()) {
             throw new PontoDeColetaException("Error - Nenhuma rota selecionada.");
         }
         pontoColeta.setNomeRota(nomeRota.getSelectedItem().toString());
 
-        // Validação do Nome das Ruas (JComboBox)
         if (nomeRuas.getSelectedItem() == null || nomeRuas.getSelectedItem().toString().isEmpty()) {
             throw new PontoDeColetaException("Error - Nenhuma rua selecionada.");
         }
-        pontoColeta.setNomeRua(nomeRuas.getSelectedItem().toString());
+        pontoColeta.setRua(nomeRuas.getSelectedItem().toString());
 
-        // Validação do Número de Lixeiras
         if (numeroLixeiras.isEmpty()) {
             throw new PontoDeColetaException("Error - Campo vazio: 'número de lixeiras'.");
         }
@@ -38,7 +38,6 @@ public class ValidatePontosColeta {
         }
         pontoColeta.setNumeroLixeiras(Integer.parseInt(numeroLixeiras));
 
-        // Validação dos Tipos de Lixeiras (JCheckBox)
         boolean peloMenosUmSelecionado = false;
         for (JCheckBox tipo : tiposLixeiras) {
             if (tipo.isSelected()) {
@@ -59,7 +58,9 @@ public class ValidatePontosColeta {
                 tiposSelecionados.append(tipo.getText());
             }
         }
-        pontoColeta.setTiposLixeiras(tiposSelecionados.toString());
+        List<String> listaTipos = new ArrayList<>(Arrays.asList(tiposSelecionados.toString().split(", ")));
+        pontoColeta.setTiposLixo(listaTipos);
+
 
         return pontoColeta;
     }

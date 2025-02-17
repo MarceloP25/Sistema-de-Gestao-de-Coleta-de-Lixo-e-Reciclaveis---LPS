@@ -28,7 +28,7 @@ public class DepartamentoController {
     }
 
     public void cadastrarDepartamento(
-            long id,
+            Long id,
             String nome,
             String rua,
             String bairro,

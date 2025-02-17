@@ -9,6 +9,7 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Supervisor
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.SupervisorDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateSupervisor;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.SupervisorException;
+import java.util.List;
 
 /**
  *
@@ -23,10 +24,10 @@ public class SupervisorController {
     }
 
     public void cadastrarSupervisor(
-            String id,
+            Long id,
             String nome,
             String dataNascimento,
-            String cpfCnpj,
+            String cpf,
             String email,
             String cep,
             String rua,
@@ -42,11 +43,11 @@ public class SupervisorController {
             List<String> veiculosSupervisionados) {
 
         ValidateSupervisor valid = new ValidateSupervisor();
-        Supervisor novoSupervisor = valid.validacao(
-                id, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento,
+        Supervisor novoSupervisor = valid.validaCamposEntrada(
+                nome, dataNascimento, cpf, email, cep, rua, bairro, cidade, numero, complemento,
                 telefone, dataContrato, idDepartamento, estacaoDescarga, rotasSupervisionadas, veiculosSupervisionados);
 
-        if (repositorio.findById(id) == null) {
+        if (repositorio.find(id) == null) {
             repositorio.save(novoSupervisor);
         } else {
             throw new SupervisorException("Error - Já existe um supervisor com este 'ID'.");
@@ -54,11 +55,11 @@ public class SupervisorController {
     }
 
     public void atualizarSupervisor(
-            String idOriginal,
-            String id,
+            
+            Long id,
             String nome,
             String dataNascimento,
-            String cpfCnpj,
+            String cpf,
             String email,
             String cep,
             String rua,
@@ -74,23 +75,23 @@ public class SupervisorController {
             List<String> veiculosSupervisionados) {
 
         ValidateSupervisor valid = new ValidateSupervisor();
-        Supervisor supervisorAtualizado = valid.validacao(
-                id, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento,
+        Supervisor supervisorAtualizado = valid.validaCamposEntrada(
+                 nome, dataNascimento, cpf, email, cep, rua, bairro, cidade, numero, complemento,
                 telefone, dataContrato, idDepartamento, estacaoDescarga, rotasSupervisionadas, veiculosSupervisionados);
 
-        supervisorAtualizado.setId(idOriginal);
+        supervisorAtualizado.setId(id);
 
         repositorio.update(supervisorAtualizado);
     }
 
-    public Supervisor buscarSupervisor(String id) {
-        return this.repositorio.findById(id);
+    public Supervisor buscarSupervisor(Long id) {
+        return this.repositorio.find(id);
     }
 
-    public void excluirSupervisor(String id) {
-        Supervisor supervisor = repositorio.findById(id);
+    public void excluirSupervisor(Long id) {
+        Supervisor supervisor = repositorio.find(id);
         if (supervisor != null) {
-            repositorio.delete(supervisor);
+            repositorio.delete(id);
         } else {
             throw new SupervisorException("Error - Supervisor inexistente.");
         }

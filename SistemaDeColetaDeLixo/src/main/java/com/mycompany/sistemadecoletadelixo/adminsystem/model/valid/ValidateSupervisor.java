@@ -5,6 +5,7 @@
 package com.mycompany.sistemadecoletadelixo.adminsystem.model.valid;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Supervisor;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.SupervisorException;
+import java.util.List;
 import javax.swing.JComboBox;
 /**
  *
@@ -12,96 +13,89 @@ import javax.swing.JComboBox;
  */
 public class ValidateSupervisor {
 
-    public Supervisor validaCamposEntrada(String nome, String dataNascimento, String rua, String bairro, String cidade,
-                                          String numero, String complemento, String cep, String email, String senha,
-                                          JComboBox<String> departamento, JComboBox<String> estacaoDescarga) {
+    public Supervisor validaCamposEntrada( String nome, String dataNascimento, String cpf, String email,
+                                          String cep, String rua, String bairro, String cidade, String numero,
+                                          String complemento, String telefone, String dataContrato, String idDepartamento,
+                                          String estacaoDescarga, List<String> rotasSupervisionadas, List<String> veiculosSupervisionados) {
         Supervisor supervisor = new Supervisor();
 
-        // Validação do Nome
         if (nome == null || nome.isEmpty()) {
             throw new SupervisorException("Error - Campo vazio: 'nome'.");
         }
         supervisor.setNome(nome);
 
-        // Validação da Data de Nascimento
-        if (dataNascimento == null || dataNascimento.isEmpty()) {
-            throw new SupervisorException("Error - Campo vazio: 'data de nascimento'.");
-        }
-        if (!dataNascimento.matches("\\d{2}/\\d{2}/\\d{4}")) {
-            throw new SupervisorException("Error - Formato inválido: 'data de nascimento'. Use o formato dd/MM/yyyy.");
+        if (dataNascimento == null || dataNascimento.isEmpty() || !dataNascimento.matches("\\d{2}/\\d{2}/\\d{4}")) {
+            throw new SupervisorException("Error - Formato inválido: 'data de nascimento'. ");
         }
         supervisor.setDataNascimento(dataNascimento);
 
-        // Validação da Rua
+        if (cpf == null || cpf.isEmpty() || !cpf.matches("\\d{11}|\\d{14}")) {
+            throw new SupervisorException("Error - CPF/CNPJ inválido. Informe 11 (CPF) ou 14 (CNPJ) dígitos numéricos.");
+        }
+        supervisor.setCpf(cpf);
+
+        if (email == null || email.isEmpty() || !email.matches("^[\\w._%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
+            throw new SupervisorException("Error - Formato inválido: 'email'.");
+        }
+        supervisor.setEmail(email);
+
+        if (cep == null || cep.isEmpty() || !cep.matches("\\d{5}-\\d{3}")) {
+            throw new SupervisorException("Error - Formato inválido: 'CEP'. ");
+        }
+        supervisor.setCep(cep);
+
         if (rua == null || rua.isEmpty()) {
             throw new SupervisorException("Error - Campo vazio: 'rua'.");
         }
         supervisor.setRua(rua);
 
-        // Validação do Bairro
         if (bairro == null || bairro.isEmpty()) {
             throw new SupervisorException("Error - Campo vazio: 'bairro'.");
         }
         supervisor.setBairro(bairro);
 
-        // Validação da Cidade
         if (cidade == null || cidade.isEmpty()) {
             throw new SupervisorException("Error - Campo vazio: 'cidade'.");
         }
         supervisor.setCidade(cidade);
 
-        // Validação do Número
-        if (numero == null || numero.isEmpty()) {
-            throw new SupervisorException("Error - Campo vazio: 'número'.");
-        }
-        if (!numero.matches("\\d+")) {
+        if (numero == null || numero.isEmpty() || !numero.matches("\\d+")) {
             throw new SupervisorException("Error - O campo 'número' deve conter apenas números.");
         }
         supervisor.setNumero(numero);
 
-        // Validação do Complemento
-        supervisor.setComplemento(complemento); // Campo opcional
+        supervisor.setComplemento(complemento);
 
-        // Validação do CEP
-        if (cep == null || cep.isEmpty()) {
-            throw new SupervisorException("Error - Campo vazio: 'CEP'.");
+        if (telefone == null || telefone.isEmpty() || !telefone.matches("\\(\\d{2}\\) \\d{4,5}-\\d{4}")) {
+            throw new SupervisorException("Error - Formato inválido: 'telefone'. ");
         }
-        if (!cep.matches("\\d{5}-\\d{3}")) {
-            throw new SupervisorException("Error - Formato inválido: 'CEP'. Use o formato 00000-000.");
-        }
-        supervisor.setCep(cep);
+        supervisor.setTelefone(telefone);
 
-        // Validação do Email
-        if (email == null || email.isEmpty()) {
-            throw new SupervisorException("Error - Campo vazio: 'email'.");
+        if (dataContrato == null || dataContrato.isEmpty() || !dataContrato.matches("\\d{2}/\\d{2}/\\d{4}")) {
+            throw new SupervisorException("Error - Formato inválido: 'data do contrato'. ");
         }
-        if (!email.matches("^[\\w._%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
-            throw new SupervisorException("Error - Formato inválido: 'email'.");
-        }
-        supervisor.setEmail(email);
+        supervisor.setDataContrato(dataContrato);
 
-        // Validação da Senha
-        if (senha == null || senha.isEmpty()) {
-            throw new SupervisorException("Error - Campo vazio: 'senha'.");
+        if (idDepartamento == null || idDepartamento.isEmpty() || !idDepartamento.matches("\\d+")) {
+            throw new SupervisorException("Error - ID do departamento inválido.");
         }
-        if (senha.length() < 6) {
-            throw new SupervisorException("Error - A senha deve conter no mínimo 6 caracteres.");
-        }
-        supervisor.setSenha(senha);
+        supervisor.setIdDepartamento((idDepartamento));
 
-        // Validação do Departamento (JComboBox)
-        if (departamento.getSelectedItem() == null || departamento.getSelectedItem().toString().isEmpty()) {
-            throw new SupervisorException("Error - Nenhum departamento selecionado.");
+        if (estacaoDescarga == null || estacaoDescarga.isEmpty()) {
+            throw new SupervisorException("Error - Nenhuma estação de descarga informada.");
         }
-        supervisor.setDepartamento(departamento.getSelectedItem().toString());
+        supervisor.setEstacaoDescarga(estacaoDescarga);
 
-        // Validação da Estação de Descarga (JComboBox)
-        if (estacaoDescarga.getSelectedItem() == null || estacaoDescarga.getSelectedItem().toString().isEmpty()) {
-            throw new SupervisorException("Error - Nenhuma estação de descarga selecionada.");
+        if (rotasSupervisionadas == null || rotasSupervisionadas.isEmpty()) {
+            throw new SupervisorException("Error - O supervisor deve supervisionar pelo menos uma rota.");
         }
-        supervisor.setEstacaoDescarga(estacaoDescarga.getSelectedItem().toString());
+        supervisor.setRotasSupervisionadas(rotasSupervisionadas);
+
+        if (veiculosSupervisionados == null || veiculosSupervisionados.isEmpty()) {
+            throw new SupervisorException("Error - O supervisor deve supervisionar pelo menos um veículo.");
+        }
+        supervisor.setVeiculosSupervisionados(veiculosSupervisionados);
 
         return supervisor;
     }
 }
-

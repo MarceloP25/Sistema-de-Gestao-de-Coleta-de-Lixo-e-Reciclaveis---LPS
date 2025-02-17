@@ -7,7 +7,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Veiculo;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.VeiculoDAO;
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateVeiculo;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateVeiculos;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.VeiculoException;
 
 /**
@@ -23,7 +23,7 @@ public class VeiculosController {
     }
 
     public void cadastrarVeiculo(
-            String id,
+            Long id,
             String placa,
             String chassi,
             double peso,
@@ -40,12 +40,12 @@ public class VeiculosController {
             String dataManutencao,
             double emissaoPoluentes) {
 
-        ValidateVeiculo valid = new ValidateVeiculo();
-        Veiculo novoVeiculo = valid.validacao(
+        ValidateVeiculos valid = new ValidateVeiculos();
+        Veiculo novoVeiculo = valid.validaCamposEntrada(
                 id, placa, chassi, peso, quilometragem, eixos, comprimento, altura, largura, tipoCarteiraCondutor,
                 cargaMaxima, consumo, tipoCombustivel, manutencao, dataManutencao, emissaoPoluentes);
 
-        if (repositorio.findById(id) == null) {
+        if (repositorio.find(id) == null) {
             repositorio.save(novoVeiculo);
         } else {
             throw new VeiculoException("Error - Já existe um veículo com este 'ID'.");
@@ -53,8 +53,7 @@ public class VeiculosController {
     }
 
     public void atualizarVeiculo(
-            String idOriginal,
-            String id,
+            Long id,
             String placa,
             String chassi,
             double peso,
@@ -71,24 +70,24 @@ public class VeiculosController {
             String dataManutencao,
             double emissaoPoluentes) {
 
-        ValidateVeiculo valid = new ValidateVeiculo();
-        Veiculo veiculoAtualizado = valid.validacao(
+        ValidateVeiculos valid = new ValidateVeiculos();
+        Veiculo veiculoAtualizado = valid.validaCamposEntrada(
                 id, placa, chassi, peso, quilometragem, eixos, comprimento, altura, largura, tipoCarteiraCondutor,
                 cargaMaxima, consumo, tipoCombustivel, manutencao, dataManutencao, emissaoPoluentes);
 
-        veiculoAtualizado.setId(idOriginal);
+        veiculoAtualizado.setId(id);
 
         repositorio.update(veiculoAtualizado);
     }
 
-    public Veiculo buscarVeiculo(String id) {
-        return this.repositorio.findById(id);
+    public Veiculo buscarVeiculo(Long id) {
+        return this.repositorio.find(id);
     }
 
-    public void excluirVeiculo(String id) {
-        Veiculo veiculo = repositorio.findById(id);
+    public void excluirVeiculo(Long id) {
+        Veiculo veiculo = repositorio.find(id);
         if (veiculo != null) {
-            repositorio.delete(veiculo);
+            repositorio.delete(id);
         } else {
             throw new VeiculoException("Error - Veículo inexistente.");
         }
