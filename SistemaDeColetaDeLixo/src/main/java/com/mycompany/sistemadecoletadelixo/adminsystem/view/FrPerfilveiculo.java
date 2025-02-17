@@ -8,12 +8,12 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.view;
  *
  * @author marce
  */
-public class FrPerfilAdmin extends javax.swing.JFrame {
+public class FrPerfilVeiculo extends javax.swing.JFrame {
 
     /**
      * Creates new form FrPerfilAdmin
      */
-    public FrPerfilAdmin() {
+    public FrPerfilVeiculo() {
         initComponents();
     }
 
@@ -33,12 +33,11 @@ public class FrPerfilAdmin extends javax.swing.JFrame {
         txaPerfil = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
         lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Administrador");
+        lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Veículo");
 
         bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntVoltar.setText("VOLTAR");
