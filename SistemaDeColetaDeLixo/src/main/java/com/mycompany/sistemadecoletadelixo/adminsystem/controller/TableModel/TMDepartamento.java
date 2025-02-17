@@ -64,7 +64,7 @@ public class TMDepartamento extends AbstractTableModel {
         
         switch (columnIndex) {
             case COL_DEPARTAMENTO:
-                return aux.getNomeDepartamento();
+                return aux.getNome();
             case COL_COLETAS:
                 return aux.getColetas().size();
             case COL_SUPERVISORES:

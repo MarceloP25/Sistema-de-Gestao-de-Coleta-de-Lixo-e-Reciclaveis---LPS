@@ -4,6 +4,19 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.view;
 
+import com.mycompany.sistemadecoletadelixo.adminsystem.controller.TableModel.TMDepartamento;
+import com.mycompany.sistemadecoletadelixo.adminsystem.view.FrHomeMaterias;
+import com.mycompany.sistemadecoletadelixo.adminsystem.view.FrHomeRotas;
+import com.mycompany.sistemadecoletadelixo.adminsystem.view.FrHomeDepartamento;
+import com.mycompany.sistemadecoletadelixo.adminsystem.view.FrHomeCidadao;
+import com.mycompany.sistemadecoletadelixo.FRStart;
+import com.mycompany.sistemadecoletadelixo.adminsystem.view.FrPerfilAdmin;
+
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.DepartamentoDAO;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Departamento;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author marce
@@ -15,6 +28,7 @@ public class FrHomeAdmin extends javax.swing.JFrame {
      */
     public FrHomeAdmin() {
         initComponents();
+        atualizarTabelaDepartamento();
     }
 
     /**
@@ -35,10 +49,9 @@ public class FrHomeAdmin extends javax.swing.JFrame {
         bntDepartamento1 = new javax.swing.JButton();
         lblDescricao = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        grdDepartamento = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
         lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -54,6 +67,11 @@ public class FrHomeAdmin extends javax.swing.JFrame {
         bntRota.setText("ROTAS");
         bntRota.setMaximumSize(new java.awt.Dimension(150, 27));
         bntRota.setMinimumSize(new java.awt.Dimension(150, 27));
+        bntRota.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntRotaMouseClicked(evt);
+            }
+        });
         bntRota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntRotaActionPerformed(evt);
@@ -64,6 +82,11 @@ public class FrHomeAdmin extends javax.swing.JFrame {
         bntCidadao.setText("CIDADÃOS");
         bntCidadao.setMaximumSize(new java.awt.Dimension(150, 27));
         bntCidadao.setMinimumSize(new java.awt.Dimension(150, 27));
+        bntCidadao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntCidadaoMouseClicked(evt);
+            }
+        });
         bntCidadao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntCidadaoActionPerformed(evt);
@@ -72,9 +95,19 @@ public class FrHomeAdmin extends javax.swing.JFrame {
 
         bntPerfil.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntPerfil.setText("Perfil");
+        bntPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntPerfilMouseClicked(evt);
+            }
+        });
 
         bntSair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntSair.setText("Sair");
+        bntSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntSairMouseClicked(evt);
+            }
+        });
         bntSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntSairActionPerformed(evt);
@@ -83,71 +116,84 @@ public class FrHomeAdmin extends javax.swing.JFrame {
 
         bntDepartamento1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntDepartamento1.setText("DEPARTAMENTOS");
+        bntDepartamento1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntDepartamento1MouseClicked(evt);
+            }
+        });
 
         lblDescricao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblDescricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDescricao.setText("Visão geral de sua empresa!!!");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        grdDepartamento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Departamentos", "Número de Coletas", "Número de Supervisores", "Número de Operadores"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        grdDepartamento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                grdDepartamentoMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(grdDepartamento);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblDescricao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblTittle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addContainerGap()
                 .addComponent(bntSair, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(bntMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bntRota, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bntDepartamento1)
-                        .addGap(18, 18, 18)
-                        .addComponent(bntCidadao, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblTittle, javax.swing.GroupLayout.DEFAULT_SIZE, 689, Short.MAX_VALUE)
+                        .addGap(83, 83, 83))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
-                        .addComponent(bntPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(21, 21, 21))
+                        .addComponent(jScrollPane1)
+                        .addGap(18, 18, 18)
+                        .addComponent(bntPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(bntMaterial, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bntRota, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bntDepartamento1, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bntCidadao, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                        .addGap(101, 101, 101)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addComponent(lblDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(174, 174, 174))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTittle, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblDescricao)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblTittle, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblDescricao)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bntPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(bntSair, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(50, 50, 50)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+                    .addComponent(bntPerfil)
+                    .addComponent(bntSair))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntCidadao, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bntDepartamento1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bntRota, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bntCidadao, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bntMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addGap(176, 176, 176))
         );
 
         pack();
@@ -162,9 +208,85 @@ public class FrHomeAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_bntSairActionPerformed
 
     private void bntRotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntRotaActionPerformed
-        // TODO add your handling code here:
+     FrHomeMaterias MateriaisFrame = new FrHomeMaterias(); 
+     MateriaisFrame.setVisible(true);
     }//GEN-LAST:event_bntRotaActionPerformed
 
+    private void bntRotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntRotaMouseClicked
+         FrHomeRotas RotaFrame = new FrHomeRotas(); 
+     RotaFrame.setVisible(true);
+    }//GEN-LAST:event_bntRotaMouseClicked
+
+    private void bntDepartamento1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntDepartamento1MouseClicked
+         FrHomeDepartamento DepartamentoFrame = new FrHomeDepartamento(); 
+     DepartamentoFrame.setVisible(true);
+    }//GEN-LAST:event_bntDepartamento1MouseClicked
+
+    private void bntCidadaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntCidadaoMouseClicked
+         FrHomeCidadao CidadaoFrame = new FrHomeCidadao(); 
+     CidadaoFrame.setVisible(true);
+    }//GEN-LAST:event_bntCidadaoMouseClicked
+
+    private void bntPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntPerfilMouseClicked
+       FrPerfilAdmin PerfilFrame = new FrPerfilAdmin(); 
+     PerfilFrame.setVisible(true);
+    }//GEN-LAST:event_bntPerfilMouseClicked
+
+    private void bntSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntSairMouseClicked
+        FRStart SairFrame = new FRStart(); 
+     SairFrame.setVisible(true);
+    }//GEN-LAST:event_bntSairMouseClicked
+
+    private void grdDepartamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_grdDepartamentoMouseClicked
+         // Pega a coluna que foi clicada
+    int column = grdDepartamento.columnAtPoint(evt.getPoint());
+
+    // Se o clique foi na coluna de remoção (supondo que seja a coluna 2)
+    if (column == 2) {
+        // Pega a linha clicada
+        int rowClicked = grdDepartamento.getSelectedRow();
+
+        // Verifica se a linha é válida
+        if (rowClicked >= 0) {
+            // Obtém o objeto Departamento da linha clicada
+            Departamento departamento = (Departamento) grdDepartamento.getModel().getValueAt(rowClicked, -1);
+
+            // Confirmação de exclusão
+            int response = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja excluir o departamento \n(" + departamento.getNome() + ")?",
+                "Confirmar exclusão",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+            );
+
+            // Se o usuário confirmar a exclusão
+            if (response == JOptionPane.OK_OPTION) {
+                // Remove o departamento da lista
+                TMDepartamento tableModel = (TMDepartamento) grdDepartamento.getModel();
+                tableModel.getLista().remove(departamento);
+
+                // Atualiza a tabela
+                atualizarTabelaDepartamento();
+            }
+        }
+    }
+    }//GEN-LAST:event_grdDepartamentoMouseClicked
+
+    
+    //tm 
+  public void atualizarTabelaDepartamento() {
+    // Obtém a lista de departamentos do DAO
+    DepartamentoDAO departamentoDAO = new DepartamentoDAO();
+    List<Departamento> listaDepartamentos = departamentoDAO.findAll();
+
+    // Cria a TableModel com a lista de departamentos
+    TMDepartamento tmDepartamento = new TMDepartamento(listaDepartamentos);
+
+    // Associa a TableModel à JTable
+    grdDepartamento.setModel(tmDepartamento);
+}
+  
     /**
      * @param args the command line arguments
      */
@@ -176,8 +298,8 @@ public class FrHomeAdmin extends javax.swing.JFrame {
     private javax.swing.JButton bntPerfil;
     private javax.swing.JButton bntRota;
     private javax.swing.JButton bntSair;
+    private javax.swing.JTable grdDepartamento;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblDescricao;
     private javax.swing.JLabel lblTittle;
     // End of variables declaration//GEN-END:variables
