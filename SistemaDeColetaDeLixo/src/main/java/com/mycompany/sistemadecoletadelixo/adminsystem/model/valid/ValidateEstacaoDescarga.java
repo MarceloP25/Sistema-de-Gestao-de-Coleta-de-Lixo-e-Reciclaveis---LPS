@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.model.valid;
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Departamento;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.*;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.EstacaoDescarga;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.EstacaoDescargaException;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import javax.swing.JComboBox;
 
 public class ValidateEstacaoDescarga {
 
-    public EstacaoDescarga validaCamposEntrada(String nome, String capacidadeProcessamento, JComboBox<String> supervisorMaquinario,
+    public EstacaoDescarga validaCamposEntrada(String nome, String capacidadeProcessamento, JComboBox<String> supervisor,
                                                JComboBox<String> departamento, JCheckBox[] materiaisProcessamento) {
         EstacaoDescarga estacao = new EstacaoDescarga();
 
@@ -32,9 +32,9 @@ public class ValidateEstacaoDescarga {
             throw new EstacaoDescargaException("Error - Valor inválido no campo 'capacidade de processamento'. Use um número válido.");
         estacao.setCapacidadeProcessamento(Float.parseFloat(capacidadeProcessamento));
 
-        if (supervisorMaquinario.getSelectedItem() == null || supervisorMaquinario.getSelectedItem().toString().isEmpty())
+        if (supervisor.getSelectedItem() == null || supervisor.getSelectedItem().toString().isEmpty())
             throw new EstacaoDescargaException("Error - Nenhum supervisor do maquinário selecionado.");
-        estacao.setSupervisor(supervisorMaquinario.getSelectedItem().toString());
+        estacao.setSupervisor((Supervisor) supervisor.getSelectedItem());
 
         Departamento deptoSelecionado = (Departamento) departamento.getSelectedItem(); 
 

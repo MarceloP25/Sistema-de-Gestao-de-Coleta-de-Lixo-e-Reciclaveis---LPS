@@ -15,6 +15,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.swing.JRadioButton;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -24,28 +27,28 @@ public class Material {
     private Long id;
 
     private String nome;
-    private String tipo;
-    private String liberarDescarte;
-    private String instrucoesDescarte;
+    private List<String> tipos;  
+    private List<String> lixeiras;  
+    private String descricao;
     
-    public Material(){
+    public Material() {
         this.id = -1L;
         this.nome = "";
-        this.tipo = "";
-        this.liberarDescarte = "";
-        this.instrucoesDescarte = "";
+        this.tipos = new ArrayList<>();  
+        this.lixeiras = new ArrayList<>(); 
+        this.descricao = "";
     }
     
     public Material(
             String nome,
-            String tipo,
-            String liberarDescarte,
-            String instrucoesDescarte
+            List<String> tipos,
+            List<String> lixeiras,
+            String descricao
         ){
         this.nome = nome;
-        this.tipo = tipo;
-        this.liberarDescarte = liberarDescarte;
-        this.instrucoesDescarte = instrucoesDescarte;
+        this.tipos = tipos != null ? tipos : new ArrayList<>();
+        this.lixeiras = lixeiras != null ? lixeiras : new ArrayList<>();
+        this.descricao = descricao;
     }
 
     public Long getId() {
@@ -64,27 +67,34 @@ public class Material {
         this.nome = nome;
     }
 
-    public String getTipo() {
-        return tipo;
+    public List<String> getTipos() {
+        return tipos;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTipos(List<String> tipos) {
+        this.tipos = tipos;
     }
 
-    public String getLiberarDescarte() {
-        return liberarDescarte;
+    public List<String> getLixeiras() {
+        return lixeiras;
     }
 
-    public void setLiberarDescarte(String liberarDescarte) {
-        this.liberarDescarte = liberarDescarte;
+    public void setLixeiras(List<String> lixeiras) {
+        this.lixeiras = lixeiras;
     }
 
-    public String getInstrucoesDescarte() {
-        return instrucoesDescarte;
+    public String getDescricaoDescarte() {
+        return descricao;
     }
 
-    public void setInstrucoesDescarte(String instrucoesDescarte) {
-        this.instrucoesDescarte = instrucoesDescarte;
+    public void setDescricaoDescarte(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setLixeiraParaDescarte(String lixeiraEscolhida) {
+        if (!lixeiras.contains(lixeiraEscolhida)) {
+            lixeiras.add(lixeiraEscolhida);
+        }
     }
 }
+

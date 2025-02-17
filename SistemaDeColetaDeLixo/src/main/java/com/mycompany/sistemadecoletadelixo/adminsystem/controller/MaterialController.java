@@ -9,6 +9,7 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Material;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.MaterialDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateMaterial;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.MaterialException;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -23,16 +24,12 @@ public class MaterialController {
     }
 
     public void cadastrarMaterial(
-            String id,
-            String nome,
-            String tipo,
-            String lixeiraDescarte,
-            String instrucoesDescarte) {
+            Long id, String nome, JRadioButton[] tipos, JRadioButton[] lixeiras, String descricao) {
 
         ValidateMaterial valid = new ValidateMaterial();
-        Material novoMaterial = valid.validaCamposEntrada(id, nome, tipo, lixeiraDescarte, instrucoesDescarte);
+        Material novoMaterial = valid.validaCamposEntrada( nome, tipos, lixeiras, descricao);
 
-        if (repositorio.findById(id) == null) {
+        if (repositorio.find(id) == null) {
             repositorio.save(novoMaterial);
         } else {
             throw new MaterialException("Error - Já existe um material com este 'ID'.");
@@ -40,27 +37,23 @@ public class MaterialController {
     }
 
     public void atualizarMaterial(
-            String id,
-            String nome,
-            String tipo,
-            String lixeiraDescarte,
-            String instrucoesDescarte) {
+            Long id, String nome, JRadioButton[] tipos, JRadioButton[] lixeiras, String descricao) {
 
         ValidateMaterial valid = new ValidateMaterial();
-        Material materialAtualizado = valid.validaCamposEntrada(id, nome, tipo, lixeiraDescarte, instrucoesDescarte);
-        materialAtualizado.setId(Long.parseLong(id));
+        Material materialAtualizado = valid.validaCamposEntrada(nome, tipos, lixeiras, descricao);
+        materialAtualizado.setId(id);
 
         repositorio.update(materialAtualizado);
     }
 
-    public Material buscarMaterial(String id) {
-        return this.repositorio.findById(id);
+    public Material buscarMaterial(Long id) {
+        return this.repositorio.find(id);
     }
 
-    public void excluirMaterial(String id) {
-        Material material = repositorio.findById(id);
+    public void excluirMaterial(Long id) {
+        Material material = repositorio.find(id);
         if (material != null) {
-            repositorio.delete(Long.parseLong(id));
+            repositorio.delete(id);
         } else {
             throw new MaterialException("Error - Material inexistente.");
         }

@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.model.valid;
-import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Operador;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.*;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.OperadorException;
+import java.util.Collections;
 import javax.swing.JComboBox;
 /**
  *
@@ -15,24 +16,21 @@ import javax.swing.JComboBox;
 
 public class ValidateOperador {
 
-    public Operador validaCamposEntrada(String nome, String dataNascimento, String rua, String bairro, String cidade,
+    public Operador validaCamposEntrada(String nome, String dataNascimento, String cpf, String rua, String bairro, String cidade,
                                         String numero, String complemento, String cep, String email, String senha,
                                         JComboBox<String> departamento, JComboBox<String> veiculo, JComboBox<String> rota) {
         Operador operador = new Operador();
 
-        // Validação do Nome
         if (nome.isEmpty())
             throw new OperadorException("Error - Campo vazio: 'nome'.");
         operador.setNome(nome);
 
-        // Validação da Data de Nascimento
         if (dataNascimento.isEmpty())
             throw new OperadorException("Error - Campo vazio: 'data de nascimento'.");
-        if (!dataNascimento.matches("^\\d{4}-\\d{2}-\\d{2}$")) // Formato esperado: YYYY-MM-DD
+        if (!dataNascimento.matches("^\\d{4}-\\d{2}-\\d{2}$")) 
             throw new OperadorException("Error - Data de nascimento em formato inválido. Use o formato YYYY-MM-DD.");
         operador.setDataNascimento(dataNascimento);
 
-        // Validação do Endereço
         if (rua.isEmpty())
             throw new OperadorException("Error - Campo vazio: 'rua'.");
         operador.setRua(rua);
@@ -51,39 +49,36 @@ public class ValidateOperador {
             throw new OperadorException("Error - Valor inválido no campo 'número'. Apenas números são permitidos.");
         operador.setNumero(numero);
 
-        operador.setComplemento(complemento); // Opcional
+        operador.setComplemento(complemento);
 
         if (cep.isEmpty())
             throw new OperadorException("Error - Campo vazio: 'CEP'.");
-        if (!cep.matches("\\d{5}-\\d{3}")) // Formato esperado: XXXXX-XXX
+        if (!cep.matches("\\d{5}-\\d{3}")) 
             throw new OperadorException("Error - CEP em formato inválido. Use o formato XXXXX-XXX.");
         operador.setCep(cep);
 
-        // Validação do Email
         if (email.isEmpty())
             throw new OperadorException("Error - Campo vazio: 'email'.");
         if (!email.matches("^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$"))
             throw new OperadorException("Error - Email inválido.");
         operador.setEmail(email);
 
-        // Validação da Senha
         if (senha.isEmpty())
             throw new OperadorException("Error - Campo vazio: 'senha'.");
         if (senha.length() < 6)
             throw new OperadorException("Error - A senha deve ter no mínimo 6 caracteres.");
         operador.setSenha(senha);
 
-        // Validação do Departamento (JComboBox)
         if (departamento.getSelectedItem() == null || departamento.getSelectedItem().toString().isEmpty())
             throw new OperadorException("Error - Nenhum departamento selecionado.");
-        operador.setDepartamento(departamento.getSelectedItem().toString());
+        operador.setDepartamento((Departamento) departamento.getSelectedItem());
 
-        // Validação do Veículo (JComboBox)
         if (veiculo.getSelectedItem() == null || veiculo.getSelectedItem().toString().isEmpty())
             throw new OperadorException("Error - Nenhum veículo selecionado.");
-        operador.setVeiculo(veiculo.getSelectedItem().toString());
+        Veiculo veiculoSelecionado = (Veiculo) veiculo.getSelectedItem();
+        operador.setVeiculo(Collections.singletonList(veiculoSelecionado));
 
-        // Validação da Rota (JComboBox)
+
         if (rota.getSelectedItem() == null || rota.getSelectedItem().toString().isEmpty())
             throw new OperadorException("Error - Nenhuma rota selecionada.");
         operador.setRota(rota.getSelectedItem().toString());

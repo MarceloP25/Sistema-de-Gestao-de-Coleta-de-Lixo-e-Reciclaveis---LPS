@@ -9,6 +9,8 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Operador;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.OperadorDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateOperador;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.OperadorException;
+import java.util.List;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -23,28 +25,14 @@ public class OperadorController {
     }
 
     public void cadastrarOperador(
-            String id,
-            String nome,
-            String dataNascimento,
-            String cpfCnpj,
-            String email,
-            String cep,
-            String rua,
-            String bairro,
-            String cidade,
-            String numero,
-            String complemento,
-            String telefone,
-            String dataContrato,
-            String idDepartamento,
-            List<String> rotasAssociadas,
-            List<String> veiculosUtilizados,
-            String estacaoDescarga) {
+            Long id, String nome, String dataNascimento, String cpf, String rua, String bairro, String cidade, 
+            String numero, String complemento, String cep, String email, String senha,
+            JComboBox<String> departamento, JComboBox<String> veiculo, JComboBox<String> rota) {
 
         ValidateOperador valid = new ValidateOperador();
-        Operador novoOperador = valid.validacao(id, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento, telefone, dataContrato, idDepartamento, rotasAssociadas, veiculosUtilizados, estacaoDescarga);
+        Operador novoOperador = valid.validaCamposEntrada( nome, dataNascimento, cpf, cep, rua, bairro, cidade, numero, complemento, email, senha, departamento, veiculo, rota);
 
-        if (repositorio.findById(id) == null) {
+        if (repositorio.find(id) == null) {
             repositorio.save(novoOperador);
         } else {
             throw new OperadorException("Error - Já existe um operador com este 'ID'.");
@@ -52,40 +40,24 @@ public class OperadorController {
     }
 
     public void atualizarOperador(
-            String idOriginal,
-            String id,
-            String nome,
-            String dataNascimento,
-            String cpfCnpj,
-            String email,
-            String cep,
-            String rua,
-            String bairro,
-            String cidade,
-            String numero,
-            String complemento,
-            String telefone,
-            String dataContrato,
-            String idDepartamento,
-            List<String> rotasAssociadas,
-            List<String> veiculosUtilizados,
-            String estacaoDescarga) {
+            Long id, String nome, String dataNascimento, String cpf, String rua, String bairro, String cidade,
+            String numero, String complemento, String cep, String email, String senha,
+            JComboBox<String> departamento, JComboBox<String> veiculo, JComboBox<String> rota) {
 
         ValidateOperador valid = new ValidateOperador();
-        Operador operadorAtualizado = valid.validacao(id, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento, telefone, dataContrato, idDepartamento, rotasAssociadas, veiculosUtilizados, estacaoDescarga);
-        operadorAtualizado.setId(idOriginal);
+        Operador operadorAtualizado = valid.validaCamposEntrada( nome, dataNascimento, cpf, cep, rua, bairro, cidade, numero, complemento, email, senha, departamento, veiculo, rota);operadorAtualizado.setId(id);
 
         repositorio.update(operadorAtualizado);
     }
 
-    public Operador buscarOperador(String id) {
-        return this.repositorio.findById(id);
+    public Operador buscarOperador(Long id) {
+        return this.repositorio.find(id);
     }
 
-    public void excluirOperador(String id) {
-        Operador operador = repositorio.findById(id);
+    public void excluirOperador(Long id) {
+        Operador operador = repositorio.find(id);
         if (operador != null) {
-            repositorio.delete(operador);
+            repositorio.delete(id);
         } else {
             throw new OperadorException("Error - Operador inexistente.");
         }

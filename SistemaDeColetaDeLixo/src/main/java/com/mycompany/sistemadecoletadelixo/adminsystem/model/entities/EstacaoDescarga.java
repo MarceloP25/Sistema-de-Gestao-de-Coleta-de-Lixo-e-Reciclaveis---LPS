@@ -34,6 +34,12 @@ public class EstacaoDescarga {
     
     private String statusOperacao;
     
+    @ManyToOne
+    private Supervisor supervisor;
+    
+    @OneToMany
+    private List<Material> materiaisProcessamento;
+    
     
     
     public EstacaoDescarga(){
@@ -42,6 +48,8 @@ public class EstacaoDescarga {
         this.capacidadeProcessamento = 0;
         this.tipoMaterialAceito = "";
         this.statusOperacao = "Desativada";
+        this.supervisor = new Supervisor();
+        this.materiaisProcessamento = new ArrayList();
     }
     
     public EstacaoDescarga(
@@ -104,11 +112,21 @@ public class EstacaoDescarga {
         this.statusOperacao = statusOperacao;
     }
 
-    public void setSupervisor(String toString) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setMateriaisProcessamento(List<Material> materiaisProcessamento) {
+        this.materiaisProcessamento = materiaisProcessamento;
+    }
+    
+    public List<Material> getMateriaisProcessamento() {
+        return materiaisProcessamento;
+    }
+    
+    public Supervisor getSupervisor() {
+        return supervisor;
     }
 
-    public void setMateriaisProcessamento(String toString) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setSupervisor(Supervisor supervisor) {
+        this.supervisor = supervisor;
     }
+
+    
 }

@@ -44,7 +44,7 @@ public class EstacaoDescargaController {
 
         ValidateEstacaoDescarga valid = new ValidateEstacaoDescarga();
         EstacaoDescarga estacaoAtualizada = valid.validaCamposEntrada(nome, capacidadeProcessamento, supervisorMaquinario, departamento, materiaisProcessamento);
-        estacaoAtualizada.setId(id);
+        estacaoAtualizada.setIdEstacao(id);
 
         repositorio.update(estacaoAtualizada);
     }
