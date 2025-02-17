@@ -18,23 +18,23 @@ public class ValidateVeiculos {
     private char carteiraConducao;
     private Object combustivel;
     private Object operador;
+    
 
-     public Veiculo validaCamposEntrada(
-        String placa,
-        String chassi,
-        String modelo,
-        double consumoPorKm, // Alterado para double
-        int eixos,
-        int carga,
-        double comprimento, // Alterado para double
-        double altura,
-        double largura,
-        char tipoCarteiraCondutor, // Adicionado
-        double cargaMaxima, // Alterado para double
-        String tipoCombustivel,
-        String dataManutencao,
-        Departamento departamento,
-        List<Operador> operadores) {
+    public Veiculo validaCamposEntrada(
+    String placa,
+    String chassi,
+    String modelo,
+    double consumoPorKm,
+    int eixos,
+    int carga,
+    double comprimento,
+    double altura,
+    double largura,
+    String tipoCarteiraCondutor,
+    String tipoCombustivel,
+    String dataManutencao,
+    Departamento departamento,
+    List<Operador> operadores) {
         
         Veiculo veiculo = new Veiculo();
 
@@ -55,13 +55,13 @@ public class ValidateVeiculos {
             throw new VeiculoException("Error - Formato inválido: 'chassi'. Deve conter 17 caracteres alfanuméricos.");
         }
         veiculo.setChassi(chassi);
-
+        
         // Validação do modelo
         if (modelo == null || modelo.isEmpty()) {
             throw new VeiculoException("Error - Campo vazio: 'modelo'.");
         }
         veiculo.setModelo(modelo);
-
+        
         // Validação do consumo por km
         if (consumoPorKm <= 0) {
             throw new VeiculoException("Error - Consumo por km deve ser maior que zero.");
@@ -93,10 +93,10 @@ public class ValidateVeiculos {
         veiculo.setLargura((float) largura);
 
         // Validação da carteira de condução
-        if (carteiraConducao == ' ') {
-            throw new VeiculoException("Error - Campo vazio: 'carteiraConducao'.");
+       if (tipoCarteiraCondutor == null || tipoCarteiraCondutor.isEmpty()) {
+        throw new VeiculoException("Error - Campo vazio: 'carteiraConducao'.");
         }
-        veiculo.setCarteiraConducao(carteiraConducao);
+        veiculo.setCarteiraConducao(tipoCarteiraCondutor.charAt(0));
 
         // Validação da carga
         if (carga <= 0) {
@@ -107,9 +107,9 @@ public class ValidateVeiculos {
         // Validação do tipo de combustível
         if (combustivel != null && combustivel instanceof String && !((String) combustivel).isEmpty()) {
             veiculo.setCombustivel((String) combustivel);
-            } else {
-                throw new VeiculoException("Error - Campo vazio: 'combustivel'.");
-            }
+        } else {
+            throw new VeiculoException("Error - Campo vazio: 'combustivel'.");
+        }
         
         // Validação da data de manutenção
         if (dataManutencao == null || dataManutencao.isEmpty()) {
@@ -124,11 +124,11 @@ public class ValidateVeiculos {
         veiculo.setDepartamento((Departamento) departamento);
 
         // Validação da lista de operadores
-       if (operador != null && operador instanceof List<?> && !((List<?>) operador).isEmpty()) {
-        veiculo.setOperador((List<Operador>) operador);
-            } else {
-                throw new VeiculoException("Error - Lista de operadores não pode ser vazia.");
-            }   
+        if (operador != null && operador instanceof List<?> && !((List<?>) operador).isEmpty()) {
+            veiculo.setOperador((List<Operador>) operador);
+        } else {
+            throw new VeiculoException("Error - Lista de operadores não pode ser vazia.");
+        }
 
         return veiculo;
     }

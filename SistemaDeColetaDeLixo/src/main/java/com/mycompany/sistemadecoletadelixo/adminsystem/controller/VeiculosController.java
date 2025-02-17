@@ -7,19 +7,25 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Veiculo;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.VeiculoDAO;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Departamento;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Operador;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateVeiculos;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.VeiculoException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
- * @author eduhe
+ * @author eduhe, arthu
  */
 public class VeiculosController {
 
-    private VeiculoDAO repositorio;
+    private final VeiculoDAO repositorio;
+    private final ValidateVeiculos valid;
 
     public VeiculosController() {
         repositorio = new VeiculoDAO();
+        valid = new ValidateVeiculos();
     }
 
     public void cadastrarVeiculo(
@@ -40,11 +46,26 @@ public class VeiculosController {
             String dataManutencao,
             double emissaoPoluentes) {
 
-        ValidateVeiculos valid = new ValidateVeiculos();
+        
+        
         Veiculo novoVeiculo = valid.validaCamposEntrada(
-                id, placa, chassi, peso, quilometragem, eixos, comprimento, altura, largura, tipoCarteiraCondutor,
-                cargaMaxima, consumo, tipoCombustivel, manutencao, dataManutencao, emissaoPoluentes);
+                placa,
+                chassi,
+                "",                         
+                consumo,                     
+                eixos,
+                (int) cargaMaxima,           
+                comprimento,
+                altura,
+                largura,
+                tipoCarteiraCondutor,       
+                tipoCombustivel,
+                dataManutencao,
+                new Departamento(),          
+                new ArrayList<>()            
+        );
 
+        novoVeiculo.setId(id);
         if (repositorio.find(id) == null) {
             repositorio.save(novoVeiculo);
         } else {
@@ -56,6 +77,7 @@ public class VeiculosController {
             Long id,
             String placa,
             String chassi,
+            String modelo,
             double peso,
             double quilometragem,
             int eixos,
@@ -68,12 +90,26 @@ public class VeiculosController {
             String tipoCombustivel,
             boolean manutencao,
             String dataManutencao,
-            double emissaoPoluentes) {
+            Departamento departamento,
+            double emissaoPoluentes,
+            List<Operador> operadores) {
 
-        ValidateVeiculos valid = new ValidateVeiculos();
         Veiculo veiculoAtualizado = valid.validaCamposEntrada(
-                 placa, chassi, peso, quilometragem, eixos, comprimento, altura, largura, tipoCarteiraCondutor,
-                cargaMaxima, consumo, tipoCombustivel, manutencao, dataManutencao, emissaoPoluentes);
+                placa,
+                chassi,
+                modelo,
+                consumo,
+                eixos,
+                (int) cargaMaxima,
+                comprimento,
+                altura,
+                largura,
+                tipoCarteiraCondutor,
+                tipoCombustivel,
+                dataManutencao,
+                departamento,
+                operadores
+        );
 
         veiculoAtualizado.setId(id);
 
