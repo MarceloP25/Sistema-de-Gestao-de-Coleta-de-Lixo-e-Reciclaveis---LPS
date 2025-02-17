@@ -20,9 +20,8 @@ import java.util.List;
  */
 public class DepartamentoController {
 
-    private DepartamentoDAO repositorio;
-    private TMDepartamento TMDepartamento;
-
+    private final DepartamentoDAO repositorio;
+    
     public DepartamentoController() {
         repositorio = new DepartamentoDAO();
     }

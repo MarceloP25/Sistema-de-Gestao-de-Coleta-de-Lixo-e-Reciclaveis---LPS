@@ -4,6 +4,7 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.view;
 
+import com.mycompany.sistemadecoletadelixo.adminsystem.view.FrHomeAdmin;
 /**
  *
  * @author Edu
@@ -58,6 +59,11 @@ public class FrHomeMaterias extends javax.swing.JFrame {
 
         bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntVoltar.setText("VOLTAR");
+        bntVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntVoltarMouseClicked(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,6 +100,11 @@ public class FrHomeMaterias extends javax.swing.JFrame {
 
         bntEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntEditar.setText("EDITAR");
+        bntEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntEditarActionPerformed(evt);
+            }
+        });
 
         bntVerDados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntVerDados.setText("VER DADOS");
@@ -174,6 +185,15 @@ public class FrHomeMaterias extends javax.swing.JFrame {
     private void rbtReciclavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtReciclavelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtReciclavelActionPerformed
+
+    private void bntEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntEditarActionPerformed
+
+    private void bntVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntVoltarMouseClicked
+      FrHomeAdmin VoltarFrame = new FrHomeAdmin(); 
+    VoltarFrame.setVisible(true);
+    }//GEN-LAST:event_bntVoltarMouseClicked
 
     /**
      * @param args the command line arguments

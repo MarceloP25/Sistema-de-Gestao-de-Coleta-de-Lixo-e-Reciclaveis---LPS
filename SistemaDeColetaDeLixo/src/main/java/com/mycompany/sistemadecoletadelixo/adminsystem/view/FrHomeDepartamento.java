@@ -4,6 +4,12 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.view;
 
+import com.mycompany.sistemadecoletadelixo.adminsystem.controller.TableModel.TMDepartamento;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.DepartamentoDAO;
+import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Departamento;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author marce
@@ -36,13 +42,12 @@ public class FrHomeDepartamento extends javax.swing.JFrame {
         bntColetas = new javax.swing.JButton();
         bntCadastrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDepartamentos = new javax.swing.JTable();
+        grdDepartamento = new javax.swing.JTable();
         bntEditar = new javax.swing.JButton();
         bntPerfilDep = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
         lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -86,7 +91,7 @@ public class FrHomeDepartamento extends javax.swing.JFrame {
         bntCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntCadastrar.setText("Cadastrar");
 
-        tblDepartamentos.setModel(new javax.swing.table.DefaultTableModel(
+        grdDepartamento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -104,7 +109,12 @@ public class FrHomeDepartamento extends javax.swing.JFrame {
                 "Nome", "Estações de Descarga", "Rotas", "Coletas", "Supervisores", "Operadores", "Veículos"
             }
         ));
-        jScrollPane1.setViewportView(tblDepartamentos);
+        grdDepartamento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                grdDepartamentoMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(grdDepartamento);
 
         bntEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntEditar.setText("Editar");
@@ -192,10 +202,56 @@ public class FrHomeDepartamento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bntVoltarActionPerformed
 
+    private void grdDepartamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_grdDepartamentoMouseClicked
+            // Pega a coluna que foi clicada
+    int column = grdDepartamento.columnAtPoint(evt.getPoint());
+
+    // Se o clique foi na coluna de remoção (supondo que seja a coluna 2)
+    if (column == 2) {
+        // Pega a linha clicada
+        int rowClicked = grdDepartamento.getSelectedRow();
+
+        // Verifica se a linha é válida
+        if (rowClicked >= 0) {
+            // Obtém o objeto Departamento da linha clicada
+            Departamento departamento = (Departamento) grdDepartamento.getModel().getValueAt(rowClicked, -1);
+
+            // Confirmação de exclusão
+            int response = JOptionPane.showConfirmDialog(
+                null,
+                "Deseja excluir o departamento \n(" + departamento.getNome() + ")?",
+                "Confirmar exclusão",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+            );
+
+            // Se o usuário confirmar a exclusão
+            if (response == JOptionPane.OK_OPTION) {
+                // Remove o departamento da lista
+                TMDepartamento tableModel = (TMDepartamento) grdDepartamento.getModel();
+                tableModel.getLista().remove(departamento);
+
+                // Atualiza a tabela
+                atualizarTabelaDepartamento();
+            }
+        }
+    }
+    }//GEN-LAST:event_grdDepartamentoMouseClicked
+
     /**
      * @param args the command line arguments
      */
+ public void atualizarTabelaDepartamento() {
+    // Obtém a lista de departamentos do DAO
+    DepartamentoDAO departamentoDAO = new DepartamentoDAO();
+    List<Departamento> listaDepartamentos = departamentoDAO.findAll();
 
+    // Cria a TableModel com a lista de departamentos
+    TMDepartamento tmDepartamento = new TMDepartamento(listaDepartamentos);
+
+    // Associa a TableModel à JTable
+    grdDepartamento.setModel(tmDepartamento);
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bntCadastrar;
@@ -207,10 +263,10 @@ public class FrHomeDepartamento extends javax.swing.JFrame {
     private javax.swing.JButton bntSupervisor;
     private javax.swing.JButton bntVeiculos;
     private javax.swing.JButton bntVoltar;
+    private javax.swing.JTable grdDepartamento;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblDescricao;
     private javax.swing.JLabel lblTittle;
-    private javax.swing.JTable tblDepartamentos;
     // End of variables declaration//GEN-END:variables
 }
