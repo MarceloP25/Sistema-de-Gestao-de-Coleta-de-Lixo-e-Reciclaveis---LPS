@@ -62,9 +62,9 @@ public class TMEstacaoDeDescarga extends AbstractTableModel {
             case COL_ID:
                 return aux.getIdEstacao();
             case COL_NOME:
-                return aux.getNomeEstacao();
+                return aux.getNome();
             case COL_CAPACIDADE_MAXIMA:
-                return aux.getCapacidadeMaxima();
+                return aux.getCapacidadeProcessamento();
             case COL_TIPO_MATERIAL_ACEITO:
                 return aux.getTipoMaterialAceito();
             case COL_STATUS_OPERACAO:

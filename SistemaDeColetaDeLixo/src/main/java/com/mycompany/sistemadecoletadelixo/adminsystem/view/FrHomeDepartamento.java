@@ -21,7 +21,8 @@ public class FrHomeDepartamento extends javax.swing.JFrame {
      */
     public FrHomeDepartamento() {
         initComponents();
-    }
+        atualizarTabelaDepartamento();
+    }       
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -93,20 +94,20 @@ public class FrHomeDepartamento extends javax.swing.JFrame {
 
         grdDepartamento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Nome", "Estações de Descarga", "Rotas", "Coletas", "Supervisores", "Operadores", "Veículos"
+
             }
         ));
         grdDepartamento.addMouseListener(new java.awt.event.MouseAdapter() {

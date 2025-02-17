@@ -56,11 +56,11 @@ public class TMMaterial extends AbstractTableModel {
             case COL_NOME:
                 return aux.getNome();
             case COL_TIPO:
-                return aux.getTipo();
+                return aux.getTipos();
             case COL_LIBERAR_DESCARTE:
-                return aux.getLiberarDescarte();
+                return aux.getLixeiras();
             case COL_INSTRUCOES_DESCARTE:
-                return aux.getInstrucoesDescarte();
+                return aux.getDescricaoDescarte();
             default:
                 return null;
         }

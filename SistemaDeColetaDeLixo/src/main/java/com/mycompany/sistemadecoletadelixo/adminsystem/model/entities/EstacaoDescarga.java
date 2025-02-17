@@ -34,13 +34,12 @@ public class EstacaoDescarga {
     
     private String statusOperacao;
     
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "estacao_descarga_id") // Define a coluna de junção
+    private List<String> materiaisProcessamento = new ArrayList<>();
+    
     @ManyToOne
     private Supervisor supervisor;
-    
-    @OneToMany
-    private List<Material> materiaisProcessamento;
-    
-    
     
     public EstacaoDescarga(){
         this.idEstacao = -1L;
@@ -48,7 +47,7 @@ public class EstacaoDescarga {
         this.capacidadeProcessamento = 0;
         this.tipoMaterialAceito = "";
         this.statusOperacao = "Desativada";
-        this.supervisor = new Supervisor();
+        
         this.materiaisProcessamento = new ArrayList();
     }
     
@@ -112,11 +111,11 @@ public class EstacaoDescarga {
         this.statusOperacao = statusOperacao;
     }
 
-    public void setMateriaisProcessamento(List<Material> materiaisProcessamento) {
+    public void setMateriaisProcessamento(List<String> materiaisProcessamento) {
         this.materiaisProcessamento = materiaisProcessamento;
     }
     
-    public List<Material> getMateriaisProcessamento() {
+    public List<String> getMateriaisProcessamento() {
         return materiaisProcessamento;
     }
     

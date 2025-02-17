@@ -47,11 +47,12 @@ public class Departamento {
     private Administrador administrador;
     
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-        joinColumns = @JoinColumn(name = "departamento_id"),
-        inverseJoinColumns = @JoinColumn(name = "estacao_id")
-    )
-    private List<EstacaoDescarga> estacoesDescarga;
+   @JoinTable(
+    name = "departamento_estacao_descarga",
+    joinColumns = @JoinColumn(name = "departamento_id"),
+    inverseJoinColumns = @JoinColumn(name = "estacao_descarga_id")
+)
+private List<EstacaoDescarga> estacoesDescarga = new ArrayList<>();
     
     @OneToMany(mappedBy = "departamento")
     private List<Veiculo> veiculos;

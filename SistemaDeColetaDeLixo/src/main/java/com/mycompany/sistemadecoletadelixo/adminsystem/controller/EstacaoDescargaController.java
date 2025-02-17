@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.sistemadecoletadelixo.adminsystem.controller;
 
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.EstacaoDescarga;
@@ -12,10 +7,6 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.EstacaoD
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 
-/**
- *
- * @author eduhe
- */
 public class EstacaoDescargaController {
 
     private EstacaoDescargaDAO repositorio;
@@ -25,13 +16,18 @@ public class EstacaoDescargaController {
     }
 
     public void cadastrarEstacaoDescarga(
-            Long id, String nome, String capacidadeProcessamento, JComboBox<String> supervisorMaquinario,
-            JComboBox<String> departamento, JCheckBox[] materiaisProcessamento) {
+            Long id, 
+            String nome, 
+            String capacidadeProcessamento, 
+            JComboBox<String> supervisorMaquinario,
+            JComboBox<String> departamento, 
+            JCheckBox[] materiaisProcessamento) {
 
         ValidateEstacaoDescarga valid = new ValidateEstacaoDescarga();
         EstacaoDescarga novaEstacaoDescarga = valid.validaCamposEntrada(nome, capacidadeProcessamento, supervisorMaquinario, departamento, materiaisProcessamento);
 
         if (repositorio.find(id) == null) {
+            novaEstacaoDescarga.setIdEstacao(id);
             repositorio.save(novaEstacaoDescarga);
         } else {
             throw new EstacaoDescargaException("Error - Já existe uma estação de descarga com este 'ID'.");
@@ -39,8 +35,12 @@ public class EstacaoDescargaController {
     }
 
     public void atualizarEstacaoDescarga(
-            Long id, String nome, String capacidadeProcessamento, JComboBox<String> supervisorMaquinario,
-            JComboBox<String> departamento, JCheckBox[] materiaisProcessamento) {
+            Long id, 
+            String nome, 
+            String capacidadeProcessamento, 
+            JComboBox<String> supervisorMaquinario,
+            JComboBox<String> departamento, 
+            JCheckBox[] materiaisProcessamento) {
 
         ValidateEstacaoDescarga valid = new ValidateEstacaoDescarga();
         EstacaoDescarga estacaoAtualizada = valid.validaCamposEntrada(nome, capacidadeProcessamento, supervisorMaquinario, departamento, materiaisProcessamento);
@@ -63,13 +63,11 @@ public class EstacaoDescargaController {
     }
 
     public String imprimirListaEstacoesDescarga() {
-        String listagemEstacoes = "";
-
+        StringBuilder listagemEstacoes = new StringBuilder();
         for (Object obj : this.repositorio.findAll()) {
             EstacaoDescarga estacaoDescarga = (EstacaoDescarga) obj;
-            listagemEstacoes += estacaoDescarga.toString();
+            listagemEstacoes.append(estacaoDescarga.toString()).append("\n");
         }
-
-        return listagemEstacoes;
+        return listagemEstacoes.toString();
     }
 }

@@ -73,7 +73,7 @@ public class TMColeta extends AbstractTableModel {
             case COL_DEPARTAMENTO:
                 return aux.getDepartamento().getNomeDepartamento(); // Supondo que Departamento tenha um método getNomeDepartamento()
             case COL_ESTACAO_DESCARGA:
-                return aux.getEstacaoDeDescarga().getNomeEstacao(); 
+                return aux.getEstacaoDeDescarga().getNome(); 
             case COL_SUPERVISOR:
                 return aux.getSupervisor().getNome(); 
             case COL_PESO:
