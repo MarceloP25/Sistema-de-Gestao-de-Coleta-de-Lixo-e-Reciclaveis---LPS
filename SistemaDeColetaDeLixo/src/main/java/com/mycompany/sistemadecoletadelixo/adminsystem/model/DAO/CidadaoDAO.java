@@ -51,22 +51,28 @@ public class CidadaoDAO implements IDAO<Cidadao> {
     }
 
     @Override
-    public boolean delete(Long id) {
-        this.entityManager = DatabaseJPA.getInstance().getEntityManager();
-        this.entityManager.getTransaction().begin();
+public boolean delete(Long id) { 
+    this.entityManager = DatabaseJPA.getInstance().getEntityManager();
+    this.entityManager.getTransaction().begin();
 
-        Cidadao cidadaoJPA = this.entityManager.find(Cidadao.class, id);
-        if (cidadaoJPA != null) {
-            this.entityManager.remove(cidadaoJPA);
-        } else {
-            this.entityManager.getTransaction().rollback();
-            throw new CidadaoException("Error - Cidadao inexistente.");
-        }
+    // Atribui o ID a um novo objeto Cidadao
+    Cidadao cidadaoJPA = new Cidadao();
+    cidadaoJPA.setId(id);
 
-        this.entityManager.getTransaction().commit();
-        this.entityManager.close();
-        return true;
+    // Busca o cidadão pelo ID antes de remover
+    cidadaoJPA = this.entityManager.find(Cidadao.class, id);
+    if (cidadaoJPA != null) {
+        this.entityManager.remove(cidadaoJPA);
+    } else {
+        this.entityManager.getTransaction().rollback();
+        throw new CidadaoException("Error - Cidadao inexistente.");
     }
+
+    this.entityManager.getTransaction().commit();
+    this.entityManager.close();
+    return true;
+}
+
 
     @Override
     public List<Cidadao> findAll() {

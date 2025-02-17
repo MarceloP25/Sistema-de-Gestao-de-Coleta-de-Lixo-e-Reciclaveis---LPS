@@ -9,6 +9,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
  * @author marce
  */
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,7 +25,7 @@ import lombok.Setter;
 @Setter
 @Data
 @Entity
-public class Cidadao extends Pessoa {
-
+public class Cidadao extends Pessoa implements Serializable {
+    
    
 }

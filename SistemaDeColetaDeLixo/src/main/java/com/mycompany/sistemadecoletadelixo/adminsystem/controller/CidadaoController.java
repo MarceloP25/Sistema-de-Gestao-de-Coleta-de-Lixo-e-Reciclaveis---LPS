@@ -60,12 +60,15 @@ public class CidadaoController {
             String numero,
             String complemento,
             String telefone) {
-
+        
+        long idLong = Long.parseLong(id); 
+        long idOriginalLong = Long.parseLong(idOriginal);
+        
         ValidateCidadao valid = new ValidateCidadao();
         Cidadao cidadaoAtualizado = valid.validacao(
-                id, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento, telefone);
+                idLong, nome, dataNascimento, cpfCnpj, email, cep, rua, bairro, cidade, numero, complemento, telefone);
 
-        cidadaoAtualizado.setId(idOriginal);
+        cidadaoAtualizado.setId(idOriginalLong);
 
         repositorio.update(cidadaoAtualizado);
     }
@@ -77,7 +80,7 @@ public class CidadaoController {
     public void excluirCidadao(long id) {
         Cidadao cidadao = repositorio.find(id);
         if (cidadao != null) {
-            repositorio.delete(cidadao);
+            repositorio.delete(id);
         } else {
             throw new CidadaoException("Error - Cidadão inexistente.");
         }
