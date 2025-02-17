@@ -4,6 +4,7 @@
  */
 package com.mycompany.sistemadecoletadelixo;
 
+import com.mycompany.sistemadecoletadelixo.adminsystem.view.FrAdmin; 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -39,7 +40,6 @@ public class FRStart extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 0));
-        setMaximumSize(new java.awt.Dimension(1000, 600));
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -48,6 +48,11 @@ public class FRStart extends javax.swing.JFrame {
         jLabel1.setText("Sistema de Gestão de Coleta de Lixo e Recicláveis");
 
         bntAdmin.setText("Administrador");
+        bntAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntAdminMouseClicked(evt);
+            }
+        });
         bntAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntAdminActionPerformed(evt);
@@ -110,6 +115,11 @@ public class FRStart extends javax.swing.JFrame {
     private void bntAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAdminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bntAdminActionPerformed
+
+    private void bntAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntAdminMouseClicked
+          FrAdmin adminFrame = new FrAdmin(); 
+          adminFrame.setVisible(true);
+    }//GEN-LAST:event_bntAdminMouseClicked
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,8 @@
  */
 package com.mycompany.sistemadecoletadelixo.adminsystem.view;
 
+import com.mycompany.sistemadecoletadelixo.adminsystem.view.FrHomeAdmin;
+import com.mycompany.sistemadecoletadelixo.adminsystem.view.FrCadAdmin;
 /**
  *
  * @author marce
@@ -54,9 +56,19 @@ public class FrAdmin extends javax.swing.JFrame {
 
         bntLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntLogin.setText("LOGIN");
+        bntLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntLoginMouseClicked(evt);
+            }
+        });
 
         bntCadastro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bntCadastro.setText("CADASTRAR");
+        bntCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntCadastroMouseClicked(evt);
+            }
+        });
         bntCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntCadastroActionPerformed(evt);
@@ -127,6 +139,16 @@ public class FrAdmin extends javax.swing.JFrame {
     private void edtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtEmailActionPerformed
+
+    private void bntCadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntCadastroMouseClicked
+        FrCadAdmin CadastrarFrame = new FrCadAdmin(); 
+        CadastrarFrame.setVisible(true);
+    }//GEN-LAST:event_bntCadastroMouseClicked
+
+    private void bntLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntLoginMouseClicked
+    FrHomeAdmin LoginFrame = new FrHomeAdmin(); 
+    LoginFrame.setVisible(true);
+    }//GEN-LAST:event_bntLoginMouseClicked
 
     /**
      * @param args the command line arguments
