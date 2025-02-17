@@ -41,7 +41,7 @@ public class FrHomeColetas extends javax.swing.JFrame {
 
         lblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Supervisores");
+        lblTittle.setText("Sistema de Coleta de Lixo e Recicláveis - Coletas");
 
         lblDescricao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblDescricao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

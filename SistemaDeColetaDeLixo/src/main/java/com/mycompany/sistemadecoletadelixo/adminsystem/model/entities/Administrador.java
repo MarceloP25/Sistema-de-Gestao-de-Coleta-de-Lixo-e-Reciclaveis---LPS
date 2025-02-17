@@ -12,6 +12,7 @@ package com.mycompany.sistemadecoletadelixo.adminsystem.model.entities;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,9 +25,13 @@ public class Administrador extends Pessoa {
     @OneToMany(mappedBy = "administrador")
     private List<Departamento> departamentos;
     
+    @ManyToMany(mappedBy = "adminFeed")
+    private List<Feedback> feedbacks;
+    
     public Administrador() {
         super();
         this.departamentos = new ArrayList<>();
+        this.feedbacks = new ArrayList<>();
     }
     
     public Administrador(          
@@ -43,7 +48,8 @@ public class Administrador extends Pessoa {
             String cidade,
             String numero,
             String complemento,
-            List<Departamento> departamentos) {
+            List<Departamento> departamentos,
+            List<Feedback> feedbacks) {
         super(
             nome, 
             sexo, 
