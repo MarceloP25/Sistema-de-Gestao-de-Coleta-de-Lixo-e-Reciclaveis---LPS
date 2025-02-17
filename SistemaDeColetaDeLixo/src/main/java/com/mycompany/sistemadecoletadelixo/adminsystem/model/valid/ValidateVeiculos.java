@@ -16,23 +16,25 @@ import java.util.List;
 public class ValidateVeiculos {
 
     private char carteiraConducao;
-    private Object departamento;
+    private Object combustivel;
+    private Object operador;
 
-    public Veiculo validaCamposEntrada(
-            String placa,
-            String chassi,
-            String modelo,
-            float consumoPorKm,
-            int eixos,
-            float comprimento,
-            float altura,
-            float largura,
-            char manutencao,       // ou boolean convertido como char
-            float carga,
-            String combustivel,
-            String dataManutencao,
-            Departamento departament,
-            List<Operador> operador) {
+     public Veiculo validaCamposEntrada(
+        String placa,
+        String chassi,
+        String modelo,
+        double consumoPorKm, // Alterado para double
+        int eixos,
+        int carga,
+        double comprimento, // Alterado para double
+        double altura,
+        double largura,
+        char tipoCarteiraCondutor, // Adicionado
+        double cargaMaxima, // Alterado para double
+        String tipoCombustivel,
+        String dataManutencao,
+        Departamento departamento,
+        List<Operador> operadores) {
         
         Veiculo veiculo = new Veiculo();
 
@@ -64,7 +66,7 @@ public class ValidateVeiculos {
         if (consumoPorKm <= 0) {
             throw new VeiculoException("Error - Consumo por km deve ser maior que zero.");
         }
-        veiculo.setConsumoPorKm(consumoPorKm);
+        veiculo.setConsumoPorKm((float) consumoPorKm);
 
         // Validação do número de eixos
         if (eixos <= 0) {
@@ -76,19 +78,19 @@ public class ValidateVeiculos {
         if (comprimento <= 0) {
             throw new VeiculoException("Error - Comprimento deve ser maior que zero.");
         }
-        veiculo.setComprimento(comprimento);
+        veiculo.setComprimento((float) comprimento);
 
         // Validação da altura
         if (altura <= 0) {
             throw new VeiculoException("Error - Altura deve ser maior que zero.");
         }
-        veiculo.setAltura(altura);
+        veiculo.setAltura((float) altura);
 
         // Validação da largura
         if (largura <= 0) {
             throw new VeiculoException("Error - Largura deve ser maior que zero.");
         }
-        veiculo.setLargura(largura);
+        veiculo.setLargura((float) largura);
 
         // Validação da carteira de condução
         if (carteiraConducao == ' ') {
@@ -103,11 +105,12 @@ public class ValidateVeiculos {
         veiculo.setCarga(carga);
 
         // Validação do tipo de combustível
-        if (combustivel == null || combustivel.isEmpty()) {
-            throw new VeiculoException("Error - Campo vazio: 'combustivel'.");
-        }
-        veiculo.setCombustivel(combustivel);
-
+        if (combustivel != null && combustivel instanceof String && !((String) combustivel).isEmpty()) {
+            veiculo.setCombustivel((String) combustivel);
+            } else {
+                throw new VeiculoException("Error - Campo vazio: 'combustivel'.");
+            }
+        
         // Validação da data de manutenção
         if (dataManutencao == null || dataManutencao.isEmpty()) {
             throw new VeiculoException("Error - Campo vazio: 'dataManutencao'.");
@@ -121,10 +124,11 @@ public class ValidateVeiculos {
         veiculo.setDepartamento((Departamento) departamento);
 
         // Validação da lista de operadores
-        if (operador == null || operador.isEmpty()) {
-            throw new VeiculoException("Error - Lista de operadores não pode ser vazia.");
-        }
-        veiculo.setOperador(operador);
+       if (operador != null && operador instanceof List<?> && !((List<?>) operador).isEmpty()) {
+        veiculo.setOperador((List<Operador>) operador);
+            } else {
+                throw new VeiculoException("Error - Lista de operadores não pode ser vazia.");
+            }   
 
         return veiculo;
     }
