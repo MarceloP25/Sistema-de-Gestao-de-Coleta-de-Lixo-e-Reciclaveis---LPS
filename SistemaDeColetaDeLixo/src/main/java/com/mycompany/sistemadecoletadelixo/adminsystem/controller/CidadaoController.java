@@ -9,7 +9,6 @@ import com.mycompany.sistemadecoletadelixo.adminsystem.model.entities.Cidadao;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.DAO.CidadaoDAO;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.valid.ValidateCidadao;
 import com.mycompany.sistemadecoletadelixo.adminsystem.model.exceptions.CidadaoException;
-
 /**
  *
  * @author eduhe
@@ -23,7 +22,7 @@ public class CidadaoController {
     }
 
     public void cadastrarCidadao(
-            String id,
+           long id,
             String nome,
             String dataNascimento,
             String cpf,
@@ -40,7 +39,7 @@ public class CidadaoController {
         Cidadao novoCidadao = valid.validacao(
                 id, nome, dataNascimento, cpf, email, cep, rua, bairro, cidade, numero, complemento, telefone);
 
-        if (repositorio.findById(id) == null) {
+        if (repositorio.find(id) == null) {
             repositorio.save(novoCidadao);
         } else {
             throw new CidadaoException("Error - Já existe um cidadão com este 'ID'.");
@@ -71,12 +70,12 @@ public class CidadaoController {
         repositorio.update(cidadaoAtualizado);
     }
 
-    public Cidadao buscarCidadao(String id) {
-        return this.repositorio.findById(id);
+    public Cidadao buscarCidadao(long id) {
+        return this.repositorio.find(id);
     }
 
-    public void excluirCidadao(String id) {
-        Cidadao cidadao = repositorio.findById(id);
+    public void excluirCidadao(long id) {
+        Cidadao cidadao = repositorio.find(id);
         if (cidadao != null) {
             repositorio.delete(cidadao);
         } else {
